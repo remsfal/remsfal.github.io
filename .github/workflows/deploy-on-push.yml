@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Build and deploy Vue.js App to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -40,6 +40,8 @@ jobs:
         # run: npm ci
       - name: Build project
         run: npm run build
+      - name: Configure HTTP Not Found for Vue Router
+        run: cp ./dist/index.html ./dist/404.html
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
