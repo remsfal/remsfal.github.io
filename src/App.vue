@@ -7,10 +7,12 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="card">
       <Menubar :model="items">
         <template #start>
-          <img alt="logo" src="@/assets/logo.png" height="30" class="logo" />
+          <div @click="$router.push('/')">
+            <img alt="logo" src="@/assets/logo.png" height="30" class="logo" />
+          </div>
         </template>
         <template #end>
-          <Button label="Try remsfal Cloud" />
+          <Button label="Try remsfal Cloud" @click="$router.push('/')" />
         </template>
       </Menubar>
     </div>
@@ -40,11 +42,11 @@ export default {
           items: [
             {
               label: 'Mission',
-              url: 'https://remsfal.de'
+              to: {name: 'mission'}
             },
             {
               label: 'Abschlussarbeiten',
-              url: 'https://remsfal.de'
+              to: {name: 'thesis'}
             }
           ]
         },
@@ -53,11 +55,11 @@ export default {
           items: [
             {
               label: 'Get Started',
-              url: 'https://remsfal.de'
+              to: {name: 'getStarted'}
             },
             {
               label: 'FAQ',
-              url: 'https://remsfal.de'
+              to: {name: 'faq'}
             }
           ]
         },
@@ -66,15 +68,15 @@ export default {
           items: [
             {
               label: 'Support',
-              url: 'https://remsfal.de'
+              to: {name: 'support'}
             },
             {
               label: 'Roadmap',
-              url: 'https://remsfal.de'
+              to: {name: 'roadmap'}
             },
             {
               label: 'Github',
-              url: 'https://remsfal.de'
+              url: 'https://github.com/remsfal'
             }
           ]
         }
