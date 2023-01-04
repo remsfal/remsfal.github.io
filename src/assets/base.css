@@ -26,12 +26,17 @@
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
+  --color-background-logo: #1e5f20;
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
+
+  --color-theme-primary: #2a862d;
+  --color-theme-secondary: #123813;
+  --color-theme-tertiary: #36ac3a;
 
   --section-gap: 160px;
 }
