@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="card">
+    <div class="menu-background">
       <Menubar :model="items">
         <template #start>
           <div @click="$router.push('/')">
@@ -16,12 +16,31 @@
 </template>
 
 <style scoped>
+.menu-background {
+  padding-bottom: 250px;
+  background-color: var(--color-background-logo);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--color-background-logo)), to(var(--color-theme-tertiary)));
+  background-image: -webkit-linear-gradient(left, var(--color-background-logo), var(--color-theme-tertiary));
+  background-image: -moz-linear-gradient(left, var(--color-background-logo), var(--color-theme-tertiary));
+  background-image: -ms-linear-gradient(left, var(--color-background-logo), var(--color-theme-tertiary));
+  background-image: -o-linear-gradient(left, var(--color-background-logo), var(--color-theme-tertiary));
+  background-image: linear-gradient(left, var(--color-background-logo), var(--color-theme-tertiary));
+}
 .p-button {
-  background: #124006;
+  background: var(--color-background-logo);
+  margin-right: 100px;
 }
 .logo {
-  margin-left: 20px;
+  margin-left: 100px;
   margin-right: 30px;
+}
+@media screen and (max-width: 1024px) {
+  .logo {
+    margin-left: 20px;
+  }
+  .p-button {
+    margin-right: 10px;
+  }
 }
 </style>
 

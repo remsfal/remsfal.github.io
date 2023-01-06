@@ -1,29 +1,23 @@
 <script setup>
 import BaseLayout from "@/components/BaseLayout.vue";
-import HelloWorld from '../components/HelloWorld.vue'
 </script>
 
 <template>
   <BaseLayout>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
-    <HelloWorld msg="You did it again!"/>
+    <div class="col-12">
+      <Card>
+        <template #header>
+          <img src="/images/sf-pier.jpg">
+        </template>
+        <template #title>
+          remsfal - REmote Management Services for connected FAciLities
+        </template>
+        <template #content>
+          <p>
+            TBD
+          </p>
+        </template>
+      </Card>
+    </div>
   </BaseLayout>
 </template>
