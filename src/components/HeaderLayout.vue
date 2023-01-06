@@ -8,7 +8,7 @@
           </div>
         </template>
         <template #end>
-          <Button label="Try remsfal Cloud" @click="$router.push('/')" />
+          <Button label="Zur remsfal Cloud" @click="$router.push('/')" />
         </template>
       </Menubar>
     </div>
@@ -50,10 +50,10 @@ export default {
     return {
       items: [
         {
-          label: 'About',
+          label: 'Über uns',
           items: [
             {
-              label: 'Mission',
+              label: 'Unsere Mission',
               to: {name: 'mission'}
             },
             {
@@ -63,7 +63,7 @@ export default {
           ]
         },
         {
-          label: 'Documentation',
+          label: 'Dokumentation',
           items: [
             {
               label: 'Get Started',

@@ -5,6 +5,12 @@ import HelloWorld from '../components/HelloWorld.vue'
 
 <template>
   <BaseLayout>
-    <HelloWorld msg="You did it again!"/>
+    <div class="col-12">
+      <Card>
+        <template #title>
+          Coming soon ...
+        </template>
+      </Card>
+    </div>
   </BaseLayout>
 </template>

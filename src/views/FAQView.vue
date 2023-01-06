@@ -1,10 +1,15 @@
 <script setup>
 import BaseLayout from "@/components/BaseLayout.vue";
-import HelloWorld from '../components/HelloWorld.vue'
 </script>
 
 <template>
   <BaseLayout>
-    <HelloWorld msg="You did it again!"/>
+    <div class="col-12">
+      <Card>
+        <template #title>
+          Coming soon ...
+        </template>
+      </Card>
+    </div>
   </BaseLayout>
 </template>
