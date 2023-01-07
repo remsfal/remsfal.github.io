@@ -7,7 +7,7 @@ import BaseLayout from "@/components/BaseLayout.vue";
     <div class="col-12">
       <Card>
         <template #header>
-          <img src="/images/sf-pier.jpg">
+          <img src="/images/sf-pier.png">
         </template>
         <template #title>
           remsfal - REmote Management Services for connected FAciLities

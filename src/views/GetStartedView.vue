@@ -7,6 +7,9 @@ import HelloWorld from '../components/HelloWorld.vue'
   <BaseLayout>
     <div class="col-12">
       <Card>
+        <template #header>
+          <img src="/images/fg-skyline.png">
+        </template>
         <template #title>
           Coming soon ...
         </template>

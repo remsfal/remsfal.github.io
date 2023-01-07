@@ -6,6 +6,9 @@ import BaseLayout from "@/components/BaseLayout.vue";
   <BaseLayout>
     <div class="col-12">
       <Card>
+        <template #header>
+          <img src="/images/cc-river.png">
+        </template>
         <template #title>
           Coming soon ...
         </template>
