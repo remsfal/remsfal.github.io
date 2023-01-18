@@ -19,7 +19,7 @@ import BaseLayout from "@/components/BaseLayout.vue";
         </template>
       </Card>
     </div>
-    <div class="col-4">
+    <div class="col-12 md:col-6 lg:col-4">
       <Card>
         <template #title>
           Mängelmanagement
@@ -32,7 +32,7 @@ import BaseLayout from "@/components/BaseLayout.vue";
         </template>
       </Card>
     </div>
-    <div class="col-4">
+    <div class="col-12 md:col-6 lg:col-4">
       <Card>
         <template #title>
           Dokumentation
@@ -46,7 +46,7 @@ import BaseLayout from "@/components/BaseLayout.vue";
         </template>
       </Card>
     </div>
-    <div class="col-4">
+    <div class="col-12 md:col-6 lg:col-4">
       <Card>
         <template #title>
           Überwachung

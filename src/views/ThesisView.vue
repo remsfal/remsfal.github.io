@@ -5,7 +5,7 @@ import HelloWorld from '../components/HelloWorld.vue'
 
 <template>
   <BaseLayout>
-    <div class="col-6">
+    <div class="col-12 md:col-6">
       <Card>
         <template #title>
           Implementierung und Evaluation eines Java-basierten HAProxy
@@ -16,7 +16,7 @@ import HelloWorld from '../components/HelloWorld.vue'
         </template>
       </Card>
     </div>
-    <div class="col-6">
+    <div class="col-12 md:col-6">
       <Card>
         <template #title>
           Implementierung und Evaluation einer
@@ -27,7 +27,7 @@ import HelloWorld from '../components/HelloWorld.vue'
         </template>
       </Card>
     </div>
-    <div class="col-6">
+    <div class="col-12 md:col-6">
       <Card>
         <template #title>
           Implementation und Evaluation eines File Upload Konzeptes mittels JAX-RS
@@ -38,7 +38,7 @@ import HelloWorld from '../components/HelloWorld.vue'
         </template>
       </Card>
     </div>
-    <div class="col-6">
+    <div class="col-12 md:col-6">
       <Card>
         <template #title>
           Vergleich und Bewertung von Online-Ticketsystemen für Hausverwaltungen und
@@ -50,7 +50,7 @@ import HelloWorld from '../components/HelloWorld.vue'
         </template>
       </Card>
     </div>
-    <div class="col-6">
+    <div class="col-12 md:col-6">
       <Card>
         <template #title>
           Konzeption und prototypische Refaktorisierung einer
