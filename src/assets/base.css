@@ -27,6 +27,7 @@
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
   --color-background-logo: #1e5f20;
+  --color-background-logo-transparent-50: rgba(30, 95, 32, 0.5);
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
@@ -60,7 +61,6 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  position: relative;
   font-weight: normal;
 }
 
@@ -78,9 +78,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+}
+
 main {
   min-height: 70vh;
-  padding: 0 100px;
+  padding: 0px 100px;
 }
 
 footer {

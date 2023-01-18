@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <div class="menu-background">
+  <div class="menu-background">
+    <header>
       <Menubar :model="items">
         <template #start>
           <div @click="$router.push('/')">
@@ -11,8 +11,8 @@
           <Button label="Zur remsfal Cloud" @click="$router.push('/')" />
         </template>
       </Menubar>
-    </div>
-  </header>
+    </header>
+  </div>
 </template>
 
 <style scoped>
