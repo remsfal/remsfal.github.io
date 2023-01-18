@@ -11,18 +11,22 @@ import HelloWorld from '../components/HelloWorld.vue'
           <img src="/images/ad-coast.png">
         </template>
         <template #title>
-          Open-Source als Grundlage für Studienprojekte und Abschlussarbeiten
+          <div class="font-bold">
+            Open-Source als Grundlage für Studienprojekte und Abschlussarbeiten
+          </div>
         </template>
         <template #content>
           <p>
-          Das Ziel des remsfal Open-Source-Projektes ist die Unterstützung
-          im Studium und in der Lehre. Studierende erhalten mit diesem Projekt die Möglichkeit
-          ein Wunschthema für ihre Abschlussarbeit mit hohem Praxisbezug
-          und einer Vielfalt an Anwendungskomplexitäten der Wirtschaftsinformatik
-          zu finden.
+            Das Ziel des remsfal Open-Source-Projektes ist die Unterstützung
+            im Studium und in der Lehre. Studierende erhalten mit diesem Projekt die Möglichkeit
+            ein Wunschthema für ihre Abschlussarbeit mit hohem Praxisbezug
+            und einer Vielfalt an Anwendungskomplexitäten der Wirtschaftsinformatik
+            zu finden.
           </p>
-          Im Detail bietet das remsfal Open-Source-Projekt
-          die folgenden Vorteile für Studienprojekte oder Abschlussarbeiten:
+          <p>
+            Im Detail bietet das remsfal Open-Source-Projekt
+            die folgenden Vorteile für Studienprojekte oder Abschlussarbeiten:
+          </p>
           <ul>
             <li><strong class="font-bold">Zugang zu Ressourcen:</strong>
               remsfal bietet Studierenden Zugang zu einer Vielzahl von Ressourcen wie Code,
