@@ -2,10 +2,6 @@
 name: Build and deploy Vue.js App to Pages
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -30,30 +26,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-      - name: Install dependencies
-        run: npm install
-        # The `npm ci` command can only install with an existing package-lock.json
-        # run: npm ci
-      - name: Build project
-        run: npm run build
-      - name: Configure HTTP Not Found for Vue Router
-        run: cp ./dist/index.html ./dist/404.html
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload distribution
-          path: './dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
       - uses: actions/setup-python@v4
         with:
         python-version: '3.x'
+      - name: Install dependencies
+        run: |
+            python -m pip install --upgrade pip
+            pip install selenium pytest
+
+      - name: Set up ChromeDriver
+        uses: browser-actions/setup-chromedriver@latest
+
+      - name: Run tests
+        run: pytest
 
 
