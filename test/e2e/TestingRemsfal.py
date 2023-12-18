@@ -3,6 +3,7 @@ import pytest
 from selenium import webdriver
 import time
 from selenium.common import TimeoutException
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -10,7 +11,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class TestRemsfal:
     def setup_method(self):
-        self.driver = webdriver.Chrome()
+        options = Options()
+        options.headless = True
+        self.driver = webdriver.Chrome(options=options)
 
     def teardown_method(self):
         self.driver.quit()
@@ -72,6 +75,52 @@ class TestRemsfal:
 
         # Verify the URL
         assert "thesis" in self.driver.current_url, "URL did not change to expected '/thesis'"
+
+    def test_responsive_layout(self):
+        self.go_to_website()
+
+        # Define different screen sizes for testing
+        screen_sizes = {
+            "Large Desktop": (1920, 1080),
+            "Small Desktop": (1366, 768),
+            "Tablet": (768, 1024),
+            "Mobile": (375, 667),
+        }
+
+        for device, size in screen_sizes.items():
+            width, height = size
+            self.driver.set_window_size(width, height)
+            print(f"Testing {device} layout")
+            time.sleep(2)  # Wait for the layout to adjust
+
+    def test_responsive_layout_with_js(self):
+                self.go_to_website()
+
+                # Define different screen sizes for testing
+                screen_sizes = {
+                    "Large Desktop": (1920, 1080),
+                    "Small Desktop": (1366, 768),
+                    "Tablet": (768, 1024),
+                    "Mobile": (375, 667),
+                }
+
+                for device, (width, height) in screen_sizes.items():
+                    self.driver.set_window_size(width, height)
+                    time.sleep(2)  # Allow time for layout changes
+
+                    # Example JavaScript to check some responsive behavior
+                    # This could be checking if an element is visible, or a certain CSS class is applied, etc.
+                    is_mobile_menu_visible = self.driver.execute_script(
+                        "return window.innerWidth <= 768 && document.querySelector('.mobile-menu').offsetWidth > 0;"
+                    )
+
+                    # You can add assertions based on the JavaScript execution result
+                    if device == "Mobile" or device == "Tablet":
+                        assert is_mobile_menu_visible, f"Mobile menu should be visible on {device}"
+                    else:
+                        assert not is_mobile_menu_visible, f"Mobile menu should not be visible on {device}"
+
+
 
 if __name__ == "__main__":
     pytest.main([__file__])
