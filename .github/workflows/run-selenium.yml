@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Build and deploy Vue.js App to Pages
+name: Run Selenium smoke test
 
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -7,11 +7,10 @@ on:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: "smoke-test"
   cancel-in-progress: true
 
 jobs:
-  # Single build and deploy job
   deploy:
     runs-on: ubuntu-latest
     steps:
