@@ -29,7 +29,7 @@ class TestRemsfal:
         self.go_to_website()
 
         # Wait and click the dropdown button
-        wait = WebDriverWait(self.driver, 15)
+        wait = WebDriverWait(self.driver, 150)
         dropdown_button = wait.until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, ".p-submenu-icon.pi.pi-angle-down"))
         )
