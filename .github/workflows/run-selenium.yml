@@ -25,7 +25,9 @@ jobs:
             pip install selenium pytest
 
       - name: Set up ChromeDriver
-        uses: browser-actions/setup-chromedriver@latest
+        uses: actions/setup-chromedriver@latest
+        with:
+          chromedriver-version: 'latest'
 
       - name: Run tests
         run: pytest

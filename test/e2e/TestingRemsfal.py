@@ -206,6 +206,32 @@ class TestRemsfal:
         # Verify the URL
         assert "github.com/remsfal" in self.driver.current_url, "URL did not change to expected '/github.com/remsfal'"
 
+    def test_impressum_page(self):
+        self.go_to_website()
+
+        try:
+            # Wait for the specific element and click
+            wait = WebDriverWait(self.driver, 3)
+            target_element = wait.until(
+                EC.element_to_be_clickable((By.XPATH, "//*[@id='app']/footer/div/div[2]/p[1]/a"))
+            )
+            target_element.click()
+
+            # Additional checks or assertions can go here
+
+        except TimeoutException:
+            # Handle the case where the element is not found/clickable
+            print("Element not found or not clickable within the timeout period.")
+
+        try:
+            # Now wait for the URL to change
+            wait.until(EC.url_contains("legal-notice"))
+        except TimeoutException:
+            # If TimeoutException is caught, assert will check the URL
+            pass
+
+        # Verify the URL
+        assert "legal-notice" in self.driver.current_url, "URL did not change to expected '/legal-notice'"
 
 
     def test_responsive_layout(self):
