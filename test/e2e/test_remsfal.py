@@ -56,7 +56,7 @@ class TestRemsfal:
         # Wait and click the dropdown button
         wait = WebDriverWait(self.driver, 5)
         dropdown_button = wait.until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "//*[@id='pv_id_1_0']/div/a/span[1]"))
+            EC.element_to_be_clickable((By.XPATH, "//*[@id='pv_id_1_0']/div/a/span[1]"))
         )
         dropdown_button.click()
 
