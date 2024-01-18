@@ -29,7 +29,7 @@ class TestRemsfal:
         self.go_to_website()
 
         # Wait and click the dropdown button
-        wait = WebDriverWait(self.driver, 150)
+        wait = WebDriverWait(self.driver, 3)
         dropdown_button = wait.until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, ".p-submenu-icon.pi.pi-angle-down"))
         )
@@ -54,9 +54,9 @@ class TestRemsfal:
         self.go_to_website()
 
         # Wait and click the dropdown button
-        wait = WebDriverWait(self.driver, 15)
+        wait = WebDriverWait(self.driver, 5)
         dropdown_button = wait.until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, ".p-submenu-icon.pi.pi-angle-down"))
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "//*[@id='pv_id_1_0']/div/a/span[1]"))
         )
         dropdown_button.click()
 
@@ -80,7 +80,7 @@ class TestRemsfal:
         self.go_to_website()
 
         # Wait and click the 'Dokumentation' dropdown button to reveal menu items
-        wait = WebDriverWait(self.driver, 15)
+        wait = WebDriverWait(self.driver, 5)
         dokumentation_dropdown = wait.until(
             EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Dokumentation')]"))
         )
@@ -106,7 +106,7 @@ class TestRemsfal:
         self.go_to_website()
 
         # Wait and click the 'Dokumentation' dropdown button to reveal menu items
-        wait = WebDriverWait(self.driver, 15)
+        wait = WebDriverWait(self.driver, 5)
         dokumentation_dropdown = wait.until(
             EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Dokumentation')]"))
         )
@@ -132,7 +132,7 @@ class TestRemsfal:
         self.go_to_website()
 
         # Wait and click the 'Dokumentation' dropdown button to reveal menu items
-        wait = WebDriverWait(self.driver, 15)
+        wait = WebDriverWait(self.driver, 5)
         dokumentation_dropdown = wait.until(
             EC.element_to_be_clickable((By.XPATH, "//span[@class='p-menuitem-text' and text()='Community']"))
         )
@@ -158,7 +158,7 @@ class TestRemsfal:
         self.go_to_website()
 
         # Wait and click the 'Community' dropdown button to reveal menu items
-        wait = WebDriverWait(self.driver, 15)
+        wait = WebDriverWait(self.driver, 5)
         community_dropdown = wait.until(
             EC.element_to_be_clickable((By.XPATH, "//span[@class='p-menuitem-text' and text()='Community']"))
         )
@@ -184,7 +184,7 @@ class TestRemsfal:
         self.go_to_website()
 
         # Wait and click the 'Community' dropdown button to reveal menu items
-        wait = WebDriverWait(self.driver, 15)
+        wait = WebDriverWait(self.driver, 5)
         community_dropdown = wait.until(
             EC.element_to_be_clickable((By.XPATH, "//span[@class='p-menuitem-text' and text()='Community']" ))
         )
@@ -211,7 +211,7 @@ class TestRemsfal:
 
         try:
             # Wait for the specific element and click
-            wait = WebDriverWait(self.driver, 15)
+            wait = WebDriverWait(self.driver, 5)
             target_element = wait.until(
                 EC.element_to_be_clickable((By.XPATH, "//*[@id='app']/footer/div/div[2]/p[1]/a"))
             )
