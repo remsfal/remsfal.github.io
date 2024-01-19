@@ -14,6 +14,7 @@ class TestRemsfal:
         options = Options()
         options.add_argument("--headless=new")
         self.driver = webdriver.Chrome(options=options)
+        self.driver.set_window_size(1920, 1080)  # Set window size
 
     def teardown_method(self):
         self.driver.quit()
