@@ -160,13 +160,13 @@ class TestRemsfal:
         # Wait and click the 'Community' dropdown button to reveal menu items
         wait = WebDriverWait(self.driver, 5)
         community_dropdown = wait.until(
-            EC.element_to_be_clickable((By.XPATH, "//span[@class='p-menuitem-text' and text()='Community']"))
+            EC.element_to_be_clickable((By.XPATH, "//*[@id='pv_id_1_2']/div/a/span[1]"))
         )
         community_dropdown.click()
 
         # Wait and click the item
         roadmap = wait.until(
-            EC.element_to_be_clickable((By.XPATH, "//span[@class='p-menuitem-text' and text()='Roadmap']"))
+            EC.element_to_be_clickable((By.XPATH, "//*[@id='pv_id_1_2_1']/div/a"))
         )
         roadmap.click()
 
@@ -192,7 +192,8 @@ class TestRemsfal:
 
         # Wait and click the item
         github_link = wait.until(
-            EC.element_to_be_clickable((By.XPATH, "//a[@href='https://github.com/remsfal']/span[contains(text(), 'Github')]"))
+            EC.element_to_be_clickable((By.XPATH, "//a[@href='https://github.com/remsfal']/span[contains(text(), "
+                                                  "'Github')]"))
         )
         github_link.click()
 
