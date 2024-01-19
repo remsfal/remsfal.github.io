@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 class TestRemsfal:
     def setup_method(self):
         options = Options()
-        options.add_argument("--headless=new")
+      #  options.add_argument("--headless=new")
         self.driver = webdriver.Chrome(options=options)
 
     def teardown_method(self):
@@ -232,6 +232,63 @@ class TestRemsfal:
 
         # Verify the URL
         assert "legal-notice" in self.driver.current_url, "URL did not change to expected '/legal-notice'"
+
+
+    def test_mit_license_compliance_external_page(self):
+        self.go_to_website()
+
+        try:
+            # Wait for the specific element and click
+            wait = WebDriverWait(self.driver, 5)
+            target_element = wait.until(
+                EC.element_to_be_clickable((By.XPATH, "//*[@id='app']/footer/div/div[2]/p[2]/a"))
+            )
+            target_element.click()
+
+            # Additional checks or assertions can go here
+
+        except TimeoutException:
+            # Handle the case where the element is not found/clickable
+            print("Element not found or not clickable within the timeout period.")
+
+        try:
+            # Now wait for the URL to change
+            wait.until(EC.url_contains("terms"))
+        except TimeoutException:
+            # If TimeoutException is caught, assert will check the URL
+            pass
+
+        # Verify the URL
+        assert "terms" in self.driver.current_url, "URL did not change to expected '/terms'"
+
+        try:
+            # Wait for the specific element and click
+            wait = WebDriverWait(self.driver, 5)
+            target_element = wait.until(
+                EC.element_to_be_clickable((By.XPATH, "//*[@id='app']/main/div/div/div[2]/div/div/div[3]/a"))
+            )
+            target_element.click()
+
+            # Additional checks or assertions can go here
+
+        except TimeoutException:
+            # Handle the case where the element is not found/clickable
+            print("Element not found or not clickable within the timeout period.")
+
+        # Switch to new window
+        self.driver.switch_to.window(self.driver.window_handles[-1])
+        # Then perform the URL check
+
+        try:
+            # Now wait for the URL to change
+            wait.until(EC.url_contains("https://opensource.org/license/mit/"))
+        except TimeoutException:
+            # If TimeoutException is caught, assert will check the URL
+            pass
+
+            # Verify the URL
+        assert "https://opensource.org/license/mit/" in self.driver.current_url, "URL did not change to expected '/https://opensource.org/license/mit/'"
+
 
 
     def test_responsive_layout(self):
