@@ -31,4 +31,4 @@ jobs:
           chrome-version: 'latest'
 
       - name: Run tests
-        run: pytest
+        run: pytest -v -ra --durations=10
