@@ -310,6 +310,14 @@ class TestRemsfal:
             print(f"Testing {device} layout")
             time.sleep(2)  # Wait for the layout to adjust
 
+            # Example: Check if a certain element is displayed correctly
+            element = self.driver.find_element(By.XPATH, '//*[@id="app"]/div/header/div/div[2]/button/span')
+            is_displayed = element.is_displayed()
+
+            # You might also want to check element sizes, positions, or even take screenshots
+            assert is_displayed, f"Element not displayed correctly on {device}"
+
+
 
 if __name__ == "__main__":
     pytest.main([__file__])
