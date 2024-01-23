@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
             python -m pip install --upgrade pip
-            pip install selenium pytest coverage pytest-html pytest-cov
+            pip install selenium pytest coverage pytest-html pytest-cov typing_extensions
 
       # Set up Chrome for Selenium
       - name: Set up Chrome
@@ -52,4 +52,4 @@ jobs:
             -Dsonar.organization=<remsfal>
             -Dsonar.python.coverage.reportPaths=coverage.xml
         env:
-          SONAR_TOKEN: ${{ SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
