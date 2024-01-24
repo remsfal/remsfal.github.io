@@ -48,8 +48,8 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
-            -Dsonar.projectKey=<remsfal_remsfal.github.io>
-            -Dsonar.organization=<remsfal>
+            -Dsonar.projectKey=remsfal_remsfal.github.io
+            -Dsonar.organization=remsfal
             -Dsonar.python.coverage.reportPaths=coverage.xml
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
