@@ -34,7 +34,7 @@ jobs:
       # Run tests with coverage and generate an HTML report
       - name: Run tests with coverage and generate HTML report
         run: |
-            pytest --cov=./ --cov-report=xml --html=report.html --self-contained-html
+            pytest -v -ra --cov=./ --cov-report=xml --html=report.html --self-contained-html
 
       # Upload the HTML report as an artifact
       - name: Upload HTML report
