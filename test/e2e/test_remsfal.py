@@ -235,6 +235,86 @@ class TestRemsfal:
         # Verify the URL
         assert "legal-notice" in self.driver.current_url, "URL did not change to expected '/legal-notice'"
 
+    def test_logo_is_clickable_on_homepage(self):
+        self.go_to_website()
+
+        try:
+            # Wait for the specific element and click
+            wait = WebDriverWait(self.driver, 5)
+            logo_element = wait.until(
+                EC.element_to_be_clickable((By.XPATH, '//*[@id="app"]/div/header/div/div[1]/div/img'))
+            )
+            logo_element.click()
+
+            # Additional checks or assertions can go here
+
+        except TimeoutException:
+            # Handle the case where the element is not found/clickable
+            print("Element not found or not clickable within the timeout period.")
+
+        try:
+            # Now wait for the URL to change
+            wait.until(EC.url_contains("https://remsfal.de/"))
+        except TimeoutException:
+            # If TimeoutException is caught, assert will check the URL
+            pass
+
+        # Verify the URL
+        assert "https://remsfal.de/" in self.driver.current_url, "URL did not change to expected '/https://remsfal.de/'"
+
+    def test_bfdi_external_link(self):
+        self.go_to_website()
+
+        # Wait and click the 'Community' dropdown button to reveal menu items
+        wait = WebDriverWait(self.driver, 5)
+        datenschutz_button = wait.until(
+            EC.element_to_be_clickable((By.XPATH, '//*[@id="app"]/footer/div/div[2]/p[3]/a'))
+        )
+        datenschutz_button.click()
+
+        # Wait and click the item
+        bfdi_link = wait.until(
+            EC.element_to_be_clickable((By.XPATH, '//*[@id="app"]/main/div/div/div[1]/div/div/div[2]/p[11]/a'))
+        )
+        bfdi_link.click()
+        # Switch to new window
+        self.driver.switch_to.window(self.driver.window_handles[-1])
+        try:
+            # Now wait for the URL to change
+            wait.until(EC.url_contains("https://www.bfdi.bund.de/DE/Service/Anschriften/anschriften_table.html"))
+        except TimeoutException:
+            # If TimeoutException is caught, assert will check the URL
+            pass
+
+        # Verify the URL
+        assert "https://www.bfdi.bund.de/DE/Service/Anschriften/anschriften_table.html" in self.driver.current_url, "URL did not change to expected '/https://www.bfdi.bund.de/DE/Service/Anschriften/anschriften_table.html'"
+
+    def test_open_privacy_external_link(self):
+        self.go_to_website()
+
+        # Wait and click the 'Community' dropdown button to reveal menu items
+        wait = WebDriverWait(self.driver, 5)
+        datenschutz_button = wait.until(
+            EC.element_to_be_clickable((By.XPATH, '//*[@id="app"]/footer/div/div[2]/p[3]/a'))
+        )
+        datenschutz_button.click()
+
+        # Wait and click the item
+        open_privacy_link = wait.until(
+            EC.element_to_be_clickable((By.XPATH, '//*[@id="app"]/main/div/div/div[1]/div/div/div[3]/a'))
+        )
+        open_privacy_link.click()
+        # Switch to new window
+        self.driver.switch_to.window(self.driver.window_handles[-1])
+        try:
+            # Now wait for the URL to change
+            wait.until(EC.url_contains("https://opr.vc/docs/allgemein/dse_einleitung/"))
+        except TimeoutException:
+            # If TimeoutException is caught, assert will check the URL
+            pass
+
+        # Verify the URL
+        assert "https://opr.vc/docs/allgemein/dse_einleitung/" in self.driver.current_url, "URL did not change to expected '/https://opr.vc/docs/allgemein/dse_einleitung/"
 
     def test_mit_license_compliance_external_page(self):
         self.go_to_website()
