@@ -34,14 +34,16 @@ jobs:
       # Run tests with coverage and generate an HTML report
       - name: Run tests with coverage and generate HTML report
         run: |
-            pytest -v -ra --cov=./ --cov-report=xml --html=report.html --self-contained-html
+            pytest -v -ra --cov=./ --cov-report=xml --cov-report=html --html=report.html --self-contained-html
 
       # Upload the HTML report as an artifact
       - name: Upload HTML report
         uses: actions/upload-artifact@v2
         with:
           name: html-report
-          path: report.html
+          path: |
+            report.html
+            htmlcov/
 
       # Scan with SonarCloud
       - name: SonarCloud Scan
