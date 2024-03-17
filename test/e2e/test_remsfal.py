@@ -363,15 +363,13 @@ class TestRemsfal:
 
         try:
             # Now wait for the URL to change
-            wait.until(EC.url_contains("https://opensource.org/license/mit/"))
+            wait.until(EC.url_contains("https://opensource.org/license/MIT"))
         except TimeoutException:
             # If TimeoutException is caught, assert will check the URL
             pass
 
-            # Verify the URL
-        assert "https://opensource.org/license/mit/" in self.driver.current_url, "URL did not change to expected '/https://opensource.org/license/mit/'"
-
-
+            # Verify the URL (case-insensitive and correct the path)
+            assert "https://opensource.org/license/MIT" in self.driver.current_url, "URL did not change to expected https://opensource.org/license/MIT"
 
     def test_responsive_layout(self):
         self.go_to_website()
