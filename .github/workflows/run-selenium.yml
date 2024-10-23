@@ -1,11 +1,8 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Run Selenium smoke test
 
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Allow one concurrent deployment
 concurrency:
   group: "smoke-test"
   cancel-in-progress: true
@@ -16,15 +13,45 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Setup Python 3
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+
+      # Install dependencies including pytest-html for HTML report generation
       - name: Install dependencies
         run: |
             python -m pip install --upgrade pip
-            pip install selenium pytest
-      - name: Set up ChromeDriver
-        uses: browser-actions/setup-chromedriver@latest
-      - name: Run tests
-        run: pytest
+            pip install selenium pytest coverage pytest-html pytest-cov typing_extensions
+
+      # Set up Chrome for Selenium
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: 'latest'
+
+      # Run tests with coverage and generate an HTML report
+      - name: Run tests with coverage and generate HTML report
+        run: |
+            pytest -v -ra --cov=./ --cov-report=xml --cov-report=html --html=report.html --self-contained-html
+
+      # Upload the HTML report as an artifact
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v2
+        with:
+          name: html-report
+          path: |
+            report.html
+            htmlcov/
+
+      # Scan with SonarCloud
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.projectKey=remsfal_remsfal.github.io
+            -Dsonar.organization=remsfal
+            -Dsonar.python.coverage.reportPaths=coverage.xml
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
