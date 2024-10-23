@@ -106,3 +106,7 @@ dist
 
 # Python and pytest cache
 .pytest_cache/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
