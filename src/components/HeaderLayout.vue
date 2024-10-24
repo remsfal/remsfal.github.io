@@ -33,6 +33,7 @@
 .logo {
   margin-left: 100px;
   margin-right: 30px;
+  cursor: pointer;
 }
 @media screen and (max-width: 1024px) {
   .logo {
