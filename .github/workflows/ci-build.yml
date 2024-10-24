@@ -31,10 +31,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: List the state of node modules
-        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        continue-on-error: true
-        run: npm list
       - name: Install dependencies
         # The `npm ci` command is safe and can only install dependencies depending on an existing package-lock.json
         run: npm ci
@@ -52,6 +48,12 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   check-branches:
     name: "Check Pull Request Conditions"
     runs-on: ubuntu-latest
