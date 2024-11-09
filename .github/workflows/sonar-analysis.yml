@@ -89,8 +89,8 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright tests (test)
         run: npm run test
-      - name: Test with Coverage Information (coverage)
-        run: npm run coverage
+      #- name: Test with Coverage Information (coverage)
+      #  run: npm run coverage
       - name: SonarCloud Scan on PR
         uses: SonarSource/sonarcloud-github-action@master
         if: github.event.workflow_run.event == 'pull_request'
