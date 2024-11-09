@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "playwright test",
-    "coverage": "npx nyc report --reporter=lcov"
+    "coverage": "nyc report --reporter=lcov"
   },
   "dependencies": {
     "primeflex": "^3.3.0",
