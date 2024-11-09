@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "playwright test"
+    "test": "playwright test",
+    "coverage": "npx nyc report --reporter=lcov"
   },
   "dependencies": {
     "primeflex": "^3.3.0",
@@ -19,6 +20,7 @@
     "@playwright/test": "^1.48.1",
     "@types/node": "^22.7.9",
     "@vitejs/plugin-vue": "^4.0.0",
+    "nyc": "^17.1.0",
     "vite": "^4.5.3"
   }
 }
