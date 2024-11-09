@@ -14,7 +14,7 @@
     "primeicons": "^5.0.0",
     "primevue": "^3.17.0",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.1",
