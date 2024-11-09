@@ -48,11 +48,17 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+      - name: Save PR number to file for subsequently Sonar Analysis
+        if: github.event_name == 'pull_request'
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+        run: echo $PR_NUMBER > PR_NUMBER.txt
+      - name: Archive PR number for subsequently Sonar Analysis
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: PR_NUMBER
+          path: PR_NUMBER.txt
 
   check-branches:
     name: "Check Pull Request Conditions"
