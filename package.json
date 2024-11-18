@@ -10,7 +10,7 @@
     "coverage": "nyc report --reporter=lcov"
   },
   "dependencies": {
-    "primeflex": "^3.3.0",
+    "primeflex": "^3.3.1",
     "primeicons": "^5.0.0",
     "primevue": "^3.17.0",
     "vue": "^3.5.12",
