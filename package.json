@@ -12,7 +12,7 @@
   "dependencies": {
     "primeflex": "^3.3.1",
     "primeicons": "^5.0.0",
-    "primevue": "^3.17.0",
+    "primevue": "^4.2.4",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },
