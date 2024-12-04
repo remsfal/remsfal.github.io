@@ -20,7 +20,7 @@ jobs:
               labels: "thesis",
               state: "all",
             });
-            // Handle frontendIssues
+            console.log('Frontend Issues:', frontendIssues);
 
       - name: Fetch Issues from remsfal-backend
         uses: actions/github-script@v6
@@ -33,4 +33,4 @@ jobs:
               labels: "thesis",
               state: "all",
             });
-            // Handle
+            console.log('Backend Issues:', backendIssues);
