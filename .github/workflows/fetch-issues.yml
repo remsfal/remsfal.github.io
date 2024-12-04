@@ -1,8 +1,8 @@
-name: Fetch Issues Daily
+name: Fetch Issues
 
 on:
+  workflow_dispatch:
   schedule:
-    # Runs at 05:00 UTC every day
     - cron: '0 5 * * *'
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const frontendIssues = await github.issues.listForRepo({
-              owner: "AliceKitchkin",
+              owner: "your-org",
               repo: "remsfal-frontend",
               labels: "thesis",
               state: "all",
@@ -28,7 +28,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const backendIssues = await github.issues.listForRepo({
-              owner: "AliceKitchkin",
+              owner: "your-org",
               repo: "remsfal-backend",
               labels: "thesis",
               state: "all",
