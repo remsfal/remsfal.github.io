@@ -1,0 +1,36 @@
+name: Fetch Issues Daily
+
+on:
+  schedule:
+    # Runs at 05:00 UTC every day
+    - cron: '0 5 * * *'
+
+jobs:
+  fetch-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Issues from remsfal-frontend
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const frontendIssues = await github.issues.listForRepo({
+              owner: "AliceKitchkin",
+              repo: "remsfal-frontend",
+              labels: "thesis",
+              state: "all",
+            });
+            // Handle frontendIssues
+
+      - name: Fetch Issues from remsfal-backend
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const backendIssues = await github.issues.listForRepo({
+              owner: "AliceKitchkin",
+              repo: "remsfal-backend",
+              labels: "thesis",
+              state: "all",
+            });
+            // Handle backendIssues
