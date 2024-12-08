@@ -1,9 +1,11 @@
 // faq.spec.js
 const { test, expect } = require('@playwright/test');
 
-test.describe('FAQ Page', () => {
+test.describe('Landing Page', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('http://localhost:5174/faq');
+        // Use env variable or fallback to localhost:5174
+        const baseUrl = process.env.CI ? 'http://localhost:4173' : 'http://localhost:5174';
+        await page.goto(`${baseUrl}/faq`);
     });
 
     test('renders FAQ header correctly', async ({ page }) => {

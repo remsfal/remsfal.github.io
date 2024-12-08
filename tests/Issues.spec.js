@@ -1,9 +1,11 @@
 // issues.spec.js
 const { test, expect } = require('@playwright/test');
 
-test.describe('Issues Page', () => {
+test.describe('Landing Page', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('http://localhost:5174/thesis');
+        // Use env variable or fallback to localhost:5174
+        const baseUrl = process.env.CI ? 'http://localhost:4173' : 'http://localhost:5174';
+        await page.goto(`${baseUrl}/thesis`);
     });
 
     test('renders issues header correctly', async ({ page }) => {

@@ -3,8 +3,9 @@ const { test, expect } = require('@playwright/test');
 
 test.describe('Landing Page', () => {
     test.beforeEach(async ({ page }) => {
-        // Assuming your dev server runs on this URL
-        await page.goto('http://localhost:5174/');
+        // Use env variable or fallback to localhost:5174
+        const baseUrl = process.env.CI ? 'http://localhost:4173' : 'http://localhost:5174';
+        await page.goto(`${baseUrl}/`);
     });
 
 
