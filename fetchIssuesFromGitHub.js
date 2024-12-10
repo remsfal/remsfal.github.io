@@ -1,9 +1,9 @@
 // Token für die Authentifizierung bei der GitHub API
-const token = 'TOKEN';
+const token = '';
 
 // Funktion, die alle Issues eines bestimmten Repositories abfragt
 const requestReposIssues = (name) => {
-    fetch(`https://api.github.com/repos/${name}/issues`, // URL für die Issues des Repositories
+    fetch(`https://api.github.com/repos/${name}/issues?labels=thesis`, // URL für die Issues des Repositories
         {
             headers: { // Header zur Authentifizierung und API-Version
                 'Accept': 'application/vnd.github.v3+json',
@@ -16,4 +16,4 @@ const requestReposIssues = (name) => {
         })
 }
 
-requestReposIssues('remsfal/remsfal.github.io');
+requestReposIssues('remsfal/remsfal-backend');
