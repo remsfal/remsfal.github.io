@@ -17,7 +17,6 @@
 
 <style scoped>
 .menu-background {
-  padding-bottom: 250px;
   background-color: var(--color-background-logo);
   background-image: -webkit-gradient(linear, left top, right top, from(var(--color-background-logo)), to(var(--color-theme-tertiary)));
   background-image: -webkit-linear-gradient(left, var(--color-background-logo), var(--color-theme-tertiary));
@@ -50,49 +49,7 @@ export default {
   data() {
     return {
       items: [
-        {
-          label: 'Über uns',
-          items: [
-            {
-              label: 'Unsere Mission',
-              to: {name: 'mission'}
-            },
-            {
-              label: 'Abschlussarbeiten',
-              to: {name: 'thesis'}
-            }
-          ]
-        },
-        {
-          label: 'Dokumentation',
-          items: [
-            {
-              label: 'Get Started',
-              to: {name: 'getStarted'}
-            },
-            {
-              label: 'FAQ',
-              to: {name: 'faq'}
-            }
-          ]
-        },
-        {
-          label: 'Community',
-          items: [
-            {
-              label: 'Support',
-              to: {name: 'support'}
-            },
-            {
-              label: 'Roadmap',
-              to: {name: 'roadmap'}
-            },
-            {
-              label: 'Github',
-              url: 'https://github.com/remsfal'
-            }
-          ]
-        }
+
       ]
     };
   }
