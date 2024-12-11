@@ -1,5 +1,4 @@
-<script setup>
-import BaseLayout from "@/components/BaseLayout.vue";
+<script setup lang="ts">
 import { ref, computed } from 'vue';
 
 const searchQuery = ref('');
@@ -64,7 +63,7 @@ const filteredIssues = computed(() => {
   return issues.value.filter(issue => {
     const matchesStatus = filterStatus.value === 'all' || issue.status === filterStatus.value;
     const matchesSearch = issue.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-                         issue.description.toLowerCase().includes(searchQuery.value.toLowerCase());
+        issue.description.toLowerCase().includes(searchQuery.value.toLowerCase());
     return matchesStatus && matchesSearch;
   });
 });
@@ -95,82 +94,64 @@ const getPriorityIcon = (priority) => {
 </script>
 
 <template>
-  <BaseLayout>
-    <div class="issues-container">
-      <!-- Header Section -->
-      <div class="hero-header">
-        <div class="brand-name">remsfal</div>
-        <h1 class="page-title">Aktuelle Themen</h1>
-        <p class="subtitle">Unsere laufenden Forschungs- und Entwicklungsprojekte</p>
-      </div>
+  <div class="issues-container">
 
-      <!-- Controls Section -->
-      <div class="controls-section">
-        <div class="search-box">
-          <input 
-            type="text" 
+    <!-- Controls Section -->
+    <div class="controls-section">
+      <div class="search-box">
+        <input
+            type="text"
             v-model="searchQuery"
             placeholder="Suchen Sie nach Projekten..."
             class="search-input"
-          >
-        </div>
-        <div class="filter-box">
-          <select v-model="filterStatus" class="filter-select">
-            <option v-for="option in statusOptions" 
-                    :key="option.value" 
-                    :value="option.value">
-              {{ option.label }}
-            </option>
-          </select>
-        </div>
+        >
       </div>
-
-      <!-- Issues Grid -->
-      <div class="issues-grid">
-        <div v-for="issue in filteredIssues" 
-             :key="issue.id" 
-             class="issue-card">
-          <div class="issue-header">
-            <span class="priority-indicator" :title="`Priorität: ${issue.priority}`">
-              {{ getPriorityIcon(issue.priority) }}
-            </span>
-            <span class="status-badge" 
-                  :style="{ backgroundColor: getStatusColor(issue.status) }">
-              {{ getStatusText(issue.status) }}
-            </span>
-          </div>
-          <router-link :to="`/issues/${issue.url}`" class="issue-title-link">
-            <h3 class="issue-title">{{ issue.title }}</h3>
-          </router-link>
-          <p class="issue-description">{{ issue.description }}</p>
-          <div class="issue-footer">
-            <div class="labels">
-              <span v-for="label in issue.labels" 
-                    :key="label" 
-                    class="label">
-                {{ label }}
-              </span>
-            </div>
-            <router-link :to="`/issues/${issue.url}`" class="details-link">
-              Details anzeigen →
-            </router-link>
-          </div>
-        </div>
-      </div>
-
-      <!-- GitHub Link -->
-      <div class="github-section">
-        <p>
-          Weitere Details finden Sie in unseren
-          <a href="https://github.com/remsfal/remsfal/issues" 
-             target="_blank"
-             class="github-link">
-            GitHub Issues
-          </a>
-        </p>
+      <div class="filter-box">
+        <select v-model="filterStatus" class="filter-select">
+          <option v-for="option in statusOptions"
+                  :key="option.value"
+                  :value="option.value">
+            {{ option.label }}
+          </option>
+        </select>
       </div>
     </div>
-  </BaseLayout>
+
+    <!-- Issues Grid -->
+    <div class="issues-grid">
+      <div v-for="issue in filteredIssues"
+           :key="issue.id"
+           class="issue-card">
+        <div class="issue-header">
+          <span class="priority-indicator" :title="`Priorität: ${issue.priority}`">
+            {{ getPriorityIcon(issue.priority) }}
+          </span>
+          <span class="status-badge"
+                :style="{ backgroundColor: getStatusColor(issue.status) }">
+            {{ getStatusText(issue.status) }}
+          </span>
+        </div>
+        <router-link :to="`/issues/${issue.url}`" class="issue-title-link">
+          <h3 class="issue-title">{{ issue.title }}</h3>
+        </router-link>
+        <p class="issue-description">{{ issue.description }}</p>
+        <div class="issue-footer">
+          <div class="labels">
+            <span v-for="label in issue.labels"
+                  :key="label"
+                  class="label">
+              {{ label }}
+            </span>
+          </div>
+          <router-link :to="`/issues/${issue.url}`" class="details-link">
+            Details anzeigen →
+          </router-link>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </template>
 
 <style scoped>
@@ -301,6 +282,7 @@ const getPriorityIcon = (priority) => {
   line-height: 1.5;
   margin-bottom: 16px;
 }
+
 .issue-title-link {
   text-decoration: none;
   color: inherit;
@@ -311,36 +293,11 @@ const getPriorityIcon = (priority) => {
   color: #4a8c3c;
 }
 
-.issue-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #2e6022;
-  margin: 0 0 12px 0;
-  line-height: 1.4;
-  transition: color 0.3s ease;
-}
-
-.details-link {
-  display: inline-block;
-  margin-top: 12px;
-  color: #2e6022;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.details-link:hover {
-  color: #4a8c3c;
-  text-decoration: underline;
-}
-
 .issue-footer {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-
 
 .labels {
   display: flex;
@@ -356,25 +313,7 @@ const getPriorityIcon = (priority) => {
   color: #4b5563;
 }
 
-.github-section {
-  text-align: center;
-  margin-top: 40px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-}
 
-.github-link {
-  color: #2e6022;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.github-link:hover {
-  color: #4a8c3c;
-  text-decoration: underline;
-}
 
 @keyframes shine {
   0% { background-position: 200% center; }

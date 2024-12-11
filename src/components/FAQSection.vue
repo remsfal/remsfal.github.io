@@ -1,8 +1,7 @@
 <script setup>
-import BaseLayout from "@/components/BaseLayout.vue";
 import { ref } from 'vue';
 
-const openSections = ref(new Set());
+const openSections = ref(new Set([0, 1, 2, 3, 4, 5, 6]));
 
 const toggleSection = (index) => {
   const newSet = new Set(openSections.value);
@@ -54,173 +53,139 @@ const faqItems = [
 </script>
 
 <template>
-  <BaseLayout>
-    <div class="faq-container">
-      <div class="hero-header">
-        <div class="brand-name">FAQ</div>
-        <h1 class="page-title">Objekthierarchie</h1>
-        <p class="subtitle">Wie ist die Objekthierarchie einer Liegenschaft aufgebaut?</p>
-      </div>
-
-      <div class="faq-content">
-        <div v-for="(item, index) in faqItems" 
-             :key="index" 
-             class="faq-item"
-             :class="{ 'active': openSections.has(index) }">
-          <div class="faq-header" @click="toggleSection(index)">
-            <div class="faq-icon">{{ item.icon }}</div>
-            <h2 class="faq-title">{{ item.title }}</h2>
-            <div class="faq-arrow">
-              {{ openSections.has(index) ? '−' : '+' }}
-            </div>
+  <div class="page-container">
+    <div class="faq-content">
+      <div v-for="(item, index) in faqItems"
+           :key="index"
+           class="faq-item"
+           :class="{ 'active': openSections.has(index) }">
+        <div class="faq-header" @click="toggleSection(index)">
+          <div class="faq-icon">{{ item.icon }}</div>
+          <h2 class="faq-title">{{ item.title }}</h2>
+          <div class="faq-arrow">
+            {{ openSections.has(index) ? '−' : '+' }}
           </div>
-          <div class="faq-body" :style="{ maxHeight: openSections.has(index) ? '500px' : '0' }">
-            <p>{{ item.content }}</p>
-          </div>
+        </div>
+        <div class="faq-body" :style="{ maxHeight: openSections.has(index) ? '500px' : '0' }">
+          <p>{{ item.content }}</p>
         </div>
       </div>
     </div>
-  </BaseLayout>
+  </div>
+
+  <div class="github-section">
+    <p>
+      Weitere Details finden Sie in unseren
+      <a href="https://github.com/remsfal/remsfal/issues"
+         class="github-link">
+        GitHub Issues
+      </a>
+    </p>
+  </div>
 </template>
 
-<style>
-.faq-container {
-  max-width: 1000px;
+<style scoped>
+.page-container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-}
-
-.hero-header {
-  text-align: center;
-  padding: 60px 20px;
-  margin: -20px -20px 40px -20px;
-  background: linear-gradient(135deg, #2e6022 0%, #4a8c3c 50%, #2e6022 100%);
-}
-
-.brand-name {
-  font-size: 64px;
-  font-weight: 800;
-  background: linear-gradient(45deg, #ffffff 10%, #a8e063 50%, #ffffff 90%);
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shine 8s linear infinite;
-  margin-bottom: 20px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
-.page-title {
-  color: white;
-  font-size: 36px;
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 20px;
-  margin: 0;
+  padding: 2rem;
 }
 
 .faq-content {
-  background: white;
+  background: var(--vt-c-white);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 2rem;
 }
 
 .faq-item {
-  margin-bottom: 16px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
   overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq-item.active {
+  border-color: var(--color-theme-primary);
 }
 
 .faq-header {
   display: flex;
   align-items: center;
-  padding: 16px;
-  background: #f8f9fa;
+  padding: 1rem;
+  background: var(--color-background-soft);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .faq-header:hover {
-  background: #f1f3f5;
+  background: var(--color-background-mute);
 }
 
 .faq-icon {
-  font-size: 24px;
-  margin-right: 16px;
+  font-size: 1.5rem;
+  margin-right: 1rem;
 }
 
 .faq-title {
   flex: 1;
   margin: 0;
-  font-size: 18px;
-  font-weight: 500;
-  color: #2e6022;
+  font-size: 1.2rem;
+  color: var(--color-theme-primary);
 }
 
 .faq-arrow {
-  font-size: 24px;
-  color: #666;
+  font-size: 1.5rem;
+  color: var(--color-theme-primary);
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-arrow {
+  transform: rotate(180deg);
 }
 
 .faq-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  background: white;
-;
+  transition: max-height 0.3s;
+  background: var(--vt-c-white);
 }
-
 
 .faq-body p {
   margin: 0;
-  padding: 16px;
+  padding: 1rem;
   line-height: 1.6;
-  color: #333;
-}
-
-.faq-item.active {
-  border-color: #2e6022;
-}
-
-.faq-item.active .faq-header {
-  background: #f1f3f5;
-}
-
-@keyframes shine {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
+  color: var(--color-text);
 }
 
 @media (max-width: 768px) {
-  .hero-header {
-    padding: 40px 20px;
+  .page-container {
+    padding: 1rem;
   }
+}
 
-  .brand-name {
-    font-size: 48px;
-  }
+.github-section {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background: var(--vt-c-black);
+  border-radius: 8px;
+}
 
-  .page-title {
-    font-size: 28px;
-  }
+.github-link {
+  color: var(--color-theme-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
 
-  .subtitle {
-    font-size: 18px;
-  }
-
-  .faq-content {
-    padding: 16px;
-  }
-
-  .faq-title {
-    font-size: 16px;
-  }
+.github-link:hover {
+  color: var(--color-theme-tertiary);
+  text-decoration: underline;
 }
 </style>

@@ -18,20 +18,11 @@ const router = createRouter({
       name: 'mission',
       component: () => import('../views/MissionView.vue')
     },
-    {
-      path: '/thesis',
-      name: 'thesis',
-      component: () => import('../views/ThesisView.vue')
-    },
+
     {
       path: '/get-started',
       name: 'getStarted',
       component: () => import('../views/GetStartedView.vue')
-    },
-    {
-      path: '/faq',
-      name: 'faq',
-      component: () => import('../views/FAQView.vue')
     },
     {
       path: '/support',

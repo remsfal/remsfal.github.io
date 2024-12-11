@@ -1,0 +1,21 @@
+{
+  "all": true,
+  "include": [
+    "src/**/*.{js,ts,vue}"
+  ],
+  "exclude": [
+    "**/*.spec.{js,ts}",
+    "**/*.test.{js,ts}",
+    "tests/**/*"
+  ],
+  "reporter": [
+    "text",
+    "html",
+    "lcov"
+  ],
+  "check-coverage": true,
+  "branches": 80,
+  "lines": 80,
+  "functions": 80,
+  "statements": 80
+}
