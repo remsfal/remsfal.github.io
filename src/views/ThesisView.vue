@@ -1,63 +1,35 @@
 <script setup>
 import BaseLayout from "@/components/BaseLayout.vue";
-import HelloWorld from '../components/HelloWorld.vue'
+import Card from 'primevue/card';
+import { ref, onMounted } from 'vue';
+import fetchIssues from '../../fetchIssuesFromGitHub.js';  // Import the correct function
+
+// Create a reactive reference to store the fetched issues
+const issues = ref([]);
+
+// Use the onMounted lifecycle hook to perform operations after the component is mounted
+onMounted(async () => {
+  try {
+    // Fetch issues and assign them to the issues reference
+    issues.value = await fetchIssues(['remsfal/remsfal-backend', 'remsfal/remsfal-frontend']); // Use the imported fetchIssues function
+  } catch (error) {
+    // Log an error message if fetching issues fails
+    console.error('Failed to fetch issues:', error);
+  }
+});
+
 </script>
 
 <template>
   <BaseLayout>
-    <div class="col-12 md:col-6">
+    <!-- Iterate over the fetched issues and display each in a Card component -->
+    <div v-for="issue in issues" :key="issue.id || issue.title" class="col-12 md:col-6">
       <Card>
         <template #title>
-          Implementierung und Evaluation eines Java-basierten HAProxy
-            Stream Processing Offload Agent zur Event Transformation nach Kafka
+          {{ issue.title }}
         </template>
         <template #footer>
-          Status: In Bearbeitung
-        </template>
-      </Card>
-    </div>
-    <div class="col-12 md:col-6">
-      <Card>
-        <template #title>
-          Implementierung und Evaluation einer
-          Vue.js Single Page Application zur Konfiguration des HAProxy als API Gateway
-        </template>
-        <template #footer>
-          Status: Offen
-        </template>
-      </Card>
-    </div>
-    <div class="col-12 md:col-6">
-      <Card>
-        <template #title>
-          Implementation und Evaluation eines File Upload Konzeptes mittels JAX-RS
-          zur ausfallsicheren Speicherung und effizienten Verwaltung unterschiedlicher Dateitypen
-        </template>
-        <template #footer>
-          Status: Offen
-        </template>
-      </Card>
-    </div>
-    <div class="col-12 md:col-6">
-      <Card>
-        <template #title>
-          Vergleich und Bewertung von Online-Ticketsystemen für Hausverwaltungen und
-          deren Auswirkungen auf die Kommunikation mit Auftraggebende, Mietparteien
-          und Auftragnehmende
-        </template>
-        <template #footer>
-          Status: In Bearbeitung
-        </template>
-      </Card>
-    </div>
-    <div class="col-12 md:col-6">
-      <Card>
-        <template #title>
-          Konzeption und prototypische Refaktorisierung einer
-          Monolithischen-Architektur hin zu einer Microservice-Architektur
-        </template>
-        <template #footer>
-          Status: In Bearbeitung
+          Status: {{ issue.state }}
         </template>
       </Card>
     </div>
