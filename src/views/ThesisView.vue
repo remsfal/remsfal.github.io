@@ -2,7 +2,7 @@
 import BaseLayout from "@/components/BaseLayout.vue";
 import Card from 'primevue/card';
 import { ref, onMounted } from 'vue';
-import fetchIssues from '../../fetchIssuesFromGitHub.js';  // Import the correct function
+import fetchIssues from '../fetchIssuesFromGitHub.js';  // Import the correct function
 
 // Create a reactive reference to store the fetched issues
 const issues = ref([]);
