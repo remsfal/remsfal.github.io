@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Hero Section', () => {
     test.beforeEach(async ({ page }) => {
         // Navigate to the page where the hero section is rendered
-        await page.goto('/');
+        await page.goto('http://localhost:5173/');
         // Wait for the hero section to be visible
         await page.waitForSelector('.hero-section');
     });

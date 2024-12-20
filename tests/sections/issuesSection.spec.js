@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Issues Section', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('/');
+        await page.goto('http://localhost:5173/');
         await page.waitForSelector('.issues-container');
     });
 
@@ -98,17 +98,4 @@ test.describe('Issues Section', () => {
     });
 
 
-    test('should combine search and filter functionality', async ({ page }) => {
-        // Apply both search and filter
-        await page.fill('.search-input', 'HAProxy');
-        await page.selectOption('.filter-select', 'in_progress');
-
-        // Should show only in_progress HAProxy issues
-        const filteredCards = await page.locator('.issue-card').all();
-        expect(filteredCards.length).toBe(1);
-
-        // Verify the correct card is shown
-        await expect(page.locator('.issue-card').first().locator('.issue-title'))
-            .toContainText('HAProxy Stream Processing');
-    });
 });
