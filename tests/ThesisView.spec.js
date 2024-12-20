@@ -1,8 +1,15 @@
 import { test, expect } from '@playwright/test';
+import dotenv from 'dotenv';
+
+dotenv.config();  // Load environment variables from .env file
+const baseURL = process.env.BASE_URL || 'http://localhost:5173';  // Fallback URL
+console.log(process.env.BASE_URL);
+
+
 
 test.describe('ThesisView Component', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/thesis');
+    await page.goto(baseURL + '/thesis');
     await page.waitForLoadState('networkidle');  // Ensure everything is loaded
   });
 
