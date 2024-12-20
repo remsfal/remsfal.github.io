@@ -23,13 +23,13 @@ onMounted(async () => {
 <template>
   <BaseLayout>
     <!-- Iterate over the fetched issues and display each in a Card component -->
-    <div v-for="issue in issues" :key="issue.id || issue.title" class="col-12 md:col-6">
+    <div v-for="issue in issues" :key="issue.id || issue.title" class="col-12 md:col-6 issue-card">
       <Card>
         <template #title>
-          {{ issue.title }}
+          <span class="issue-title">{{ issue.title }}</span>
         </template>
         <template #footer>
-          Status: {{ issue.state }}
+          <span class="issue-footer">Status: {{ issue.state }}</span>
         </template>
       </Card>
     </div>
