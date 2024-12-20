@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Educational Benefits Section', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('http://localhost:5173/');
+        await page.goto('/');
         await page.waitForSelector('.education-container');
     });
 
