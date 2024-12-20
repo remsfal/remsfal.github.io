@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import dotenv from 'dotenv';
 
 dotenv.config();  // Load environment variables from .env file
-const baseURL = process.env.BASE_URL || '127.0.0.1';  // Fallback URL
+const baseURL = process.env.BASE_URL || 'http://127.0.0.1:3000';  // Fallback URL
 console.log(process.env.BASE_URL);
 
 
