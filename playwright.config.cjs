@@ -26,17 +26,10 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
-    baseURL: process.env.BASE_URL || 'http://localhost:3000',  // Use environment variable
+    baseURL: process.env.BASE_URL || '127.0.0.1',  // Use environment variable
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-  },
-  webServer: {
-    command: 'npm run dev',  // Command to start your server, adjust as necessary
-    url: process.env.BASE_URL || 'http://localhost:3000',  // Use environment variable
-    reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000,  // Adjust timeout if your server takes longer to start
   },
 
   /* Configure projects for major browsers */
