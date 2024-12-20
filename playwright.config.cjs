@@ -32,6 +32,12 @@ module.exports = defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
+  webServer: {
+    command: 'npm run dev',  // Command to start your server, adjust as necessary
+    url: process.env.BASE_URL || 'http://localhost:3000',  // Use environment variable
+    reuseExistingServer: !process.env.CI,
+    timeout: 120 * 1000,  // Adjust timeout if your server takes longer to start
+  },
 
   /* Configure projects for major browsers */
   projects: [
