@@ -25,7 +25,7 @@ module.exports = defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    //baseURL: process.env.BASE_URL || '127.0.0.1',  // Use environment variable
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -71,9 +71,10 @@ module.exports = defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'npm run dev',
-    url: 'http://127.0.0.1:3000',
-    reuseExistingServer: !process.env.CI,
+    command: 'npm run dev', // Use `npm run dev` for a development server, or `npm run start` if that's your command
+    url: 'http://127.0.0.1:3000', // Ensure this matches where your server runs
+    timeout: 120 * 1000,  // Increase timeout if your server takes longer to start
+    reuseExistingServer: !process.env.CI, // Don't reuse server in CI for consistency
   },
 });
 
