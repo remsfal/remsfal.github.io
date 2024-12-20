@@ -96,6 +96,4 @@ test.describe('Issues Section', () => {
             '/issues/haproxy-stream-processing-agent'
         );
     });
-
-
 });
