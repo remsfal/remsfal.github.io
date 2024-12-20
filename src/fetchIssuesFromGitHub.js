@@ -1,4 +1,3 @@
-const token = 'PERSONAL_ACCESS_TOKEN'; // Store the GitHub personal access token
 async function fetchIssuesFromMultipleRepos(repoNames) {
   const allIssues = []; // Initialize an array to store all fetched issues
 
@@ -7,8 +6,7 @@ async function fetchIssuesFromMultipleRepos(repoNames) {
       // Make an asynchronous fetch call to GitHub API to get issues with the "thesis" label from the current repository
       const response = await fetch(`https://api.github.com/repos/${repo}/issues?labels=thesis`, {
         headers: {
-          'Accept': 'application/vnd.github.v3+json', // Set the API version
-          'Authorization': `token ${token}` // Use the stored token for authorization
+          'Accept': 'application/json' // Request Json
         }
       });
     
