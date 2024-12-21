@@ -2,9 +2,7 @@ import { test, expect } from '@playwright/test';
 import dotenv from 'dotenv';
 
 dotenv.config();  // Load environment variables from .env file
-const baseURL = process.env.BASE_URL || 'http://localhost:5173';  // Fallback URL
-console.log(process.env.BASE_URL);
-
+const baseURL = 'http://localhost:5173'
 
 
 test.describe('ThesisView Component', () => {
