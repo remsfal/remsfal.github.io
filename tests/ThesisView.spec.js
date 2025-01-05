@@ -14,6 +14,11 @@ test.describe('ThesisView Component', () => {
     // Select all the card elements using the correct class
     const issueCards = await page.$$('.p-card');
     expect(issueCards.length).toBeGreaterThan(0);
+  });
+
+  test('should display correct content in issue cards', async ({ page }) => {
+    // Select all the card elements using the correct class
+    const issueCards = await page.$$('.p-card');
 
     // Verify content within each card
     for (let card of issueCards) {
