@@ -13,7 +13,6 @@ test.describe('ThesisView Component', () => {
   test('should display issues', async ({ page }) => {
     // Select all the card elements using the correct class
     const issueCards = await page.$$('.p-card');
-    console.log(`Found ${issueCards.length} issue cards`); // Debug output to confirm what is found
     expect(issueCards.length).toBeGreaterThan(0);
 
     // Verify content within each card
