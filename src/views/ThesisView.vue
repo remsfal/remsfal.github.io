@@ -2,18 +2,15 @@
 import BaseLayout from "@/components/BaseLayout.vue";
 import Card from 'primevue/card';
 import { ref, onMounted } from 'vue';
-import fetchIssues from '../fetchIssuesFromGitHub.js';  // Import the correct function
+import fetchIssues from '../fetchIssuesFromGitHub.js';
 
 // Create a reactive reference to store the fetched issues
 const issues = ref([]);
 
-// Use the onMounted lifecycle hook to perform operations after the component is mounted
 onMounted(async () => {
   try {
-    // Fetch issues and assign them to the issues reference
-    issues.value = await fetchIssues(['remsfal/remsfal-backend', 'remsfal/remsfal-frontend']); // Use the imported fetchIssues function
+    issues.value = await fetchIssues(['remsfal/remsfal-backend', 'remsfal/remsfal-frontend']);
   } catch (error) {
-    // Log an error message if fetching issues fails
     console.error('Failed to fetch issues:', error);
   }
 });
