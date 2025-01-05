@@ -23,10 +23,8 @@ onMounted(async () => {
       <Card class="fixed-height-card">
         <template #title>
           <span class="issue-title">{{ issue.title }}</span>
-          <span class="issue-title">{{ issue.title }}</span>
         </template>
         <template #footer>
-          <span class="issue-footer">Status: {{ issue.state }}</span>
           <span class="issue-footer">Status: {{ issue.state }}</span>
         </template>
       </Card>
