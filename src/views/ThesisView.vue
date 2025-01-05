@@ -21,7 +21,7 @@ onMounted(async () => {
   <BaseLayout>
     <!-- Iterate over the fetched issues and display each in a Card component -->
     <div v-for="issue in issues" :key="issue.id || issue.title" class="col-12 md:col-6 issue-card">
-      <Card>
+      <Card class="fixed-height-card">
         <template #title>
           <span class="issue-title">{{ issue.title }}</span>
         </template>
@@ -32,3 +32,9 @@ onMounted(async () => {
     </div>
   </BaseLayout>
 </template>
+
+<style scoped>
+.fixed-height-card {
+  height: 300px;
+}
+</style>
