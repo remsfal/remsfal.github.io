@@ -19,8 +19,6 @@ test.describe('ThesisView Component', () => {
     for (let card of issueCards) {
       const title = await card.$eval('.issue-title', (el) => el.textContent);
       const footer = await card.$eval('.issue-footer', (el) => el.textContent);
-
-      console.log(`Title: ${title}, Footer: ${footer}`); // Additional debug output
       expect(title).not.toBeNull();
       expect(footer).toContain('Status:');
     }
