@@ -19,7 +19,6 @@ async function fetchIssuesFromMultipleRepos(repoNames) {
     } catch (error) {
       console.error('Error fetching issues:', error); // Log any errors that occur during the fetch
       return []; // Return an empty array if an error occurs
-      console.error('Error fetching issues from repo:', repo, error); // Log the specific repository where the error occurred
     }
   }
 
