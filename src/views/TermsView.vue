@@ -1,6 +1,5 @@
-<script setup>
+<script setup lang="ts">
 import BaseLayout from "@/components/BaseLayout.vue";
-import HelloWorld from '../components/HelloWorld.vue'
 </script>
 
 <template>

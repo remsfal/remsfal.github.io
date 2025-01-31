@@ -1,8 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import BaseLayout from "@/components/BaseLayout.vue";
 import Card from 'primevue/card';
 import { ref, onMounted } from 'vue';
-import fetchIssues from '../fetchIssuesFromGitHub.js';
+import fetchIssues from '@/services/fetchIssuesFromGitHub.js';
 
 const issues = ref([]);
 

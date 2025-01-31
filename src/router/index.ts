@@ -24,11 +24,6 @@ const router = createRouter({
       component: () => import('../views/ThesisView.vue')
     },
     {
-      path: '/get-started',
-      name: 'getStarted',
-      component: () => import('../views/GetStartedView.vue')
-    },
-    {
       path: '/faq',
       name: 'faq',
       component: () => import('../views/FAQView.vue')
@@ -37,11 +32,6 @@ const router = createRouter({
       path: '/support',
       name: 'support',
       component: () => import('../views/SupportView.vue')
-    },
-    {
-      path: '/roadmap',
-      name: 'roadmap',
-      component: () => import('../views/RoadmapView.vue')
     },
     {
       path: '/legal-notice',
@@ -57,7 +47,12 @@ const router = createRouter({
       path: '/privacy',
       name: 'privacy',
       component: () => import('../views/PrivacyView.vue')
-    }
+    },
+    {
+      path: '/landing',
+      name: 'landing',
+      component: () => import('@/views/Landing.vue')
+    },
   ]
 })
 
