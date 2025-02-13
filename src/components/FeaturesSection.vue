@@ -8,7 +8,7 @@ const features = [
   {
     title: 'Mängelmanagement',
     description: 'Erfassen und verfolgen Sie Mängel in Echtzeit mit unserem fortschrittlichen System. Organisieren Sie Ihre Aufgaben effizient und behalten Sie den Überblick über den aktuellen Status jedes Mangels.',
-    icon: 'pi pi-exclamation-circle',
+    icon: 'pi pi-building',
     stats: ['98% Effizienz', '24/7 Verfügbar']
   },
   {

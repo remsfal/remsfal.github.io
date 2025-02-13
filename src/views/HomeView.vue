@@ -4,7 +4,6 @@ import FeaturesSection from '../components/FeaturesSection.vue';
 import EducationalSection from '../components/EducationalSection.vue';
 import IssuesSection from "../components/IssuesSection.vue";
 import FAQSection from "../components/FAQSection.vue";
-import FooterLayout from "../components/FooterLayout.vue";
 </script>
 
 <template>
@@ -16,8 +15,6 @@ import FooterLayout from "../components/FooterLayout.vue";
       <EducationalSection />
       <IssuesSection />
       <FAQSection />
-      <FooterLayout />
-
     </div>
   </div>
 </template>
