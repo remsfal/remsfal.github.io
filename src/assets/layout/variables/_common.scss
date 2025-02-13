@@ -17,4 +17,11 @@
     --focus-ring-color: var(--p-focus-ring-color);
     --focus-ring-offset: var(--p-focus-ring-offset);
     --focus-ring-shadow: var(--p-focus-ring-shadow);
+
+    --remsfal-color: #2e6021;
+    --htw-color: #76b900;
+    --button-color: var(--remsfal-color);
+    --button-color-hover: var(--htw-color);
+    --button-border-color: var(--remsfal-color);
+    --button-border-color-hover: var(--color-white);
 }

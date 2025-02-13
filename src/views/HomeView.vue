@@ -1,64 +1,29 @@
-<script setup>
-import BaseLayout from "@/components/BaseLayout.vue";
+<script setup lang="ts">
+import HeroSection from '../components/HeroSection.vue';
+import FeaturesSection from '../components/FeaturesSection.vue';
+import EducationalSection from '../components/EducationalSection.vue';
+import IssuesSection from "../components/IssuesSection.vue";
+import FAQSection from "../components/FAQSection.vue";
+import FooterLayout from "../components/FooterLayout.vue";
 </script>
 
 <template>
-  <BaseLayout>
-    <div class="col-12">
-      <Card>
-        <template #header>
-          <img src="/images/sf-pier.png">
-        </template>
-        <template #title>
-          <div class="font-bold">
-            remsfal - REmote Management Services for connected FAciLities
-          </div>
-        </template>
-        <template #subtitle>
-          Die Open-Source Facility Management Technologie zum Überwachen, Steuern und Verwalten von Liegenschaften
-        </template>
-      </Card>
+  <div class="min-h-screen bg-gradient">
+    <!-- Add pt-[60px] or use the CSS variable -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" style="padding-top: calc(var(--header-height) + 8rem);">
+      <HeroSection />
+      <FeaturesSection />
+      <EducationalSection />
+      <IssuesSection />
+      <FAQSection />
+      <FooterLayout />
+
     </div>
-    <div class="col-12 md:col-6 lg:col-4">
-      <Card>
-        <template #title>
-          Mängelmanagement
-        </template>
-        <template #content>
-          <p>
-            Ein Online-Ticketsystemen für Hausverwaltungen zur Erfassung und Bearbeitung von
-            Mängel mit einem begleitenden Prozess bis hin zur Beseitigung.
-          </p>
-        </template>
-      </Card>
-    </div>
-    <div class="col-12 md:col-6 lg:col-4">
-      <Card>
-        <template #title>
-          Dokumentation
-        </template>
-        <template #content>
-          <p>
-            Ein Content-Management-System für Hausverwaltungen zur Dokumentation,
-            Archivierung und schnellem Zugriff nach Bedarf auf Stammdaten,
-            Ereignisse und Mietverhältnisse.
-          </p>
-        </template>
-      </Card>
-    </div>
-    <div class="col-12 md:col-6 lg:col-4">
-      <Card>
-        <template #title>
-          Überwachung
-        </template>
-        <template #content>
-          <p>
-            Eine Fernzugriffstechnologie sowie Wartungssystem zur
-            schnellen Erkennung und Behebung von Problem auf Basis
-            von Smart-Building Echtzeitdaten.
-          </p>
-        </template>
-      </Card>
-    </div>
-  </BaseLayout>
+  </div>
 </template>
+
+<style scoped>
+.bg-gradient {
+  background: linear-gradient(135deg, #2e6022 0%, #4a8c3c 50%, #2e6022 100%);
+}
+</style>

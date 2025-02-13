@@ -1,5 +1,4 @@
 <template>
-  <footer>
     <div class="grid">
       <div class="col left-footer">
         <p class="license">Released under the MIT License</p>
@@ -17,7 +16,6 @@
         </p>
       </div>
     </div>
-  </footer>
 </template>
 
 <style scoped>

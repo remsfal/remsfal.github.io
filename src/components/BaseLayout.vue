@@ -1,11 +1,9 @@
 <template>
-  <main>
     <div class="base-layout-space">
       <div class="grid">
         <slot />
       </div>
     </div>
-  </main>
 </template>
 
 <style>

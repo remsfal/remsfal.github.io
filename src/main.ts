@@ -10,8 +10,6 @@ import Button from 'primevue/button';
 
 import '@/assets/styles.scss';
 import '@/assets/tailwind.css';
-// TODO: remove main.css
-import '@/assets/main.css'
 
 const app = createApp(App)
 
@@ -23,7 +21,8 @@ app.use(PrimeVue, {
   theme: {
     preset: Aura,
     options: {
-      darkModeSelector: '.app-dark'
+      darkModeSelector: 'system',
+      cssLayer: false
     }
   }
 });
