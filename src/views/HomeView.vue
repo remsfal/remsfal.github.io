@@ -13,8 +13,6 @@ import FAQSection from "../components/FAQSection.vue";
       <HeroSection />
       <FeaturesSection />
       <EducationalSection />
-      <IssuesSection />
-      <FAQSection />
     </div>
   </div>
 </template>

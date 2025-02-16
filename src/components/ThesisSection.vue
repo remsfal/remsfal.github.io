@@ -2,9 +2,9 @@
 import BaseLayout from "@/components/BaseLayout.vue";
 import Card from 'primevue/card';
 import { ref, onMounted } from 'vue';
-import fetchIssues from '@/services/fetchIssuesFromGitHub.js';
+import fetchIssues, { type Issue } from '@/services/GitHubService.ts'
 
-const issues = ref([]);
+const issues = ref([] as Issue[]);
 
 onMounted(async () => {
   try {
@@ -13,7 +13,6 @@ onMounted(async () => {
     console.error('Failed to fetch issues:', error);
   }
 });
-
 </script>
 
 <template>

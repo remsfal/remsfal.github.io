@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import Section from '@/components/Section.vue'
+import TitleWidget from '@/components/TitleWidget.vue'
 </script>
 
 <template>
+  <TitleWidget title="Datenschutz" />
+
   <Section title="Datenschutzerklärung">
     <p>Im Folgenden möchten wir Sie aufklären, wie Ihre Daten von uns verarbeitet werden.</p>
     <p class="p-card-content-header">Verantwortlich im Sinne der DSGVO ist:</p>

@@ -1,5 +1,25 @@
-async function fetchIssuesFromMultipleRepos(repoNames) {
-  const allIssues = [];
+
+export interface User {
+  id: number;
+  login: string;
+  url: string;
+  html_url: string;
+  avatar_url: string;
+}
+
+export interface Issue {
+  id: number;
+  number: number;
+  title: string;
+  state: string;
+  url: string;
+  html_url: string;
+  assignee: User;
+  body: string;
+}
+
+async function fetchIssuesFromMultipleRepos(repoNames):Issue[] {
+  const allIssues:Issue[] = [];
 
   for (const repo of repoNames) {
     try {
@@ -25,7 +45,5 @@ async function fetchIssuesFromMultipleRepos(repoNames) {
   console.log('Fetched issues from all repositories:', allIssues);
   return allIssues;
 }
-export default fetchIssuesFromMultipleRepos;
 
-// Example usage
-// fetchIssuesFromMultipleRepos(['remsfal/remsfal-backend', 'remsfal/remsfal-frontend']); // Example of how to use the function with repository names
+export default fetchIssuesFromMultipleRepos;

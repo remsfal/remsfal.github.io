@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import Section from '@/components/Section.vue'
+import TitleWidget from '@/components/TitleWidget.vue'
 </script>
 
 <template>
+  <TitleWidget title="Impressum" />
   <Section title="Impressum">
     <p>Angaben gemäß § 5 Telemediengesetz (TMG):</p>
     <p>
