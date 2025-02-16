@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Section from '@/components/Section.vue'
-import IssuesSection from '@/components/IssuesSection.vue'
 import ThesisSection from '@/components/ThesisSection.vue'
 import TitleWidget from '@/components/TitleWidget.vue'
 </script>
@@ -30,7 +29,6 @@ import TitleWidget from '@/components/TitleWidget.vue'
   </Section>
 
   <Section title="Abschlussarbeiten im Studiengang Wirtschaftsinformatik">
-    <IssuesSection />
     <ThesisSection />
   </Section>
 </template>

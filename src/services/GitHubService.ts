@@ -7,6 +7,13 @@ export interface User {
   avatar_url: string;
 }
 
+export interface Label {
+  id: number;
+  name: string;
+  color: string;
+  description: string;
+}
+
 export interface Issue {
   id: number;
   number: number;
@@ -15,6 +22,7 @@ export interface Issue {
   url: string;
   html_url: string;
   assignee: User;
+  labels: Label[];
   body: string;
 }
 
