@@ -63,7 +63,7 @@ onMounted(() => {
   <div class="education-container" :class="{ 'is-visible': isVisible }">
     <div class="education-section">
       <div class="section-header">
-        <h2 class="education-title">REMSFAL für Studienprojekte</h2>
+        <h2 class="education-title">REMSFAL in Forschung und Lehre</h2>
         <div class="title-underline"></div>
         <p class="education-description">
           REMSFAL ist mehr als nur ein Open-Source-Projekt - es ist eine Plattform für akademisches Wachstum,
@@ -99,13 +99,13 @@ onMounted(() => {
       </div>
 
       <div class="cta-section">
-        <a href="https://github.com/remsfal" class="github-link">
+        <a href="https://github.com/remsfal" target="_blank" class="github-link">
           <i class="i-lucide-github"></i>
           GitHub Repository erkunden
         </a>
-        <a href="#" class="docs-link">
+        <a href="https://github.com/remsfal/.github/blob/main/CONTRIBUTING.md" target="_blank" class="docs-link">
           <i class="i-lucide-book-open"></i>
-          Dokumentation lesen
+          Mitmachen und eigenen Beitrag leisten
         </a>
       </div>
     </div>
@@ -129,7 +129,7 @@ onMounted(() => {
 }
 
 .education-section {
-  background: rgba(255, 255, 255, 0.03);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)), radial-gradient(77.36% 96.97% at 77.36% 57.52%, var(--htw-color) 0%, var(--remsfal-color) 80%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 30px;
   padding: 60px 40px;

@@ -7,21 +7,24 @@ const isVisible = ref(false);
 const features = [
   {
     title: 'Mängelmanagement',
-    description: 'Erfassen und verfolgen Sie Mängel in Echtzeit mit unserem fortschrittlichen System. Organisieren Sie Ihre Aufgaben effizient und behalten Sie den Überblick über den aktuellen Status jedes Mangels.',
+    description: 'Erfassen und verfolgen Sie Mängel transparent und effizient für alle Parteien.' +
+      ' Organisieren Sie Ihre Aufgaben produktiv und behalten Sie den Überblick über den aktuellen Status jedes Mangels.',
     icon: 'pi pi-building',
-    stats: ['98% Effizienz', '24/7 Verfügbar']
+    stats: ['100% Transparent', '24/7 Verfügbar']
   },
   {
     title: 'Dokumentation',
-    description: 'Zentrale Verwaltung aller Dokumente. Greifen Sie von überall auf wichtige Unterlagen zu, teilen Sie diese mit relevanten Stakeholdern und nutzen Sie unsere leistungsstarke Suchfunktion.',
+    description: 'Zentrale Verwaltung aller Dokumente. Greifen Sie von überall auf wichtige Unterlagen zu,' +
+      ' teilen Sie diese mit relevanten Stakeholdern und nutzen Sie unsere leistungsstarken Suchfunktionen.',
     icon: 'pi pi-folder',
     stats: ['100% Digital', 'Cloud-basiert']
   },
   {
     title: 'Überwachung',
-    description: 'Echtzeitüberwachung und umfassende Analysen. Erhalten Sie detaillierte Einblicke in Ihre Prozesse, identifizieren Sie Optimierungspotenziale und treffen Sie datenbasierte Entscheidungen.',
+    description: 'Echtzeitüberwachung und umfassende Analysen von Gebäudedaten. Erhalten Sie detaillierte Einblicke in Ihre Prozesse,' +
+      ' identifizieren Sie Optimierungspotenziale und treffen Sie datenbasierte Entscheidungen.',
     icon: 'pi pi-chart-line',
-    stats: ['Echtzeit Updates', 'KI-gestützt']
+    stats: ['Echtzeit Überwachung', 'KI-gestützt']
   }
 ];
 
@@ -102,7 +105,6 @@ onMounted(() => {
 .features-title {
   font-size: 42px;
   font-weight: 700;
-  color: #ffffff;
   text-align: center;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
@@ -110,7 +112,6 @@ onMounted(() => {
 
 .features-subtitle {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
   text-align: center;
   max-width: 600px;
   margin: 0 auto 60px;

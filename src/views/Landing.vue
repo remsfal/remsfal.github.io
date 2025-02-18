@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import FeaturesWidget from '@/components/landing/FeaturesWidget.vue'
-import HeroWidget from '@/components/PositioningSection.vue'
-import HighlightsWidget from '@/components/landing/HighlightsWidget.vue'
-import PricingWidget from '@/components/landing/PricingWidget.vue'
+import PositioningSection from '@/components/PositioningSection.vue'
+import FeaturesSection from '@/components/FeaturesSection.vue'
+import EducationalSection from '@/components/EducationalSection.vue'
 </script>
 
 <template>
-  <HeroWidget />
-  <FeaturesWidget />
-  <HighlightsWidget />
-  <PricingWidget />
+  <PositioningSection />
+  <FeaturesSection />
+  <EducationalSection />
 </template>

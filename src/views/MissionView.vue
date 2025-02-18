@@ -1,9 +1,4 @@
-<script setup lang="ts">
-import BaseLayout from "@/components/BaseLayout.vue";
-</script>
-
 <template>
-  <BaseLayout>
     <div class="col-12">
       <Card>
         <template #header>
@@ -59,5 +54,4 @@ import BaseLayout from "@/components/BaseLayout.vue";
         </template>
       </Card>
     </div>
-  </BaseLayout>
 </template>

@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/Landing.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     // always scroll to top
     return { top: 0 }
   },
@@ -15,38 +15,33 @@ const router = createRouter({
     },
     {
       path: '/research',
-      name: 'research',
+      name: 'ResearchView',
       component: () => import('../views/ResearchView.vue')
     },
     {
       path: '/documentation',
-      name: 'documentation',
+      name: 'DocumentationView',
       component: () => import('../views/DocumentationView.vue')
     },
     {
       path: '/support',
-      name: 'support',
+      name: 'SupportView',
       component: () => import('../views/SupportView.vue')
     },
     {
       path: '/legal-notice',
-      name: 'legalNotice',
+      name: 'LegalNoticeView',
       component: () => import('../views/LegalNoticeView.vue')
     },
     {
       path: '/terms',
-      name: 'terms',
+      name: 'TermsView',
       component: () => import('../views/TermsView.vue')
     },
     {
       path: '/privacy',
-      name: 'privacy',
+      name: 'PrivacyView',
       component: () => import('../views/PrivacyView.vue')
-    },
-    {
-      path: '/landing',
-      name: 'landing',
-      component: () => import('@/views/Landing.vue')
     },
   ]
 })
