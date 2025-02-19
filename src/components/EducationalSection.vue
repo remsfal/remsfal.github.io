@@ -19,27 +19,27 @@ const educationalBenefits = [
   },
   {
     title: 'Teamarbeit',
-    description: 'Entwickeln Sie Ihre Fähigkeiten in kollaborativen Projekten und lernen Sie effektive Zusammenarbeit',
+    description: 'Entwickeln Sie Ihre Fähigkeiten in kollaborativen Projekten weiter und lernen Sie effektive Zusammenarbeit',
     icon: 'pi pi-users',
-    stats: 'Durchschnittlich 2 Teammitglieder pro Projekt'
+    stats: 'Mindestens 2 Personen pro Pull Request'
   },
   {
     title: 'Networking',
-    description: 'Bauen Sie wertvolle Kontakte zu Entwicklern und Fachexperten auf für Ihre zukünftige Karriere',
+    description: 'Bauen Sie für Ihre zukünftige Karriere wertvolle Kontakte zu anderen Entwicklern und Fachexperten auf',
     icon: 'pi pi-share-alt',
-    stats: 'Über 30+ Community-Mitglieder'
+    stats: 'Über 50+ Community-Mitglieder'
   },
   {
     title: 'Aktuelle Technologien',
     description: 'Arbeiten Sie mit den neuesten Tools und Frameworks der Softwareentwicklung',
     icon: 'pi pi-code',
-    stats: 'Zugang zu über 20+ modernen Technologie-Stacks'
+    stats: 'Programmieren mit über 20+ modernen Open Source Technologien aus einer Hand'
   },
   {
     title: 'Kreative Freiheit',
     description: 'Verwirklichen Sie eigene Ideen und arbeiten Sie unabhängig an innovativen Lösungen',
     icon: 'pi pi-pencil',
-    stats: 'kreative Kontrolle über Ihre Projekte'
+    stats: 'Kreative Kontrolle über eigene Beiträge'
   },
 
 ];
@@ -67,7 +67,7 @@ onMounted(() => {
         <div class="title-underline"></div>
         <p class="education-description">
           REMSFAL ist mehr als nur ein Open-Source-Projekt - es ist eine Plattform für akademisches Wachstum,
-          praktische Erfahrung und professionelle Entwicklung. Entdecken Sie alle Möglichkeiten,
+          praktische Erfahrung und professionelle Softwareentwicklung. Entdecken Sie alle Möglichkeiten,
           die REMSFAL für Ihr Studium bietet.
         </p>
       </div>

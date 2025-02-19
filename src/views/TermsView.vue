@@ -5,8 +5,9 @@ import TitleWidget from '@/components/TitleWidget.vue'
 
 <template>
   <TitleWidget title="Nutzungsbedingungen" />
+
   <Section title="Haftungsklausel">
-    <p class="p-card-content-header">Haftung für Inhalte</p>
+    <h3>Haftung für Inhalte</h3>
     <p>
       Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen
       Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind
@@ -21,7 +22,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
       Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte
       umgehend entfernen.
     </p>
-    <p class="p-card-content-header">Haftung für Links</p>
+    <h3>Haftung für Links</h3>
     <p>
       Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
       Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
@@ -42,7 +43,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
       Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
       diesen Seiten unterliegen dem deutschen Urheberrecht.
     </p>
-    <p class="p-card-content-header">Copyright © 2023-present Prof. Dr.-Ing. Alexander Stanik</p>
+    <h3>Copyright © 2023-present Prof. Dr.-Ing. Alexander Stanik</h3>
     <p>
       Jedem, der eine Kopie dieser Software und der zugehörigen Dokumentationsdateien
       (die „Software“) erhält, wird hiermit kostenlos die Erlaubnis erteilt,
@@ -66,8 +67,10 @@ import TitleWidget from '@/components/TitleWidget.vue'
       DIE SICH AUS ODER IN VERBINDUNG MIT DER SOFTWARE ODER DER NUTZUNG ODER ANDEREN
       GESCHÄFTEN MIT DER SOFTWARE ERGEBEN.
     </p>
-    <a href="https://opensource.org/licenses/MIT" target="_blank">
+    <p>
+    <a href="https://opensource.org/licenses/MIT" class="underline hover:decoration-green-600" target="_blank">
       The MIT License by Open Source Initiative
     </a>
+    </p>
   </Section>
 </template>

@@ -55,7 +55,7 @@
 
       <div class="col left-footer">
         <p class="license">Released under the MIT License</p>
-        <p class="copyright">Copyright © 2023-present Prof. Dr.-Ing. Alexander Stanik</p>
+        <p class="copyright">Copyright © 2023 - present Prof. Dr.-Ing. Alexander Stanik</p>
       </div>
       </div>
 

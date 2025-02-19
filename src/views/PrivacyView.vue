@@ -8,7 +8,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
 
   <Section title="Datenschutzerklärung">
     <p>Im Folgenden möchten wir Sie aufklären, wie Ihre Daten von uns verarbeitet werden.</p>
-    <p class="p-card-content-header">Verantwortlich im Sinne der DSGVO ist:</p>
+    <h3>Verantwortlich im Sinne der DSGVO ist:</h3>
     <p>
       Prof. Dr.-Ing. Alexander Stanik<br />
       TA Gebäude C, Raum 830<br />
@@ -18,7 +18,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
     </p>
     <p>E-Mail: info@remsfal.de</p>
 
-    <p class="p-card-content-header">Unseren Datenschutzbeauftragten erreichen sie unter:</p>
+    <h3>Unseren Datenschutzbeauftragten erreichen sie unter:</h3>
     <p>
       Prof. Dr.-Ing. Alexander Stanik<br />
       E-Mail: privacy@remsfal.de
@@ -28,7 +28,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
       Daten von uns gespeichert, um Ihr Anliegen zu bearbeiten.
     </p>
 
-    <p class="p-card-content-header">Betroffenenrechte</p>
+    <h3>Betroffenenrechte</h3>
     <p>
       Sie haben als betroffene Person, das Recht auf Auskunft, das Recht auf
       Berichtigung oder Löschung, das Recht auf Einschränkung der Verarbeitung
@@ -43,12 +43,14 @@ import TitleWidget from '@/components/TitleWidget.vue'
       Darüber hinaus haben Sie das Recht auf Datenübertragbarkeit.
       Sie haben weiter das Recht, sich bei einer Aufsichtsbehörde über die Verarbeitung zu
       beschweren. Eine Liste der entsprechenden Behörden finden Sie unter:
-      <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" target="_blank">
+      <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html"
+         class="underline hover:decoration-green-600" target="_blank">
         https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html
       </a>.
     </p>
     <p>
-      <a href="https://opr.vc/docs/allgemein/dse_einleitung/" target="_blank">
+      <a href="https://opr.vc/docs/allgemein/dse_einleitung/" class="underline hover:decoration-green-600"
+         target="_blank">
         open privacy by opr.vc
       </a>
     </p>
@@ -90,7 +92,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
       Weitere Informationen zu Widerspruchs- und Beseitigungsmöglichkeiten gegenüber
       GitHub finden Sie unter:
       <a href="https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement#github-pages"
-         target="_blank">
+         class="underline hover:decoration-green-600" target="_blank">
         https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement#github-pages
       </a>
     </p>
@@ -111,12 +113,12 @@ import TitleWidget from '@/components/TitleWidget.vue'
       EU-Standardvertragsklauseln (SCCs). Weitere Informationen finden Sie unter:
       <a
         href="https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-data-protection-addendum#attachment-1–the-standard-contractual-clauses-processors"
-        target="_blank">
+        class="underline hover:decoration-green-600" target="_blank">
         https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-data-protection-addendum#attachment-1–the-standard-contractual-clauses-processors
       </a>
     </p>
     <p>
-      <a href="https://opr.vc/docs/hosting/github_pages/" target="_blank">
+      <a href="https://opr.vc/docs/hosting/github_pages/" class="underline hover:decoration-green-600" target="_blank">
         open privacy by opr.vc
       </a>
     </p>

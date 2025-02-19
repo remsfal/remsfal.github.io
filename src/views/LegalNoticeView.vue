@@ -5,6 +5,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
 
 <template>
   <TitleWidget title="Impressum" />
+
   <Section title="Impressum">
     <p>Angaben gemäß § 5 Telemediengesetz (TMG):</p>
     <p>
@@ -15,6 +16,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
       Deutschland<br />
     </p>
   </Section>
+
   <Section title="Kontakt">
     <p>
       Tel.: +49 30 5019-2346<br />
