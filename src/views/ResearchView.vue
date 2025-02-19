@@ -9,56 +9,41 @@ import TitleWidget from '@/components/TitleWidget.vue'
 
   <Section title="Forschung an der HTW Berlin">
     <img alt="HTW Berlin logo" src="@/assets/htw-berlin-logo.svg" class="float-right p-2 htw-logo" />
-    <p>Im Folgenden möchten wir Sie aufklären, wie Ihre Daten von uns verarbeitet werden.</p>
-
-    <p>Mieter:innen und Kund:innen verdienen Aufmerksamkeit und Transparenz,
-      wären Verwalter:innen und Eigentümer:innen Kosten und Zeit durch effizientes
-      Liegenschaftsmanagement und Digitalisierung von Verwaltungsprozessen einsparen.
-      REMSFAL ist die Open Source Facility Management
-      Technologie zum Überwachen, Steuern und Verwalten von Liegenschaften,
-      die Ihnen die Arbeit erleichert und durch Zeit- und Kostenersparnis die
-      CO<sub>2</sub>-Emissionen für die Gebäudebewirtschaftung reduziert.</p>
     <p>
-      Das Ziel des remsfal Open-Source-Projektes ist die Unterstützung
-      im Studium und in der Lehre. Studierende erhalten mit diesem Projekt die Möglichkeit
-      ein Wunschthema für ihre Abschlussarbeit mit hohem Praxisbezug
-      und einer Vielfalt an Anwendungskomplexitäten der Wirtschaftsinformatik
-      zu finden.
+      REMSFAL wurde 2023 von
+      <a href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708"
+         class="underline hover:decoration-green-600" target="_blank">
+        Prof. Dr.-Ing. Alexander Stanik
+      </a>
+      als interdisziplinäres wissenschaftliches
+      Open Source Forschungsprojekt gegründet und konzentriert sich auf die Entwicklung skalierbarer Architekturen
+      und Technologien für verteilte und parallele Informationssysteme in der Immobilienwirtschaft.
+      Ziel des Projektes ist die Digitalisierung von Hausverwaltungen durch innovative Verwaltungs-
+      und Immobiliensoftware voranzutreiben. Ein besonderer Fokus liegt dabei auf der Optimierung
+      von Mängelmanagement-Prozessen und der Implementierung nachhaltiger Strategien zur Reduzierung
+      von CO<sub>2</sub>-Emissionen in der Gebäudebewirtschaftung.
+      Durch die Erforschung und Erprobung neuer Technologien sollen Prozesse zur Liegenschaftsverwaltung
+      effizienter gestaltet und gleichzeitig ökologische Aspekte berücksichtigt werden.
     </p>
     <p>
-      Im Detail bietet das remsfal Open-Source-Projekt
-      die folgenden Vorteile für Studienprojekte oder Abschlussarbeiten:
+      Das REMSFAL Projekt ist mehr als eine Open Source Initiative und konzentriert sich unter der Leitung von
+      <a href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708"
+         class="underline hover:decoration-green-600" target="_blank">
+        Prof. Dr.-Ing. Alexander Stanik von der Hochschule für Technik und Wirtschaft (HTW) Berlin
+      </a>
+      ebenso auf den Einsatz in der Forschung und der Lehre.
+      Studierende erhalten mit diesem Projekt die Möglichkeit
+      eigene kreative Ideen mit innovativen Technologien und hohem Praxisbezug
+      sowie einer Vielfalt an Anwendungskomplexitäten der Wirtschaftsinformatik
+      zu realisieren. Mit dem Themenschwerpunkt auf Entwicklung und Erprobung neuer Technologien und Anwendungen
+      für nachhaltige und klimagerechte Gebäudebewirtschaftung ist dieses Projekt seit 2024 auch Teil
+      des Forschungsclusters
+      <a href="https://www.htw-berlin.de/forschung/forschungsprofil/forschungscluster/cluster/?eid=23"
+         class="underline hover:decoration-green-600" target="_blank">
+        Klimagerechte Energieversorgungssysteme und energieeffiziente Gebäude (KEG)
+      </a>
+      der HTW Berlin.
     </p>
-    <ul>
-      <li><strong class="font-bold">Zugang zu Ressourcen:</strong>
-        remsfal bietet Studierenden Zugang zu einer Vielzahl von Ressourcen wie Code,
-        Dokumentation und Community-Unterstützung, die sie für ihre Arbeiten verwenden können.
-      </li>
-      <li><strong class="font-bold">Real-world Erfahrung:</strong>
-        remsfal ermöglicht es Studierenden an realen Projekten mit realen Anforderungen
-        zu arbeiten und ihre Fähigkeiten in einem realen Arbeitsumfeld zu erproben.
-      </li>
-      <li><strong class="font-bold">Teamarbeit:</strong>
-        remsfal ermöglicht es Studierenden in Teams zusammenzuarbeiten und
-        ihre Fähigkeiten im Teamwork zu verbessern.
-      </li>
-      <li><strong class="font-bold">Networking:</strong>
-        Studierende haben die Möglichkeit Kontakte zu anderen Entwicklern und Fachexperten aufzubauen,
-        die ihnen bei ihren Karrieremöglichkeiten helfen können.
-      </li>
-      <li><strong class="font-bold">Aktuelle Technologien:</strong>
-        remsfal bietet Studierenden die Möglichkeit mit den neuesten Technologien
-        und Tools zu arbeiten und ihre Fähigkeiten in diesen Bereichen zu verbessern.
-      </li>
-      <li><strong class="font-bold">Freiheit:</strong>
-        remsfal bietet Studierenden die Möglichkeit kreativ und unabhängig
-        zu arbeiten und ihre eigenen Ideen umzusetzen.
-      </li>
-      <li><strong class="font-bold">Publikationen:</strong>
-        remsfal bietet Studierenden die Möglichkeit ihre Arbeiten zu veröffentlichen
-        und so ihre Leistungen einer breiteren Öffentlichkeit zugänglich zu machen.
-      </li>
-    </ul>
   </Section>
 
   <Section title="Abschlussarbeiten im Studiengang Wirtschaftsinformatik">
