@@ -44,11 +44,11 @@
             </h1>
             <p class="font-normal text-xl md:text-2xl leading-normal md:mt-4 text-white">
               Mieter:innen und Kund:innen verdienen Aufmerksamkeit und Transparenz,
-              wären Verwalter:innen und Eigentümer:innen Kosten und Zeit durch effizientes
+              während Verwalter:innen und Eigentümer:innen Kosten und Zeit durch effizientes
               Liegenschaftsmanagement und Digitalisierung von Verwaltungsprozessen einsparen.
               REMSFAL ist die Open Source Facility Management
               Technologie zum Überwachen, Steuern und Verwalten von Liegenschaften,
-              die Ihnen die Arbeit erleichert und durch Zeit- und Kostenersparnis
+              die Ihnen die Arbeit erleichtert und durch Zeit- und Kostenersparnis
               eine nachhaltige Gebäudebewirtschaftung realisiert.
             </p>
             <Button label="Kostenlos testen" as="a" href="https://remsfal.online/api/v1/authentication/login" rounded class="!text-xl mt-8 !px-4 try-button"></Button>
