@@ -23,26 +23,26 @@ const statusOptions = [
 
 const filteredIssues = computed(() => {
   return issues.value.filter(issue => {
-    const matchesStatus = filterStatus.value === 'all' || issue.status === filterStatus.value;
+    const matchesStatus = filterStatus.value === 'all' || issue.state === filterStatus.value;
     const matchesSearch = issue.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-      issue.description.toLowerCase().includes(searchQuery.value.toLowerCase());
+      issue.body.toLowerCase().includes(searchQuery.value.toLowerCase());
     return matchesStatus && matchesSearch;
   });
 });
 
-const getStatusColor = (status) => {
+const getStatusColor = (status: string) => {
   return {
-    'in_progress': '#2563eb',
-    'open': '#9333ea',
-    'completed': '#16a34a'
+    'in_progress': String('#2563eb'),
+    'open': String('#9333ea'),
+    'completed': String('#16a34a')
   }[status] || '#6b7280';
 };
 
-const getStatusText = (status) => {
+const getStatusText = (status: string) => {
   return {
-    'in_progress': 'In Bearbeitung',
-    'open': 'Offen',
-    'completed': 'Abgeschlossen'
+    'in_progress': String('In Bearbeitung'),
+    'open': String('Offen'),
+    'completed': String('Abgeschlossen')
   }[status] || status;
 };
 </script>

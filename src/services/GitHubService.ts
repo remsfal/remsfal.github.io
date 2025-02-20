@@ -26,7 +26,7 @@ export interface Issue {
   body: string;
 }
 
-async function fetchIssuesFromMultipleRepos(repoNames):Issue[] {
+async function fetchIssuesFromMultipleRepos(repoNames: string[]): Promise<Issue[]> {
   const allIssues:Issue[] = [];
 
   for (const repo of repoNames) {
