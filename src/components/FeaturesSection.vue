@@ -45,7 +45,7 @@ onMounted(() => {
 
 <template>
   <div class="features-container" :class="{ 'is-visible': isVisible }">
-    <h2 class="features-title">Unsere Kernfunktionen</h2>
+    <h2 class="features-title text-5xl">Unsere Kernfunktionen</h2>
     <p class="features-subtitle">Entdecken Sie die Werkzeuge, die Ihr Liegenschaftsmanagement revolutionieren</p>
 
     <div class="features-grid">
@@ -103,7 +103,6 @@ onMounted(() => {
 }
 
 .features-title {
-  font-size: 42px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 16px;

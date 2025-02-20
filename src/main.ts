@@ -7,6 +7,7 @@ import PrimeVue from 'primevue/config';
 import Card from 'primevue/card';
 import Menubar from 'primevue/menubar';
 import Button from 'primevue/button';
+import StyleClass from 'primevue/styleclass';
 
 import '@/assets/styles.scss';
 import '@/assets/tailwind.css';
@@ -26,6 +27,9 @@ app.use(PrimeVue, {
     }
   }
 });
+
+// Add primevue directives
+app.directive('styleclass', StyleClass);
 
 // Add primefaces components
 app.component('Card', Card)

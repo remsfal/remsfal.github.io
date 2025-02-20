@@ -21,6 +21,7 @@ defineProps<{
 
   h1 {
     padding-bottom: 100px;
+    text-shadow: 2px 2px 6px var(--remsfal-color);
   }
 }
 .try-button {

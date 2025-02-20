@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Button from 'primevue/button'
 </script>
 
 <template>
@@ -11,7 +12,14 @@
       text
       severity="secondary"
       rounded
-      v-styleclass="{ selector: '@next', enterFromClass: 'hidden', enterActiveClass: 'animate-scalein', leaveToClass: 'hidden', leaveActiveClass: 'animate-fadeout', hideOnOutsideClick: true }"
+      v-styleclass="{
+        selector: '@next',
+        enterFromClass: 'hidden',
+        enterActiveClass: 'animate-scalein',
+        leaveToClass: 'hidden',
+        leaveActiveClass: 'animate-fadeout',
+        hideOnOutsideClick: true
+      }"
     >
       <i class="pi pi-bars !text-2xl"></i>
     </Button>
@@ -69,7 +77,9 @@
   }
 
   .try-button {
+    margin-left: 1px;
     margin-right: 1px;
+    width: 100%;
   }
 }
 </style>

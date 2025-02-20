@@ -35,14 +35,14 @@
       </div>
 
       <div class="mx-6 md:mx-20 mt-0 md:mt-6">
-            <h1 class="text-6xl font-bold text-gray-900 leading-tight">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
               <span class="font-light block">
                 REMSFAL - <strong>RE</strong>mote <strong>M</strong>anagement
                 <strong>S</strong>ervices for connected <strong>FA</strong>ci<strong>L</strong>ities
               </span>
               Open Source Immobiliensoftware
             </h1>
-            <p class="font-normal text-2xl leading-normal md:mt-4 text-white">
+            <p class="font-normal text-xl md:text-2xl leading-normal md:mt-4 text-white">
               Mieter:innen und Kund:innen verdienen Aufmerksamkeit und Transparenz,
               wären Verwalter:innen und Eigentümer:innen Kosten und Zeit durch effizientes
               Liegenschaftsmanagement und Digitalisierung von Verwaltungsprozessen einsparen.
@@ -54,7 +54,7 @@
             <Button label="Kostenlos testen" as="a" href="https://remsfal.online/api/v1/authentication/login" rounded class="!text-xl mt-8 !px-4 try-button"></Button>
         </div>
         <div class="flex justify-center md:justify-end">
-            <img src="/landing/screen-1.png" alt="Hero Image" class="w-9/12 md:w-auto" />
+            <img src="/landing/screen-1.png" alt="REMSFAL preview" class="w-9/12 md:w-auto" />
         </div>
     </div>
 </template>
