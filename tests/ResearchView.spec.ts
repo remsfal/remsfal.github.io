@@ -20,7 +20,7 @@ describe('ResearchView', () => {
     const issueCards = wrapper.findAll('.p-card')
 
     // Verify content within each card
-    for (let card of issueCards) {
+    for (const card of issueCards) {
       const title = card.find('p-card-title')
       const footer = card.find('.p-card-content')
       expect(title).not.toBeNull()
