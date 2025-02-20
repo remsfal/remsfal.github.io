@@ -40,7 +40,7 @@
                 REMSFAL - <strong>RE</strong>mote <strong>M</strong>anagement
                 <strong>S</strong>ervices for connected <strong>FA</strong>ci<strong>L</strong>ities
               </span>
-              Open Source Immobiliensoftware
+              Open Source Immobilien<wbr />software
             </h1>
             <p class="font-normal text-xl md:text-2xl leading-normal md:mt-4 text-white">
               Mieter:innen und Kund:innen verdienen Aufmerksamkeit und Transparenz,

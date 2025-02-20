@@ -61,6 +61,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
 @media screen and (max-width: 1024px) {
   .htw-logo {
     margin-left: 1px;
+    margin-right: 1px;
   }
 }
 </style>
