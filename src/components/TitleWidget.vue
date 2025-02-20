@@ -7,7 +7,7 @@ defineProps<{
 <template>
     <div class="flex flex-col pt-6 px-6 lg:px-20 overflow-hidden title-widget">
         <div class="mx-6 md:mx-20 mt-0 md:mt-6">
-            <h1 class="text-6xl font-bold text-gray-900 leading-tight">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
               {{ title }}
             </h1>
         </div>
