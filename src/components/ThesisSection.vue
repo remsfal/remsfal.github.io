@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 import fetchIssues, { type Issue } from '@/services/GitHubService.ts'
+import MarkdownIt from 'markdown-it'
 
+const md = new MarkdownIt()
 const issues = ref([] as Issue[]);
 const searchQuery = ref('');
 const filterStatus = ref('all');
@@ -29,6 +31,10 @@ const filteredIssues = computed(() => {
     return matchesStatus && matchesSearch;
   });
 });
+// Convert Markdown to HTML
+const renderMarkdown = (markdown: string) => {
+  return md.render(markdown)
+} 
 
 const getStatusColor = (status: string) => {
   return {
@@ -84,7 +90,7 @@ const getStatusText = (status: string) => {
         <a :href="issue.html_url" target="_blank" class="issue-title-link">
           <h3 class="issue-title">{{ issue.title }}</h3>
         </a>
-        <p class="issue-description">{{ issue.body }}</p>
+     <div class="issue-description" v-html="renderMarkdown(issue.body)"></div>
         <div class="issue-footer">
           <div class="labels">
             <span v-for="label in issue.labels"
@@ -192,6 +198,7 @@ const getStatusText = (status: string) => {
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 16px;
+  word-break: break-word;
 }
 
 .issue-title-link {
