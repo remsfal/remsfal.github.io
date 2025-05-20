@@ -90,7 +90,19 @@ const getStatusText = (status: string) => {
         <a :href="issue.html_url" target="_blank" class="issue-title-link">
           <h3 class="issue-title">{{ issue.title }}</h3>
         </a>
+
      <div class="issue-description" v-html="renderMarkdown(issue.body)"></div>
+
+        <!-- Assignee anzeigen -->
+        <div v-if="issue.assignee" class="flex items-center gap-2 mt-4">
+          <img
+            :src="issue.assignee.avatar_url"
+            alt="Avatar"
+            class="w-8 h-8 rounded-full border"
+          />
+          <span class="text-sm text-gray-600">@{{ issue.assignee.login }}</span>
+        </div>
+
         <div class="issue-footer">
           <div class="labels">
             <span v-for="label in issue.labels"
