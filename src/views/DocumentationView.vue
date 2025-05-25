@@ -41,19 +41,38 @@ import TitleWidget from '@/components/TitleWidget.vue'
     <p>
       Eine Wohnung ist ein umschlossener Raum oder eine Flucht aus mehreren Räumen innerhalb eines Gebäudes,
       die zu Wohnzwecken laut Baugenehmigung verwendet werden darf.
-      Eine Wohnung besteht daher aus Wohn- und Nutzfläche.
+      Eine Wohnung besteht daher aus Wohn- und Nutzfläche, die sich nach der
+      <a href="https://www.gesetze-im-internet.de/woflv/BJNR234610003.html"
+         class="underline hover:decoration-green-600" target="_blank">
+        Verordnung zur Berechnung der Wohnfläche (Wohnflächenverordnung - WoFlV)
+      </a>
+      berechnet.
     </p>
-    <h3>Commercial = Gewerbe</h3>
+    <h3>Storage(ehem. Garage) = Nebennutzungsraum</h3>
     <p>
-      Ein Gewerbe ist ein Laden oder ein Zusammenschluss mehrerer Räume innerhalb eines Gebäudes,
+      Ein Nebennutzungsraum oder auch Zubehörraum ist eine meist abschließbare und durch feste Wände umschlossene
+      Abstellmöglichkeit innerhalb eines Gebäudes, die ausschließlich aus Nutzfläche besteht
+      und nicht zur Wohnfläche gehört entsprechend der
+      <a href="https://www.gesetze-im-internet.de/woflv/BJNR234610003.html"
+         class="underline hover:decoration-green-600" target="_blank">
+        Verordnung zur Berechnung der Wohnfläche (Wohnflächenverordnung - WoFlV)
+      </a>.
+      Hierzu zählen Garagen, Stellplätze in Tiefgaragen, Kellerräume, Waschküchen, Abstell-, Hobby- oder Lagerräume.
+    </p>
+    <h3>Commercial = Gewerberäume</h3>
+    <p>
+      Ein Gewerbe bestehend aus mehreren Gewerberäumen ist ein Laden oder ein Zusammenschluss mehrerer Räume innerhalb eines Gebäudes,
       die ausschließlich oder vorwiegend der Unterbringung von Industrie- oder Gewerbebetrieben dient.
-      Ein Gewerbe besteht daher aus Gewerbe- und Nutzfläche.
-    </p>
-    <h3>Garage = Nebennutzungsraum</h3>
-    <p>
-      Ein Nebennutzungsraum ist eine meist abschließbare und durch feste Wände umschlossene
-      Abstellmöglichkeit innerhalb eines Gebäudes, die ausschließlich aus Nutzfläche besteht.
-      Hierzu zählen Garagen, Stellplätze in Tiefgaragen, Hobby- oder Lagerräume.
+      Gewerberäume werden nach der
+      <a href="https://www.dinmedia.de/de/norm/din-277/342217323"
+         class="underline hover:decoration-green-600" target="_blank">
+        DIN 277:2021-08 Norm für Grundflächen und Rauminhalte im Hochbau
+      </a>
+      berechnet und
+      bestehen daher aus Nutzungsfläche (NUF), Verkehrsfläche (VF) und Technikfläche (TF).
+      Insgesamt ergibt sich aus der Summe dieser Flächen die Netto-Raumfläche (NRF) einer Gewerbeeinheit.
+      Eine Aufteilung der Nutzungsfläche in die sieben Unterkategorien nach ihren Funktion kann
+      in der Beschreibung der Gewerbeeinheit angegeben werden.
     </p>
   </Section>
 
