@@ -23,7 +23,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@primevue/auto-import-resolver": "^4.3.3",
+    "@primevue/auto-import-resolver": "^4.3.4",
     "@rushstack/eslint-patch": "^1.11.0",
     "@testing-library/vue": "^8.1.0",
     "@tsconfig/node22": "^22.0.1",
