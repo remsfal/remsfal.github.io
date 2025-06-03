@@ -14,11 +14,10 @@ hero:
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Objekthierachie
+    details: Wie ist die Objekthierachie einer Liegschaft aufgebaut?
+    link: objekthierachie.md
+  - title: Projektdokumentation
+    details: Spezifische Informationen zur Projektarchitektur
 ---
 

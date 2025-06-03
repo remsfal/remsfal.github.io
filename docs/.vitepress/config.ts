@@ -9,7 +9,7 @@ export default defineConfig({
   outDir: resolve(__dirname, '../../dist/docs'),
   base: '/docs/',
   themeConfig: {
-    logo: '/docs/public/logo.png',
+    logo: 'logo.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Forschung', link: 'https://remsfal.de/research', target: '_self'},
@@ -19,10 +19,10 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Inhalte',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Objekthierachie', link: '/objekthierachie' },
+          { text: 'Projektdokumentation', link: '/projektdokumentation' }
         ]
       }
     ],
@@ -31,11 +31,18 @@ export default defineConfig({
       copyright: 'Copyright © 2023 - present Prof. Dr.-Ing. Alexander Stanik'
     },
     lastUpdated: {
-    text: 'Updated at',
+    text: 'Zuletzt aktualisiert',
     formatOptions: {
     dateStyle: 'full',
-    timeStyle: 'medium'
+    timeStyle: 'short'
     }
+    },
+    docFooter: {
+      prev: 'Vorherige Seite',
+      next: 'Nächste Seite'
+    },
+    search: {
+      provider: 'local'
     }
   }
 })
