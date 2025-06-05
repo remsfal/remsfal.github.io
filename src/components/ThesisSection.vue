@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 import fetchIssues, { type Issue } from '@/services/GitHubService.ts'
-import MarkdownIt from 'markdown-it'
+import ThesisCard from '@/components/ThesisCard.vue'
 
-const md = new MarkdownIt()
 const issues = ref([] as Issue[]);
 const searchQuery = ref('');
 const filterStatus = ref('all');
@@ -31,30 +30,10 @@ const filteredIssues = computed(() => {
     return matchesStatus && matchesSearch;
   });
 });
-// Convert Markdown to HTML
-const renderMarkdown = (markdown: string) => {
-  return md.render(markdown)
-} 
-
-const getStatusColor = (status: string) => {
-  return {
-    'in_progress': String('#2563eb'),
-    'open': String('#9333ea'),
-    'completed': String('#16a34a')
-  }[status] || '#6b7280';
-};
-
-const getStatusText = (status: string) => {
-  return {
-    'in_progress': String('In Bearbeitung'),
-    'open': String('Offen'),
-    'completed': String('Abgeschlossen')
-  }[status] || status;
-};
 </script>
 
 <template>
-  <div class="issues-container">
+  <div class="py-12 px-4">
     <!-- Controls Section -->
     <div class="controls-section">
       <div class="search-box">
@@ -76,64 +55,23 @@ const getStatusText = (status: string) => {
       </div>
     </div>
 
-    <!-- Issues Grid -->
+    <!-- Issues Grid using ThesisCard -->
     <div class="issues-grid">
-      <div v-for="issue in filteredIssues"
-           :key="issue.id"
-           class="issue-card">
-        <div class="issue-header">
-          <span class="status-badge"
-                :style="{ backgroundColor: getStatusColor(issue.state) }">
-            {{ getStatusText(issue.state) }}
-          </span>
-        </div>
-        <a :href="issue.html_url" target="_blank" class="issue-title-link">
-          <h3 class="issue-title">{{ issue.title }}</h3>
-        </a>
-
-     <div class="issue-description" v-html="renderMarkdown(issue.body)"></div>
-
-        <!-- Assignee anzeigen -->
-        <div v-if="issue.assignee" class="flex items-center gap-2 mt-4">
-          <img
-            :src="issue.assignee.avatar_url"
-            alt="Avatar"
-            class="w-8 h-8 rounded-full border"
-          />
-          <span class="text-sm text-gray-600">@{{ issue.assignee.login }}</span>
-        </div>
-
-        <div class="issue-footer">
-          <div class="labels">
-            <span v-for="label in issue.labels"
-                  :key="label.id"
-                  class="label"
-                  :style="{ backgroundColor: '#' + label.color }">
-              {{ label.name }}
-            </span>
-          </div>
-          <a :href="issue.html_url" target="_blank" class="details-link">
-            Details anzeigen →
-          </a>
-        </div>
-      </div>
+      <ThesisCard
+        v-for="issue in filteredIssues"
+        :key="issue.id"
+        :issue="issue"
+      />
     </div>
   </div>
 </template>
 
 <style scoped>
-.issues-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 .controls-section {
   display: flex;
   gap: 20px;
   margin-bottom: 30px;
 }
-
 .search-box {
   flex: 1;
 }
@@ -168,85 +106,6 @@ const getStatusText = (status: string) => {
   margin-bottom: 40px;
 }
 
-.issue-card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-}
-
-.issue-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.issue-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.status-badge {
-  padding: 6px 12px;
-  border-radius: 20px;
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.issue-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #2e6022;
-  margin: 0 0 12px 0;
-  line-height: 1.4;
-}
-
-.issue-description {
-  color: #4b5563;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 16px;
-  word-break: break-word;
-}
-
-.issue-title-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.issue-title-link:hover .issue-title {
-  color: #4a8c3c;
-}
-
-.issue-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.labels {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.label {
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  color: #4b5563;
-}
-
-@keyframes shine {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
-}
-
 @media (max-width: 768px) {
   .controls-section {
     flex-direction: column;
@@ -255,4 +114,5 @@ const getStatusText = (status: string) => {
   .issues-grid {
     grid-template-columns: 1fr;
   }
-}</style>
+}
+</style>
