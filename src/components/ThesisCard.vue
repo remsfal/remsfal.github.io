@@ -11,11 +11,15 @@ const md = new MarkdownIt()
 
 // Berechne Status-Text anhand von GitHub-Daten
 const statusText = computed(() => {
-  return props.issue.assignee ? 'In Bearbeitung' : 'Offen'
+  if (props.issue.state === 'completed') return 'Abgeschlossen'
+  if (props.issue.assignee) return 'In Bearbeitung'
+  return 'Offen'
 })
 
 const statusColor = computed(() => {
-  return props.issue.assignee ? 'bg-blue-500' : 'bg-purple-500'
+  if (props.issue.state === 'completed') return 'bg-green-500'
+  if (props.issue.assignee) return 'bg-blue-500'
+  return 'bg-purple-500'
 })
 
 const renderedBody = computed(() => md.render(props.issue.body))
