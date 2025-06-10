@@ -1,13 +1,13 @@
 import { defineConfig } from 'vitepress'
 import { resolve } from 'path'
-import { text } from 'node:stream/consumers'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: ' ',
   description: "Remsfal Dokumentation",
+  lang: 'de-DE',
   outDir: resolve(__dirname, '../../dist/docs'),
-  base: '/docs/',
+  base: '/docs',
   themeConfig: {
     logo: 'logo.png',
     // https://vitepress.dev/reference/default-theme-config
@@ -43,6 +43,9 @@ export default defineConfig({
     },
     search: {
       provider: 'local'
+    },
+    outline: {
+      label: 'Auf dieser Seite',
     }
   }
 })

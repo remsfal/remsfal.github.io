@@ -11,13 +11,14 @@ hero:
       link: /markdown-examples
     - theme: alt
       text: Projektdokumentation
-      link: /api-examples
+      link: /projektdokumentation
 
 features:
   - title: Objekthierachie
     details: Wie ist die Objekthierachie einer Liegschaft aufgebaut?
-    link: objekthierachie.md
+    link: /objekthierachie
   - title: Projektdokumentation
     details: Spezifische Informationen zur Projektarchitektur
+    link: /projektdokumentation
 ---
 
