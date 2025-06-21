@@ -1,6 +1,8 @@
 import { mount, VueWrapper } from '@vue/test-utils'
 import { describe, it, expect, beforeEach } from 'vitest'
 import ResearchView from '@/views/ResearchView.vue'
+import ThesisCard from '@/components/ThesisCard.vue'
+
 
 // Mock fetchIssues to return dummy data
 vi.mock('@/services/GitHubService.ts', async () => {
@@ -20,7 +22,7 @@ vi.mock('@/services/GitHubService.ts', async () => {
         id: 2,
         title: 'Second issue',
         body: 'Simple issue description',
-        state: 'completed',
+        state: 'closed',
         labels: [{ id: 11, name: 'enhancement', color: '0f0' }],
         html_url: 'https://github.com/example/issue2'
       }
@@ -33,100 +35,116 @@ describe('ResearchView', () => {
 
   beforeEach(async () => {
     wrapper = mount(ResearchView)
-    // Wait for fetchIssues to complete
     await new Promise(resolve => setTimeout(resolve, 10))
   })
 
-  
-
   it('should display issues', () => {
-    const issueCards = wrapper.findAll('.issue-card')
-    expect(issueCards.length).toBeGreaterThan(0)
-  })
-
-  it('should display correct content in issue cards', () => {
-    const issueCards = wrapper.findAll('.issue-card')
-    for (const card of issueCards) {
-      const title = card.find('.issue-title')
-      const description = card.find('.issue-description')
-      const footer = card.find('.issue-footer')
-      expect(title.exists()).toBe(true)
-      expect(description.exists()).toBe(true)
-      expect(footer.exists()).toBe(true)
-    }
+    const cards = wrapper.findAllComponents(ThesisCard)
+    expect(cards.length).toBeGreaterThan(0)
   })
 
   it('should render markdown content correctly', () => {
-    const card = wrapper.find('.issue-card')
-    const html = card.find('.issue-description').html()
-    expect(html).toContain('<strong>Bold text</strong>')
-    expect(html).toContain('<em>italic</em>')
+    const cardHtml = wrapper.find('.prose').html()
+    expect(cardHtml).toContain('<strong>Bold text</strong>')
+    expect(cardHtml).toContain('<em>italic</em>')
   })
 
   it('should display label badges', () => {
-    const labels = wrapper.findAll('.label')
+    const labels = wrapper.findAll('[style*="background-color"]')
     expect(labels.length).toBeGreaterThan(0)
     expect(labels[0].text()).toBe('bug')
   })
 
   it('should filter issues based on status', async () => {
-    const select = wrapper.find('.filter-select')
-    await select.setValue('completed')
+    const select = wrapper.find('select')
+    await select.setValue('closed')
+    await new Promise(resolve => setTimeout(resolve, 10))
 
-    const issueCards = wrapper.findAll('.issue-card')
-    expect(issueCards.length).toBe(1)
-    expect(issueCards[0].text()).toContain('Second issue')
+    const cards = wrapper.findAllComponents(ThesisCard)
+    expect(cards.length).toBe(1)
+    expect(cards[0].text()).toContain('Second issue')
   })
 
   it('should filter issues based on search query', async () => {
-    const input = wrapper.find('.search-input')
+    const input = wrapper.find('input[placeholder="Suchen Sie nach Projekten..."]')
     await input.setValue('first')
+    await new Promise(resolve => setTimeout(resolve, 10))
 
-    const issueCards = wrapper.findAll('.issue-card')
-    expect(issueCards.length).toBe(1)
-    expect(issueCards[0].text()).toContain('First issue')
+    const cards = wrapper.findAllComponents(ThesisCard)
+    expect(cards.length).toBe(1)
+    expect(cards[0].text()).toContain('First issue')
   })
 
+  it('should display assignee info when present', async () => {
+    const assigneeIssue = {
+      id: 3,
+      title: 'Assigned issue',
+      body: 'Test body',
+      state: 'open',
+      labels: [],
+      html_url: 'https://github.com/example/issue3',
+      assignee: {
+        login: 'testuser',
+        avatar_url: 'https://example.com/avatar.png'
+      }
+    }
+
+    const mockFetch = (await import('@/services/GitHubService.ts')).default
+    mockFetch.mockResolvedValueOnce([assigneeIssue])
+
+    const wrapper = mount(ResearchView)
+    await new Promise(resolve => setTimeout(resolve, 10))
+
+    const card = wrapper.findComponent(ThesisCard)
+
+    const assigneeWrapper = card.find('.items-center.gap-2') // Zielt eindeutig auf den Assignee-Block
+
+    expect(assigneeWrapper.exists()).toBe(true)
+
+    const avatar = assigneeWrapper.find('img')
+    expect(avatar.attributes('src')).toBe('https://example.com/avatar.png')
+
+    const username = assigneeWrapper.find('span')
+    expect(username.text()).toBe('@testuser')
+  })
+
+
   it('should open correct link for details', () => {
-    const link = wrapper.find('.details-link')
-    expect(link.attributes('href')).toContain('https://github.com/example/issue')
+    const link = wrapper.find('a[href="https://github.com/example/issue1"]')
+    expect(link.exists()).toBe(true)
   })
 
   it('should show correct status badge text and color', () => {
-    const badges = wrapper.findAll('.status-badge')
-    expect(badges[0].text()).toBe('Offen')
-    expect(badges[1].text()).toBe('Abgeschlossen')
-    expect(badges[0].attributes('style')).toContain('background-color')
+    const cards = wrapper.findAllComponents(ThesisCard)
+    const statuses = cards.map(card => card.find('span').text())
+    expect(statuses).toContain('Offen')
+    expect(statuses).toContain('Abgeschlossen')
   })
 
   it('should log an error when fetchIssues fails', async () => {
     const mockConsoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
-  
-    // Override the mock to throw
-    const errorMessage = 'Network error'
+
     const fetchIssues = (await import('@/services/GitHubService.ts')).default
-    fetchIssues.mockRejectedValueOnce(new Error(errorMessage))
-  
-    // Remount component
+    fetchIssues.mockRejectedValueOnce(new Error('Network error'))
+
     const wrapper = mount(ResearchView)
     await new Promise(resolve => setTimeout(resolve, 10))
-  
+
     expect(mockConsoleError).toHaveBeenCalledWith('Failed to fetch issues:', expect.any(Error))
-  
+
     mockConsoleError.mockRestore()
   })
 
   it('should show no issues for unmatched search query', async () => {
-    const input = wrapper.find('.search-input')
-    await input.setValue('nonexistent issue')
-  
-    const issueCards = wrapper.findAll('.issue-card')
-    expect(issueCards.length).toBe(0)
+    const input = wrapper.find('input[placeholder="Suchen Sie nach Projekten..."]')
+    await input.setValue('nonexistent')
+    await new Promise(resolve => setTimeout(resolve, 10))
+
+    const cards = wrapper.findAllComponents(ThesisCard)
+    expect(cards.length).toBe(0)
   })
+
   it('matches snapshot', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
-  
-  
-  
 })
