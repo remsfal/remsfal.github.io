@@ -19,14 +19,18 @@ const statusOptions = [
   { label: 'Alle', value: 'all' },
   { label: 'In Bearbeitung', value: 'in_progress' },
   { label: 'Offen', value: 'open' },
-  { label: 'Abgeschlossen', value: 'completed' }
+  { label: 'Abgeschlossen', value: 'closed' }
 ];
-
 const filteredIssues = computed(() => {
-  return issues.value.filter(issue => {
-    const matchesStatus = filterStatus.value === 'all' || issue.state === filterStatus.value;
-    const matchesSearch = issue.title.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-      issue.body.toLowerCase().includes(searchQuery.value.toLowerCase());
+  return issues.value.filter((issue: any) => {
+    // Ensure we have valid strings for comparison
+    const status = typeof filterStatus.value === 'string' ? filterStatus.value : '';
+    const search = typeof searchQuery.value === 'string' ? searchQuery.value : '';
+
+    const matchesStatus = status === 'all' || issue.state === status;
+    const matchesSearch =
+      (issue.title?.toLowerCase()?.includes(search.toLowerCase()) ?? false) ||
+      (issue.body?.toLowerCase()?.includes(search.toLowerCase()) ?? false);
     return matchesStatus && matchesSearch;
   });
 });
@@ -35,17 +39,21 @@ const filteredIssues = computed(() => {
 <template>
   <div class="py-12 px-4">
     <!-- Controls Section -->
-    <div class="controls-section">
-      <div class="search-box">
+    <div class="flex flex-col md:flex-row gap-5 mb-8">
+      <!-- Suche -->
+      <div class="flex-1">
         <input
           type="text"
           v-model="searchQuery"
           placeholder="Suchen Sie nach Projekten..."
-          class="search-input"
+          class="w-full px-5 py-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-green-800"
         >
       </div>
-      <div class="filter-box">
-        <select v-model="filterStatus" class="filter-select">
+
+      <!-- Filter -->
+      <div>
+        <select v-model="filterStatus" class="px-5 py-3 border-2 border-gray-200 rounded-lg text-base min-w-[200px] bg-white"
+        >
           <option v-for="option in statusOptions"
                   :key="option.value"
                   :value="option.value">
@@ -55,8 +63,8 @@ const filteredIssues = computed(() => {
       </div>
     </div>
 
-    <!-- Issues Grid using ThesisCard -->
-    <div class="issues-grid">
+    <!-- Issues Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
       <ThesisCard
         v-for="issue in filteredIssues"
         :key="issue.id"
@@ -66,53 +74,3 @@ const filteredIssues = computed(() => {
   </div>
 </template>
 
-<style scoped>
-.controls-section {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-.search-box {
-  flex: 1;
-}
-
-.search-input {
-  width: 100%;
-  padding: 12px 20px;
-  border: 2px solid #e5e7eb;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: #2e6022;
-}
-
-.filter-select {
-  padding: 12px 20px;
-  border: 2px solid #e5e7eb;
-  border-radius: 8px;
-  font-size: 16px;
-  min-width: 200px;
-  background-color: white;
-}
-
-.issues-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
-}
-
-@media (max-width: 768px) {
-  .controls-section {
-    flex-direction: column;
-  }
-
-  .issues-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>

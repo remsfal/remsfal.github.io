@@ -14,6 +14,12 @@ export interface Label {
   description: string;
 }
 
+export enum IssueState {
+  Open = 'open',
+  InProgress = 'in_progress',
+  Closed = 'closed'
+}
+
 export interface Issue {
   id: number;
   number: number;
@@ -26,13 +32,20 @@ export interface Issue {
   body: string;
 }
 
+// Statusanzeige
+export function getReadableStatus(issue: { state: string; assignee?: any }): string {
+  if (issue.state === IssueState.Closed) return 'Abgeschlossen';
+  if (issue.assignee) return 'In Bearbeitung';
+  return 'Offen';
+}
+
 async function fetchIssuesFromMultipleRepos(repoNames: string[]): Promise<Issue[]> {
   const allIssues:Issue[] = [];
 
   for (const repo of repoNames) {
     try {
       // Make an asynchronous fetch call to GitHub API to get issues with the "thesis" label from the current repository
-      const response = await fetch(`https://api.github.com/repos/${repo}/issues?labels=thesis`, {
+      const response = await fetch(`https://api.github.com/repos/${repo}/issues?labels=thesis&state=all`, {
         headers: {
           'Accept': 'application/json'
         }
@@ -41,16 +54,16 @@ async function fetchIssuesFromMultipleRepos(repoNames: string[]): Promise<Issue[
       if (!response.ok) {
         throw new Error('Network response was not ok for repo: ' + repo);
       }
-      
-      const issues = await response.json(); // Parse the response JSON to get issues data
-      allIssues.push(...issues); // Add fetched issues to the allIssues array
+
+      const issues = await response.json()
+      const filteredIssues = issues.filter((issue: any) => !issue.pull_request)
+      allIssues.push(...filteredIssues)
     } catch (error) {
       console.error('Error fetching issues:', error);
       return []; // Return an empty array if an error occurs
     }
   }
 
-  console.log('Fetched issues from all repositories:', allIssues);
   return allIssues;
 }
 

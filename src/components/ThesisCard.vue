@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { Issue } from '@/services/GitHubService'
+import { getReadableStatus } from '@/services/GitHubService'
+import Card from 'primevue/card'
 import MarkdownIt from 'markdown-it'
 import { computed } from 'vue'
 
@@ -10,41 +12,45 @@ const props = defineProps<{
 const md = new MarkdownIt()
 
 // Berechne Status-Text anhand von GitHub-Daten
-const statusText = computed(() => {
-  if (props.issue.state === 'completed') return 'Abgeschlossen'
-  if (props.issue.assignee) return 'In Bearbeitung'
-  return 'Offen'
-})
+const statusText = computed(() => getReadableStatus(props.issue))
 
 const statusColor = computed(() => {
-  if (props.issue.state === 'completed') return 'bg-green-500'
+  if (props.issue.state === 'closed') return 'bg-green-500'
   if (props.issue.assignee) return 'bg-blue-500'
   return 'bg-purple-500'
 })
 
-const renderedBody = computed(() => md.render(props.issue.body))
+const renderedBody = computed(() => md.render(props.issue.body || ''));
 </script>
 
 <template>
-  <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between transition hover:-translate-y-1 hover:shadow-lg">
+  <Card class="rounded-2xl shadow-md transition hover:-translate-y-1 hover:shadow-lg">
+    <template #content>
+      <div class="flex justify-between items-center mb-4">
     <!-- Status -->
-    <div class="flex justify-between items-center mb-4">
       <span :class="`text-white text-sm px-3 py-1 rounded-full ${statusColor}`">
         {{ statusText }}
       </span>
 
       <!-- Assignee -->
       <div v-if="issue.assignee" class="flex items-center gap-2">
-        <img :src="issue.assignee.avatar_url" alt="avatar" class="w-8 h-8 rounded-full border" />
+        <img
+          :src="issue.assignee.avatar_url"
+          alt="avatar"
+          class="w-8 h-8 rounded-full border"
+        />
         <span class="text-sm text-gray-600">@{{ issue.assignee.login }}</span>
       </div>
     </div>
 
     <!-- Titel -->
-    <h3 class="text-xl font-semibold text-green-900 mb-2">{{ issue.title }}</h3>
+    <h3 class="text-xl font-semibold text-green-900 mb-2">
+      {{ issue.title }}
+    </h3>
 
     <!-- Beschreibung (Markdown gerendert) -->
-    <div class="prose prose-sm max-w-none text-gray-700 mb-4" v-html="renderedBody" />
+    <div
+      class="prose prose-sm max-w-none text-gray-700 mb-4" v-html="renderedBody" />
 
     <!-- Labels -->
     <div class="flex flex-wrap gap-2 mb-4">
@@ -59,15 +65,13 @@ const renderedBody = computed(() => md.render(props.issue.body))
     </div>
 
     <!-- Link -->
-    <a :href="issue.html_url" target="_blank" class="text-green-700 text-sm font-medium hover:underline">
+    <a
+      :href="issue.html_url"
+      target="_blank"
+      class="text-green-700 text-sm font-medium hover:underline"
+    >
       Details anzeigen →
     </a>
-  </div>
+    </template>
+  </Card>
 </template>
-
-<style scoped>
-/* Optional: Für Markdown-Text (prose) ansprechender gestalten */
-.prose :where(p):not(:last-child) {
-  margin-bottom: 0.5rem;
-}
-</style>
