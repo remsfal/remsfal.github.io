@@ -22,7 +22,7 @@ vi.mock('@/services/GitHubService.ts', async () => {
         id: 2,
         title: 'Second issue',
         body: 'Simple issue description',
-        state: 'completed',
+        state: 'closed',
         labels: [{ id: 11, name: 'enhancement', color: '0f0' }],
         html_url: 'https://github.com/example/issue2'
       }
@@ -56,8 +56,8 @@ describe('ResearchView', () => {
   })
 
   it('should filter issues based on status', async () => {
-    const select = wrapper.find('.filter-select')
-    await select.setValue('completed')
+    const select = wrapper.find('select')
+    await select.setValue('closed')
     await new Promise(resolve => setTimeout(resolve, 10))
 
     const cards = wrapper.findAllComponents(ThesisCard)
@@ -66,7 +66,7 @@ describe('ResearchView', () => {
   })
 
   it('should filter issues based on search query', async () => {
-    const input = wrapper.find('.search-input')
+    const input = wrapper.find('input[placeholder="Suchen Sie nach Projekten..."]')
     await input.setValue('first')
     await new Promise(resolve => setTimeout(resolve, 10))
 
@@ -136,7 +136,7 @@ describe('ResearchView', () => {
   })
 
   it('should show no issues for unmatched search query', async () => {
-    const input = wrapper.find('.search-input')
+    const input = wrapper.find('input[placeholder="Suchen Sie nach Projekten..."]')
     await input.setValue('nonexistent')
     await new Promise(resolve => setTimeout(resolve, 10))
 
