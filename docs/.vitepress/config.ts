@@ -4,7 +4,7 @@ import { resolve } from 'path'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: ' ',
-  description: "Remsfal Dokumentation",
+  description: "REMSFAL Dokumentation",
   lang: 'de-DE',
   outDir: resolve(__dirname, '../../dist/docs'),
   base: '/docs',
