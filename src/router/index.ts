@@ -20,8 +20,7 @@ const router = createRouter({
     },
     {
       path: '/documentation',
-      name: 'DocumentationView',
-      component: () => import('../views/DocumentationView.vue')
+      redirect: '/docs'
     },
     {
       path: '/support',
