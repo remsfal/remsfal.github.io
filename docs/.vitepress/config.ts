@@ -14,7 +14,7 @@ export default defineConfig({
     nav: [
       { text: 'Forschung', link: 'https://remsfal.de/research', target: '_self'},
       { text: 'Dokumentation', link: 'https://remsfal.de/research', target: '_self'},
-      { text: 'Kostenlos testen', link: 'https://remsfal.online/api/v1/authentication/login'}
+      { text: 'Kostenlos testen', link: 'https://remsfal.online'}
     ],
 
     sidebar: [
