@@ -20,7 +20,7 @@ const router = createRouter({
     },
     {
       path: '/documentation',
-      redirect: '/docs'
+      redirect: '/docs/'
     },
     {
       path: '/support',
