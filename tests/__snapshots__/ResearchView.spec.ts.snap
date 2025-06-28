@@ -1,82 +1,75 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ResearchView > matches snapshot 1`] = `
-"<div data-v-f8d2ac06="" data-v-53ee1ad1="" class="flex flex-col pt-6 px-6 lg:px-20 overflow-hidden title-widget">
-  <div data-v-f8d2ac06="" class="mx-6 md:mx-20 mt-0 md:mt-6">
-    <h1 data-v-f8d2ac06="" class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">Forschung</h1>
-  </div>
-</div>
-<div data-v-33107760="" data-v-53ee1ad1="" id="legal" class="py-6 px-6 lg:px-20 mx-0 my-12 lg:mx-20">
-  <div data-v-33107760="" class="p-card p-component" data-pc-name="card" pc0="" data-pc-section="root">
-    <!---->
-    <div class="p-card-body" data-pc-section="body">
-      <div class="p-card-caption" data-pc-section="caption">
-        <div class="p-card-title" data-pc-section="title">
-          <div data-v-33107760="" class="section-title text-2xl m-8">Forschung an der HTW Berlin</div>
-        </div>
-        <!---->
-      </div>
-      <div class="p-card-content" data-pc-section="content">
-        <div data-v-33107760="" class="section-content [&amp;>p]:text-lg [&amp;>p]:m-8 [&amp;>h3]:font-semibold [&amp;>h3]:text-xl [&amp;>h3]:ml-8 [&amp;>h3]:-mb-4 [&amp;>h3:first-child]:mt-6"><img data-v-53ee1ad1="" alt="HTW Berlin logo" src="/src/assets/htw-berlin-logo.svg" class="float-right p-2 htw-logo">
-          <p data-v-53ee1ad1=""> REMSFAL wurde 2023 von <a data-v-53ee1ad1="" href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" class="underline hover:decoration-green-600" target="_blank"> Prof. Dr.-Ing. Alexander Stanik </a> als interdisziplinäres wissenschaftliches Open Source Forschungsprojekt gegründet und konzentriert sich auf die Entwicklung skalierbarer Architekturen und Technologien für verteilte und parallele Informationssysteme in der Immobilienwirtschaft. Ziel des Projektes ist die Digitalisierung von Hausverwaltungen durch innovative Verwaltungs- und Immobiliensoftware voranzutreiben. Ein besonderer Fokus liegt dabei auf der Optimierung von Mängelmanagement-Prozessen und der Implementierung nachhaltiger Strategien zur Reduzierung von CO<sub data-v-53ee1ad1="">2</sub>-Emissionen in der Gebäudebewirtschaftung. Durch die Erforschung und Erprobung neuer Technologien sollen Prozesse zur Liegenschaftsverwaltung effizienter gestaltet und gleichzeitig ökologische Aspekte berücksichtigt werden. </p>
-          <p data-v-53ee1ad1=""> Das REMSFAL Projekt ist mehr als eine Open Source Initiative und konzentriert sich unter der Leitung von <a data-v-53ee1ad1="" href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" class="underline hover:decoration-green-600" target="_blank"> Prof. Dr.-Ing. Alexander Stanik von der Hochschule für Technik und Wirtschaft (HTW) Berlin </a> ebenso auf den Einsatz in der Forschung und der Lehre. Studierende erhalten mit diesem Projekt die Möglichkeit eigene kreative Ideen mit innovativen Technologien und hohem Praxisbezug sowie einer Vielfalt an Anwendungskomplexitäten der Wirtschaftsinformatik zu realisieren. Mit dem Themenschwerpunkt auf Entwicklung und Erprobung neuer Technologien und Anwendungen für nachhaltige und klimagerechte Gebäudebewirtschaftung ist dieses Projekt seit 2024 auch Teil des Forschungsclusters <a data-v-53ee1ad1="" href="https://www.htw-berlin.de/forschung/forschungsprofil/forschungscluster/cluster/?eid=23" class="underline hover:decoration-green-600" target="_blank"> Klimagerechte Energieversorgungssysteme und energieeffiziente Gebäude (KEG) </a> der HTW Berlin. </p>
-        </div>
-      </div>
-      <!---->
+"<div data-v-53ee1ad1="" class="bg-white text-black dark:bg-black dark:text-white">
+  <div data-v-f8d2ac06="" data-v-53ee1ad1="" class="flex flex-col pt-6 px-6 lg:px-20 overflow-hidden title-widget">
+    <div data-v-f8d2ac06="" class="mx-6 md:mx-20 mt-0 md:mt-6">
+      <h1 data-v-f8d2ac06="" class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">Forschung</h1>
     </div>
   </div>
-</div>
-<div data-v-33107760="" data-v-53ee1ad1="" id="legal" class="py-6 px-6 lg:px-20 mx-0 my-12 lg:mx-20">
-  <div data-v-33107760="" class="p-card p-component" data-pc-name="card" pc1="" data-pc-section="root">
-    <!---->
-    <div class="p-card-body" data-pc-section="body">
-      <div class="p-card-caption" data-pc-section="caption">
-        <div class="p-card-title" data-pc-section="title">
-          <div data-v-33107760="" class="section-title text-2xl m-8">Abschlussarbeiten im Studiengang Wirtschaftsinformatik</div>
-        </div>
-        <!---->
-      </div>
-      <div class="p-card-content" data-pc-section="content">
-        <div data-v-33107760="" class="section-content [&amp;>p]:text-lg [&amp;>p]:m-8 [&amp;>h3]:font-semibold [&amp;>h3]:text-xl [&amp;>h3]:ml-8 [&amp;>h3]:-mb-4 [&amp;>h3:first-child]:mt-6">
-          <div data-v-0ce74e49="" data-v-53ee1ad1="" class="issues-container">
-            <!-- Controls Section -->
-            <div data-v-0ce74e49="" class="controls-section">
-              <div data-v-0ce74e49="" class="search-box"><input data-v-0ce74e49="" type="text" placeholder="Suchen Sie nach Projekten..." class="search-input"></div>
-              <div data-v-0ce74e49="" class="filter-box"><select data-v-0ce74e49="" class="filter-select">
-                  <option data-v-0ce74e49="" value="all">Alle</option>
-                  <option data-v-0ce74e49="" value="in_progress">In Bearbeitung</option>
-                  <option data-v-0ce74e49="" value="open">Offen</option>
-                  <option data-v-0ce74e49="" value="completed">Abgeschlossen</option>
-                </select></div>
-            </div><!-- Issues Grid -->
-            <div data-v-0ce74e49="" class="issues-grid">
-              <div data-v-0ce74e49="" class="issue-card">
-                <div data-v-0ce74e49="" class="issue-header"><span data-v-0ce74e49="" class="status-badge" style="background-color: rgb(147, 51, 234);">Offen</span></div><a data-v-0ce74e49="" href="https://github.com/example/issue1" target="_blank" class="issue-title-link">
-                  <h3 data-v-0ce74e49="" class="issue-title">First issue</h3>
-                </a>
-                <div data-v-0ce74e49="" class="issue-description">
+  <div data-v-33107760="" data-v-53ee1ad1="" id="legal" class="py-6 px-6 lg:px-20 mx-0 my-12 lg:mx-20">
+    <!-- Titel zentriert -->
+    <div data-v-33107760="" class="text-3xl font-bold text-left mb-8 ml-4">Forschung an der HTW Berlin</div><!-- Inhalt -->
+    <div data-v-33107760="" class="section-content [&amp;>p]:text-lg [&amp;>p]:m-8 [&amp;>h3]:font-semibold [&amp;>h3]:text-xl [&amp;>h3]:ml-8 [&amp;>h3]:-mb-4 [&amp;>h3:first-child]:mt-6"><img data-v-53ee1ad1="" alt="HTW Berlin logo" src="/src/assets/htw-berlin-logo.svg" class="float-right p-2 htw-logo">
+      <p data-v-53ee1ad1=""> REMSFAL wurde 2023 von <a data-v-53ee1ad1="" href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" class="underline hover:decoration-green-600" target="_blank"> Prof. Dr.-Ing. Alexander Stanik </a> als interdisziplinäres wissenschaftliches Open Source Forschungsprojekt gegründet und konzentriert sich auf die Entwicklung skalierbarer Architekturen und Technologien für verteilte und parallele Informationssysteme in der Immobilienwirtschaft. Ziel des Projektes ist die Digitalisierung von Hausverwaltungen durch innovative Verwaltungs- und Immobiliensoftware voranzutreiben. Ein besonderer Fokus liegt dabei auf der Optimierung von Mängelmanagement-Prozessen und der Implementierung nachhaltiger Strategien zur Reduzierung von CO<sub data-v-53ee1ad1="">2</sub>-Emissionen in der Gebäudebewirtschaftung. Durch die Erforschung und Erprobung neuer Technologien sollen Prozesse zur Liegenschaftsverwaltung effizienter gestaltet und gleichzeitig ökologische Aspekte berücksichtigt werden. </p>
+      <p data-v-53ee1ad1=""> Das REMSFAL Projekt ist mehr als eine Open Source Initiative und konzentriert sich unter der Leitung von <a data-v-53ee1ad1="" href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" class="underline hover:decoration-green-600" target="_blank"> Prof. Dr.-Ing. Alexander Stanik von der Hochschule für Technik und Wirtschaft (HTW) Berlin </a> ebenso auf den Einsatz in der Forschung und der Lehre. Studierende erhalten mit diesem Projekt die Möglichkeit eigene kreative Ideen mit innovativen Technologien und hohem Praxisbezug sowie einer Vielfalt an Anwendungskomplexitäten der Wirtschaftsinformatik zu realisieren. Mit dem Themenschwerpunkt auf Entwicklung und Erprobung neuer Technologien und Anwendungen für nachhaltige und klimagerechte Gebäudebewirtschaftung ist dieses Projekt seit 2024 auch Teil des Forschungsclusters <a data-v-53ee1ad1="" href="https://www.htw-berlin.de/forschung/forschungsprofil/forschungscluster/cluster/?eid=23" class="underline hover:decoration-green-600" target="_blank"> Klimagerechte Energieversorgungssysteme und energieeffiziente Gebäude (KEG) </a> der HTW Berlin. </p>
+    </div>
+  </div>
+  <div data-v-33107760="" data-v-53ee1ad1="" id="legal" class="py-6 px-6 lg:px-20 mx-0 my-12 lg:mx-20">
+    <!-- Titel zentriert -->
+    <div data-v-33107760="" class="text-3xl font-bold text-left mb-8 ml-4">Abschlussarbeiten im Studiengang Wirtschaftsinformatik</div><!-- Inhalt -->
+    <div data-v-33107760="" class="section-content [&amp;>p]:text-lg [&amp;>p]:m-8 [&amp;>h3]:font-semibold [&amp;>h3]:text-xl [&amp;>h3]:ml-8 [&amp;>h3]:-mb-4 [&amp;>h3:first-child]:mt-6">
+      <div data-v-53ee1ad1="" class="py-12 px-4">
+        <!-- Controls Section -->
+        <div class="flex flex-col md:flex-row gap-5 mb-8">
+          <!-- Suche -->
+          <div class="flex-1"><input type="text" placeholder="Suchen Sie nach Projekten..." class="w-full px-5 py-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-green-800"></div><!-- Filter -->
+          <div><select class="px-5 py-3 border-2 border-gray-200 rounded-lg text-base min-w-[200px] bg-white">
+              <option value="all">Alle</option>
+              <option value="in_progress">In Bearbeitung</option>
+              <option value="open">Offen</option>
+              <option value="closed">Abgeschlossen</option>
+            </select></div>
+        </div><!-- Issues Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          <div class="p-card p-component rounded-2xl shadow-md transition hover:-translate-y-1 hover:shadow-lg" data-pc-name="card" pc0="" data-pc-section="root">
+            <!---->
+            <div class="p-card-body" data-pc-section="body">
+              <!---->
+              <div class="p-card-content" data-pc-section="content">
+                <div class="flex justify-between items-center mb-4">
+                  <!-- Status --><span class="text-white text-sm px-3 py-1 rounded-full bg-purple-500">Offen</span><!-- Assignee -->
+                  <!--v-if-->
+                </div><!-- Titel -->
+                <h3 class="text-xl font-semibold text-green-900 mb-2">First issue</h3><!-- Beschreibung (Markdown gerendert) -->
+                <div class="prose prose-sm max-w-none text-gray-700 mb-4">
                   <p><strong>Bold text</strong> with <em>italic</em></p>
-                </div>
-                <div data-v-0ce74e49="" class="issue-footer">
-                  <div data-v-0ce74e49="" class="labels"><span data-v-0ce74e49="" class="label" style="background-color: rgb(255, 0, 0);">bug</span></div><a data-v-0ce74e49="" href="https://github.com/example/issue1" target="_blank" class="details-link"> Details anzeigen → </a>
-                </div>
+                </div><!-- Labels -->
+                <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs px-2 py-1 rounded" style="background-color: rgb(255, 0, 0); color: white;">bug</span></div><!-- Link --><a href="https://github.com/example/issue1" target="_blank" class="text-green-700 text-sm font-medium hover:underline"> Details anzeigen → </a>
               </div>
-              <div data-v-0ce74e49="" class="issue-card">
-                <div data-v-0ce74e49="" class="issue-header"><span data-v-0ce74e49="" class="status-badge" style="background-color: rgb(22, 163, 74);">Abgeschlossen</span></div><a data-v-0ce74e49="" href="https://github.com/example/issue2" target="_blank" class="issue-title-link">
-                  <h3 data-v-0ce74e49="" class="issue-title">Second issue</h3>
-                </a>
-                <div data-v-0ce74e49="" class="issue-description">
+              <!---->
+            </div>
+          </div>
+          <div class="p-card p-component rounded-2xl shadow-md transition hover:-translate-y-1 hover:shadow-lg" data-pc-name="card" pc1="" data-pc-section="root">
+            <!---->
+            <div class="p-card-body" data-pc-section="body">
+              <!---->
+              <div class="p-card-content" data-pc-section="content">
+                <div class="flex justify-between items-center mb-4">
+                  <!-- Status --><span class="text-white text-sm px-3 py-1 rounded-full bg-green-500">Abgeschlossen</span><!-- Assignee -->
+                  <!--v-if-->
+                </div><!-- Titel -->
+                <h3 class="text-xl font-semibold text-green-900 mb-2">Second issue</h3><!-- Beschreibung (Markdown gerendert) -->
+                <div class="prose prose-sm max-w-none text-gray-700 mb-4">
                   <p>Simple issue description</p>
-                </div>
-                <div data-v-0ce74e49="" class="issue-footer">
-                  <div data-v-0ce74e49="" class="labels"><span data-v-0ce74e49="" class="label" style="background-color: rgb(0, 255, 0);">enhancement</span></div><a data-v-0ce74e49="" href="https://github.com/example/issue2" target="_blank" class="details-link"> Details anzeigen → </a>
-                </div>
+                </div><!-- Labels -->
+                <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs px-2 py-1 rounded" style="background-color: rgb(0, 255, 0); color: white;">enhancement</span></div><!-- Link --><a href="https://github.com/example/issue2" target="_blank" class="text-green-700 text-sm font-medium hover:underline"> Details anzeigen → </a>
               </div>
+              <!---->
             </div>
           </div>
         </div>
       </div>
-      <!---->
     </div>
   </div>
 </div>"
