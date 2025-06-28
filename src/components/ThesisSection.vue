@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
-import fetchIssues, { type Issue } from '@/services/GitHubService.ts'
+import fetchIssues, { type Issue, IssueState } from '@/services/GitHubService.ts'
 import ThesisCard from '@/components/ThesisCard.vue'
+
+
 
 const issues = ref([] as Issue[]);
 const searchQuery = ref('');
-const filterStatus = ref('all');
+const filterStatus = ref<'all' | IssueState>('all')
 
 onMounted(async () => {
   try {
@@ -17,20 +19,19 @@ onMounted(async () => {
 
 const statusOptions = [
   { label: 'Alle', value: 'all' },
-  { label: 'In Bearbeitung', value: 'in_progress' },
-  { label: 'Offen', value: 'open' },
-  { label: 'Abgeschlossen', value: 'closed' }
+  { label: 'In Bearbeitung', value: IssueState.InProgress },
+  { label: 'Offen', value: IssueState.Open },
+  { label: 'Abgeschlossen', value: IssueState.Closed }
 ];
 const filteredIssues = computed(() => {
-  return issues.value.filter((issue: any) => {
-    // Ensure we have valid strings for comparison
-    const status = typeof filterStatus.value === 'string' ? filterStatus.value : '';
-    const search = typeof searchQuery.value === 'string' ? searchQuery.value : '';
+  return issues.value.filter((issue: Issue) => {
+    const matchesStatus =
+      filterStatus.value === 'all' ||
+      issue.state === filterStatus.value
 
-    const matchesStatus = status === 'all' || issue.state === status;
     const matchesSearch =
-      (issue.title?.toLowerCase()?.includes(search.toLowerCase()) ?? false) ||
-      (issue.body?.toLowerCase()?.includes(search.toLowerCase()) ?? false);
+      issue.title?.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+      issue.body?.toLowerCase().includes(searchQuery.value.toLowerCase())
     return matchesStatus && matchesSearch;
   });
 });

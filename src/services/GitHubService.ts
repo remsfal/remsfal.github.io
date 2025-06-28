@@ -64,7 +64,9 @@ async function fetchIssuesFromMultipleRepos(repoNames: string[]): Promise<Issue[
     }
   }
 
-  return allIssues;
+  return allIssues.sort(
+    (a: any, b: any) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+  );
 }
 
 export default fetchIssuesFromMultipleRepos;

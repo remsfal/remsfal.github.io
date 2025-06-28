@@ -4,6 +4,7 @@ import { getReadableStatus } from '@/services/GitHubService'
 import Card from 'primevue/card'
 import MarkdownIt from 'markdown-it'
 import { computed } from 'vue'
+import DOMPurify from 'dompurify'
 
 const props = defineProps<{
   issue: Issue
@@ -20,7 +21,11 @@ const statusColor = computed(() => {
   return 'bg-purple-500'
 })
 
-const renderedBody = computed(() => md.render(props.issue.body || ''));
+// Sicher gerenderter Markdown-Text
+const renderedBody = computed(() => {
+  const raw = md.render(props.issue.body || '')
+  return DOMPurify.sanitize(raw)
+})
 </script>
 
 <template>
@@ -36,7 +41,7 @@ const renderedBody = computed(() => md.render(props.issue.body || ''));
       <div v-if="issue.assignee" class="flex items-center gap-2">
         <img
           :src="issue.assignee.avatar_url"
-          alt="avatar"
+          alt="Avatar of {{issue.assignee.login}}"
           class="w-8 h-8 rounded-full border"
         />
         <span class="text-sm text-gray-600">@{{ issue.assignee.login }}</span>
