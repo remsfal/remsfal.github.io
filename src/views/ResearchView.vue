@@ -2,9 +2,12 @@
 import Section from '@/components/Section.vue'
 import ThesisSection from '@/components/ThesisSection.vue'
 import TitleWidget from '@/components/TitleWidget.vue'
+
+
 </script>
 
 <template>
+  <div class="bg-white text-black dark:bg-black dark:text-white">
   <TitleWidget title="Forschung" />
 
   <Section title="Forschung an der HTW Berlin">
@@ -49,6 +52,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
   <Section title="Abschlussarbeiten im Studiengang Wirtschaftsinformatik">
     <ThesisSection />
   </Section>
+  </div>
 </template>
 
 <style scoped>
