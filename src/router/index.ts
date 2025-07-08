@@ -27,9 +27,10 @@ const router = createRouter({
     },
     {
       path: '/documentation',
-      redirect: '/docs/',
+      name: 'DocumentationRedirect',
+      component: EmptyComponent,
       beforeEnter() {
-        window.location.href = '/docs/'
+        window.location.href = 'http://localhost:5174/docs/'
       }
     },
     {
