@@ -1,10 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { defineComponent } from 'vue'
 import HomeView from '@/views/Landing.vue'
+
+const EmptyComponent = defineComponent({
+  name: 'EmptyComponent',
+  setup() {
+    return () => null
+  }
+})
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior() {
-    // always scroll to top
     return { top: 0 }
   },
   routes: [
@@ -20,7 +27,10 @@ const router = createRouter({
     },
     {
       path: '/documentation',
-      redirect: '/docs/'
+      redirect: '/docs/',
+      beforeEnter() {
+        window.location.href = '/docs/'
+      }
     },
     {
       path: '/support',
@@ -41,7 +51,7 @@ const router = createRouter({
       path: '/privacy',
       name: 'PrivacyView',
       component: () => import('../views/PrivacyView.vue')
-    },
+    }
   ]
 })
 

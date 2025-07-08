@@ -13,7 +13,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Forschung', link: 'https://remsfal.de/research', target: '_self'},
-      { text: 'Dokumentation', link: 'https://remsfal.de/research', target: '_self'},
+      { text: 'Dokumentation', link: '/docs/', target: '_self' },
       { text: 'Kostenlos testen', link: 'https://remsfal.online'}
     ],
 
