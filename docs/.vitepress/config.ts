@@ -12,9 +12,10 @@ export default defineConfig({
     logo: 'logo.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Forschung', link: 'https://remsfal.de/research', target: '_self'},
-      { text: 'Dokumentation', link: '/docs/', target: '_self' },
-      { text: 'Kostenlos testen', link: 'https://remsfal.online'}
+   
+        { text: 'Forschung', link: 'https://remsfal.de/research', target: '_self'},
+        { text: 'Dokumentation', link: process.env.VITE_DOCS_URL || '/docs/', target: '_self' },
+        { text: 'Kostenlos testen', link: 'https://remsfal.online'}
     ],
 
     sidebar: [

@@ -30,7 +30,7 @@ const router = createRouter({
       name: 'DocumentationRedirect',
       component: EmptyComponent,
       beforeEnter() {
-        window.location.href = 'http://localhost:5174/docs/'
+        window.location.href = import.meta.env.VITE_DOCS_URL
       }
     },
     {
