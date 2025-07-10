@@ -1,8 +1,8 @@
-// tailwind.config.cjs
-/** @type {import('tailwindcss').Config} */
-const plugin = require('tailwindcss-primeui');
+// tailwind.config.js
+import plugin from 'tailwindcss-primeui';
 
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
   darkMode: ['selector', '[class*="app-dark"]'],
   content: [
     './index.html',
