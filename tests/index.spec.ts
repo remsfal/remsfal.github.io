@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import router from '../src/router/index'
 import HomeView from '../src/views/Landing.vue'
@@ -19,6 +19,7 @@ class MockIntersectionObserver implements IntersectionObserver {
   }
 }
 
+// Set global IntersectionObserver mock
 global.IntersectionObserver = MockIntersectionObserver
 
 describe('Router basic test', () => {
@@ -71,7 +72,7 @@ describe('Router basic test', () => {
     // Save original window.location
     const originalLocation = window.location
 
-    // Override window.location.href with a writable property
+    // Mock window.location.href as writable
     Object.defineProperty(window, 'location', {
       configurable: true,
       writable: true,
