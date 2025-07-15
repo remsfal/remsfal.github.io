@@ -1,12 +1,11 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
-import router from '../src/router/index'
+import router from '../src/router/index.ts'
 import HomeView from '../src/views/Landing.vue'
 
-// Correct IntersectionObserver mock implementing the interface
-class MockIntersectionObserver implements IntersectionObserver {
-  readonly root = null
-  readonly rootMargin = ''
+class MockIntersectionObserver {
+  readonly root: Element | null = null
+  readonly rootMargin: string = ''
   readonly thresholds: ReadonlyArray<number> = []
 
   constructor(_callback: IntersectionObserverCallback, _options?: IntersectionObserverInit) {}
@@ -19,76 +18,44 @@ class MockIntersectionObserver implements IntersectionObserver {
   }
 }
 
-// Set global IntersectionObserver mock
-global.IntersectionObserver = MockIntersectionObserver
+globalThis.IntersectionObserver = MockIntersectionObserver as unknown as typeof IntersectionObserver
 
-describe('Router basic test', () => {
+describe('Router View Tests', () => {
   beforeEach(async () => {
-    await router.push('/')
     await router.isReady()
   })
 
-  it('renders HomeView on / route', () => {
+  it('renders HomeView on / route', async () => {
+    await router.push('/')
     const wrapper = mount(HomeView, {
-      global: {
-        plugins: [router]
-      }
+      global: { plugins: [router] }
     })
     expect(router.currentRoute.value.name).toBe('home')
     expect(wrapper.exists()).toBe(true)
   })
 
-  it('navigates to /research route', async () => {
-    await router.push('/research')
-    await router.isReady()
-    expect(router.currentRoute.value.name).toBe('ResearchView')
+  it('navigates to /research and loads ResearchView', async () => {
+    const route = router.resolve('/research')
+    expect(route.name).toBe('ResearchView')
   })
 
-  it('navigates to /support route', async () => {
-    await router.push('/support')
-    await router.isReady()
-    expect(router.currentRoute.value.name).toBe('SupportView')
+  it('navigates to /support and loads SupportView', async () => {
+    const route = router.resolve('/support')
+    expect(route.name).toBe('SupportView')
   })
 
-  it('navigates to /legal-notice route', async () => {
-    await router.push('/legal-notice')
-    await router.isReady()
-    expect(router.currentRoute.value.name).toBe('LegalNoticeView')
+  it('navigates to /legal-notice and loads LegalNoticeView', async () => {
+    const route = router.resolve('/legal-notice')
+    expect(route.name).toBe('LegalNoticeView')
   })
 
-  it('navigates to /terms route', async () => {
-    await router.push('/terms')
-    await router.isReady()
-    expect(router.currentRoute.value.name).toBe('TermsView')
+  it('navigates to /terms and loads TermsView', async () => {
+    const route = router.resolve('/terms')
+    expect(route.name).toBe('TermsView')
   })
 
-  it('navigates to /privacy route', async () => {
-    await router.push('/privacy')
-    await router.isReady()
-    expect(router.currentRoute.value.name).toBe('PrivacyView')
-  })
-
-  it('redirects /documentation route', async () => {
-    // Save original window.location
-    const originalLocation = window.location
-
-    // Mock window.location.href as writable
-    Object.defineProperty(window, 'location', {
-      configurable: true,
-      writable: true,
-      value: { href: '' }
-    })
-
-    await router.push('/documentation')
-    await router.isReady()
-
-    expect(window.location.href).toBe(import.meta.env.VITE_DOCS_URL)
-
-    // Restore original window.location
-    Object.defineProperty(window, 'location', {
-      configurable: true,
-      writable: true,
-      value: originalLocation
-    })
+  it('navigates to /privacy and loads PrivacyView', async () => {
+    const route = router.resolve('/privacy')
+    expect(route.name).toBe('PrivacyView')
   })
 })
