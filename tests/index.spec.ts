@@ -38,26 +38,34 @@ describe('Router basic test', () => {
     expect(router.currentRoute.value.name).toBe('home')
   }, 20000)
 
-  it('navigates to /documentation and triggers redirect', async () => {
+  it('navigates to /documentation and triggers redirect via href', async () => {
     const originalLocation = window.location
   
-    // @ts-ignore
-    delete window.location
+    const hrefSetter = vi.fn()
   
-    // Mock window.location
-    window.location = {
-      ...originalLocation,
-      href: '',
-    }
+    // Override window.location with a custom setter for href
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      value: {
+        ...originalLocation,
+        set href(value: string) {
+          hrefSetter(value)
+        },
+      },
+    })
   
     await router.push('/documentation')
     await router.isReady()
   
-    expect(window.location.href).toBe(import.meta.env.VITE_DOCS_URL)
+    expect(hrefSetter).toHaveBeenCalledWith(import.meta.env.VITE_DOCS_URL)
   
-    // Restore original window.location
-    window.location = originalLocation
-  }, 20000)
+    // Restore the original window.location
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      value: originalLocation,
+    })
+  })
+  
   
 
   it('renders HomeView component on "/" route', () => {
