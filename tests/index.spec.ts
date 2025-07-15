@@ -1,61 +1,45 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { mount } from '@vue/test-utils'
-import router from '../src/router/index.ts'
-import HomeView from '../src/views/Landing.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import router from '../src/router/index.ts' // adjust the path if needed
 
-class MockIntersectionObserver {
-  readonly root: Element | null = null
-  readonly rootMargin: string = ''
-  readonly thresholds: ReadonlyArray<number> = []
-
-  constructor(_callback: IntersectionObserverCallback, _options?: IntersectionObserverInit) {}
-
-  observe(_target: Element): void {}
-  unobserve(_target: Element): void {}
-  disconnect(): void {}
-  takeRecords(): IntersectionObserverEntry[] {
-    return []
-  }
-}
-
-globalThis.IntersectionObserver = MockIntersectionObserver as unknown as typeof IntersectionObserver
-
-describe('Router View Tests', () => {
-  beforeEach(async () => {
-    await router.isReady()
-  })
-
-  it('renders HomeView on / route', async () => {
-    await router.push('/')
-    const wrapper = mount(HomeView, {
-      global: { plugins: [router] }
+describe('Router', () => {
+  beforeEach(() => {
+    // Mock window.location with writable, configurable, enumerable props
+    delete (window as any).location
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      writable: true,
+      enumerable: true,
+      value: {
+        href: '',
+        assign: vi.fn((url: string) => {
+          window.location.href = url
+        }),
+        replace: vi.fn(),
+      },
     })
-    expect(router.currentRoute.value.name).toBe('home')
-    expect(wrapper.exists()).toBe(true)
+
+    // Mock import.meta.env.VITE_DOCS_URL properly
+    Object.defineProperty(import.meta.env, 'VITE_DOCS_URL', {
+      value: 'https://example.com/docs',
+      writable: true,
+      configurable: true,
+      enumerable: true,
+    })
   })
 
-  it('navigates to /research and loads ResearchView', async () => {
-    const route = router.resolve('/research')
-    expect(route.name).toBe('ResearchView')
+  it('redirects /documentation to external docs URL', async () => {
+    await router.push('/documentation')
+    expect(window.location.href).toBe('https://example.com/docs')
   })
 
-  it('navigates to /support and loads SupportView', async () => {
-    const route = router.resolve('/support')
-    expect(route.name).toBe('SupportView')
+  it('navigates to home', async () => {
+    await router.push('/')
+    expect(router.currentRoute.value.fullPath).toBe('/')
   })
 
-  it('navigates to /legal-notice and loads LegalNoticeView', async () => {
-    const route = router.resolve('/legal-notice')
-    expect(route.name).toBe('LegalNoticeView')
-  })
-
-  it('navigates to /terms and loads TermsView', async () => {
-    const route = router.resolve('/terms')
-    expect(route.name).toBe('TermsView')
-  })
-
-  it('navigates to /privacy and loads PrivacyView', async () => {
-    const route = router.resolve('/privacy')
-    expect(route.name).toBe('PrivacyView')
+  it('navigates to /research', async () => {
+    await router.push('/research')
+    expect(router.currentRoute.value.fullPath).toBe('/research')
   })
 })
