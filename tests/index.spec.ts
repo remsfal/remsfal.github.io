@@ -1,21 +1,30 @@
-import { describe, it, expect, beforeEach, beforeAll, afterAll } from 'vitest'
+import { describe, it, expect, beforeEach, beforeAll, afterAll, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import router from '../src/router/index'
 import HomeView from '../src/views/Landing.vue'
 
-// Mock IntersectionObserver globally for these tests
+// 🛠️ Properly Mock IntersectionObserver
 beforeAll(() => {
   class IntersectionObserverMock {
+    root: null = null
+    rootMargin: string = ''
+    thresholds: ReadonlyArray<number> = []
+
     constructor(callback: IntersectionObserverCallback) {}
     observe() {}
     unobserve() {}
     disconnect() {}
+    takeRecords(): IntersectionObserverEntry[] {
+      return []
+    }
   }
-  global.IntersectionObserver = IntersectionObserverMock as any
+
+  globalThis.IntersectionObserver = IntersectionObserverMock as any
 })
 
+// 🧼 Clean up after all
 afterAll(() => {
-  delete (global as any).IntersectionObserver
+  delete (globalThis as any).IntersectionObserver
 })
 
 describe('Router basic test', () => {
@@ -28,7 +37,7 @@ describe('Router basic test', () => {
     await router.push('/')
     await router.isReady()
     expect(router.currentRoute.value.name).toBe('home')
-  }, 20000) // 20 second timeout
+  }, 20000)
 
   it('renders HomeView component on "/" route', () => {
     const wrapper = mount(HomeView, {
@@ -38,11 +47,11 @@ describe('Router basic test', () => {
     })
     expect(wrapper.exists()).toBe(true)
     expect(router.currentRoute.value.name).toBe('home')
-  }, 20000) // 20 second timeout
+  }, 20000)
 
   it('navigates to /research route', async () => {
     await router.push('/research')
     await router.isReady()
     expect(router.currentRoute.value.name).toBe('ResearchView')
-  }, 20000) // 20 second timeout
+  }, 20000)
 })
