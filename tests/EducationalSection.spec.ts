@@ -4,15 +4,23 @@ import EducationalSection from '@/components/EducationalSection.vue'
 
 beforeAll(() => {
   global.IntersectionObserver = class {
-    constructor() {}
-    observe() {}
-    unobserve() {}
+    root: Element | null = null
+    rootMargin: string = ''
+    thresholds: ReadonlyArray<number> = []
+
+    constructor(callback: IntersectionObserverCallback, options?: IntersectionObserverInit) {}
+
+    observe(target: Element) {}
+    unobserve(target: Element) {}
     disconnect() {}
+    takeRecords(): IntersectionObserverEntry[] {
+      return []
+    }
   }
 })
 
 describe('EducationalSection', () => {
-  let wrapper: VueWrapper
+  let wrapper: VueWrapper<any>
 
   beforeEach(() => {
     wrapper = mount(EducationalSection)
