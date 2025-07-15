@@ -38,6 +38,28 @@ describe('Router basic test', () => {
     expect(router.currentRoute.value.name).toBe('home')
   }, 20000)
 
+  it('navigates to /documentation and triggers redirect', async () => {
+    const originalLocation = window.location
+  
+    // @ts-ignore
+    delete window.location
+  
+    // Mock window.location
+    window.location = {
+      ...originalLocation,
+      href: '',
+    }
+  
+    await router.push('/documentation')
+    await router.isReady()
+  
+    expect(window.location.href).toBe(import.meta.env.VITE_DOCS_URL)
+  
+    // Restore original window.location
+    window.location = originalLocation
+  }, 20000)
+  
+
   it('renders HomeView component on "/" route', () => {
     const wrapper = mount(HomeView, {
       global: {
