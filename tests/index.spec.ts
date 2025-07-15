@@ -1,45 +1,91 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { createRouter, createWebHistory } from 'vue-router'
-import router from '../src/router/index.ts' // adjust the path if needed
+import { describe, it, expect, beforeEach, beforeAll } from 'vitest'
+import { mount } from '@vue/test-utils'
+import router from '../src/router/index.ts'
+import HomeView from '../src/views/Landing.vue'
 
-describe('Router', () => {
-  beforeEach(() => {
-    // Mock window.location with writable, configurable, enumerable props
+class MockIntersectionObserver implements IntersectionObserver {
+  readonly root: Element | null = null
+  readonly rootMargin: string = ''
+  readonly thresholds: ReadonlyArray<number> = []
+
+  constructor(_callback: IntersectionObserverCallback, _options?: IntersectionObserverInit) {}
+
+  observe(_target: Element): void {}
+  unobserve(_target: Element): void {}
+  disconnect(): void {}
+  takeRecords(): IntersectionObserverEntry[] {
+    return []
+  }
+}
+
+global.IntersectionObserver = MockIntersectionObserver
+
+beforeAll(() => {
+  window.scrollTo = () => {}
+
+  // // Mock import.meta.env to include your docs URL
+  // // @ts-ignore
+  // import.meta.env = {
+  //   ...import.meta.env,
+  //   VITE_DOCS_URL: 'http://localhost:5174/docs/',
+  // }
+})
+
+describe('Router basic test', () => {
+  beforeEach(async () => {
+    let href = ''
+
+    // Remove window.location so we can redefine it
     delete (window as any).location
+
+    // Mock window.location with getter/setter for href as string
     Object.defineProperty(window, 'location', {
       configurable: true,
-      writable: true,
       enumerable: true,
-      value: {
-        href: '',
-        assign: vi.fn((url: string) => {
-          window.location.href = url
-        }),
-        replace: vi.fn(),
+      get() {
+        return {
+          get href() {
+            return href
+          },
+          set href(url: string) {
+            href = url
+          },
+        }
+      },
+      set(value) {
+        href = value
       },
     })
 
-    // Mock import.meta.env.VITE_DOCS_URL properly
-    Object.defineProperty(import.meta.env, 'VITE_DOCS_URL', {
-      value: 'https://example.com/docs',
-      writable: true,
-      configurable: true,
-      enumerable: true,
-    })
+    await router.push('/')
+    await router.isReady()
   })
 
   it('redirects /documentation to external docs URL', async () => {
     await router.push('/documentation')
-    expect(window.location.href).toBe('https://example.com/docs')
+    await new Promise((resolve) => setTimeout(resolve, 0)) // wait a tick if needed
+
+    expect(window.location.href).toBe(import.meta.env.VITE_DOCS_URL)
   })
 
   it('navigates to home', async () => {
     await router.push('/')
-    expect(router.currentRoute.value.fullPath).toBe('/')
+    expect(router.currentRoute.value.name).toBe('home')
+  })
+
+  it('renders HomeView on / route', () => {
+    const wrapper = mount(HomeView, {
+      global: {
+        plugins: [router],
+      },
+    })
+
+    expect(wrapper.exists()).toBe(true)
+    expect(router.currentRoute.value.name).toBe('home')
   })
 
   it('navigates to /research', async () => {
     await router.push('/research')
-    expect(router.currentRoute.value.fullPath).toBe('/research')
+    expect(router.currentRoute.value.name).toBe('ResearchView')
   })
 })
