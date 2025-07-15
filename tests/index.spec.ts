@@ -1,25 +1,22 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, beforeAll, afterAll } from 'vitest'
 import { mount } from '@vue/test-utils'
-import router from '../src/router/index.ts' 
+import router from '../src/router/index'
 import HomeView from '../src/views/Landing.vue'
 
-// Fully typed IntersectionObserver mock for TS safety
-class MockIntersectionObserver implements IntersectionObserver {
-  readonly root: Element | null = null
-  readonly rootMargin: string = ''
-  readonly thresholds: ReadonlyArray<number> = []
-
-  constructor(_callback: IntersectionObserverCallback, _options?: IntersectionObserverInit) {}
-
-  observe(_target: Element): void {}
-  unobserve(_target: Element): void {}
-  disconnect(): void {}
-  takeRecords(): IntersectionObserverEntry[] {
-    return []
+// Mock IntersectionObserver globally for these tests
+beforeAll(() => {
+  class IntersectionObserverMock {
+    constructor(callback: IntersectionObserverCallback) {}
+    observe() {}
+    unobserve() {}
+    disconnect() {}
   }
-}
+  global.IntersectionObserver = IntersectionObserverMock as any
+})
 
-global.IntersectionObserver = MockIntersectionObserver
+afterAll(() => {
+  delete (global as any).IntersectionObserver
+})
 
 describe('Router basic test', () => {
   beforeEach(async () => {
@@ -27,14 +24,25 @@ describe('Router basic test', () => {
     await router.isReady()
   })
 
-  it('renders HomeView on / route', () => {
+  it('navigates to home route "/"', async () => {
+    await router.push('/')
+    await router.isReady()
+    expect(router.currentRoute.value.name).toBe('home')
+  })
+
+  it('renders HomeView component on "/" route', () => {
     const wrapper = mount(HomeView, {
       global: {
-        plugins: [router]
-      }
+        plugins: [router],
+      },
     })
-
-    expect(router.currentRoute.value.name).toBe('home')
     expect(wrapper.exists()).toBe(true)
+    expect(router.currentRoute.value.name).toBe('home')
+  })
+
+  it('navigates to /research route', async () => {
+    await router.push('/research')
+    await router.isReady()
+    expect(router.currentRoute.value.name).toBe('ResearchView')
   })
 })
