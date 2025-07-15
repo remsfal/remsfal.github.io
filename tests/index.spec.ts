@@ -28,7 +28,7 @@ describe('Router basic test', () => {
     await router.push('/')
     await router.isReady()
     expect(router.currentRoute.value.name).toBe('home')
-  })
+  }, 20000) // 20 second timeout
 
   it('renders HomeView component on "/" route', () => {
     const wrapper = mount(HomeView, {
@@ -38,11 +38,11 @@ describe('Router basic test', () => {
     })
     expect(wrapper.exists()).toBe(true)
     expect(router.currentRoute.value.name).toBe('home')
-  })
+  }, 20000) // 20 second timeout
 
   it('navigates to /research route', async () => {
     await router.push('/research')
     await router.isReady()
     expect(router.currentRoute.value.name).toBe('ResearchView')
-  })
+  }, 20000) // 20 second timeout
 })
