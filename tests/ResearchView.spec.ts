@@ -1,10 +1,9 @@
 import { mount, VueWrapper } from '@vue/test-utils'
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest' 
 import ResearchView from '@/views/ResearchView.vue'
 import ThesisCard from '@/components/ThesisCard.vue'
 
 
-// Mock fetchIssues to return dummy data
 vi.mock('@/services/GitHubService.ts', async () => {
   const actual = await vi.importActual<any>('@/services/GitHubService.ts')
   return {
@@ -31,7 +30,7 @@ vi.mock('@/services/GitHubService.ts', async () => {
 })
 
 describe('ResearchView', () => {
-  let wrapper: VueWrapper
+  let wrapper: VueWrapper<any> 
 
   beforeEach(async () => {
     wrapper = mount(ResearchView)
@@ -89,15 +88,14 @@ describe('ResearchView', () => {
       }
     }
 
-    const mockFetch = (await import('@/services/GitHubService.ts')).default
-    mockFetch.mockResolvedValueOnce([assigneeIssue])
+    const fetchIssues = (await import('@/services/GitHubService.ts')).default as ReturnType<typeof vi.fn> 
+    fetchIssues.mockResolvedValueOnce([assigneeIssue])
 
     const wrapper = mount(ResearchView)
     await new Promise(resolve => setTimeout(resolve, 10))
 
     const card = wrapper.findComponent(ThesisCard)
-
-    const assigneeWrapper = card.find('.items-center.gap-2') // Zielt eindeutig auf den Assignee-Block
+    const assigneeWrapper = card.find('.items-center.gap-2')
 
     expect(assigneeWrapper.exists()).toBe(true)
 
@@ -107,7 +105,6 @@ describe('ResearchView', () => {
     const username = assigneeWrapper.find('span')
     expect(username.text()).toBe('@testuser')
   })
-
 
   it('should open correct link for details', () => {
     const link = wrapper.find('a[href="https://github.com/example/issue1"]')
@@ -124,7 +121,7 @@ describe('ResearchView', () => {
   it('should log an error when fetchIssues fails', async () => {
     const mockConsoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
 
-    const fetchIssues = (await import('@/services/GitHubService.ts')).default
+    const fetchIssues = (await import('@/services/GitHubService.ts')).default as ReturnType<typeof vi.fn> 
     fetchIssues.mockRejectedValueOnce(new Error('Network error'))
 
     const wrapper = mount(ResearchView)

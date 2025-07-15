@@ -3,7 +3,6 @@ import { mount } from '@vue/test-utils'
 import router from '../src/router/index'
 import HomeView from '../src/views/Landing.vue'
 
-// 🛠️ Properly Mock IntersectionObserver
 beforeAll(() => {
   class IntersectionObserverMock {
     root: null = null
@@ -22,7 +21,7 @@ beforeAll(() => {
   globalThis.IntersectionObserver = IntersectionObserverMock as any
 })
 
-// 🧼 Clean up after all
+
 afterAll(() => {
   delete (globalThis as any).IntersectionObserver
 })
