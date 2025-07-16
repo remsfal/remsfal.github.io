@@ -4,20 +4,29 @@ import EducationalSection from '@/components/EducationalSection.vue'
 
 beforeAll(() => {
   global.IntersectionObserver = class {
-    root: Element | null = null
-    rootMargin: string = ''
-    thresholds: ReadonlyArray<number> = []
+    root: Element | null = null;
+    rootMargin: string = '';
+    thresholds: ReadonlyArray<number> = [];
 
-    constructor(callback: IntersectionObserverCallback, options?: IntersectionObserverInit) {}
-
-    observe(target: Element) {}
-    unobserve(target: Element) {}
-    disconnect() {}
-    takeRecords(): IntersectionObserverEntry[] {
-      return []
+    observe(_target: Element) {
+      void _target; // Prevent 'empty method' and 'unused parameter' warnings
     }
-  }
-})
+
+    unobserve(_target: Element) {
+      void _target; // Same here
+    }
+
+    disconnect() {
+      void 0; // No-op to prevent empty method warning
+    }
+
+    takeRecords(): IntersectionObserverEntry[] {
+      return [];
+    }
+  };
+});
+
+
 
 describe('EducationalSection', () => {
   let wrapper: VueWrapper<any>

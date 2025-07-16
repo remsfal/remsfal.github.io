@@ -5,21 +5,30 @@ import HomeView from '../src/views/Landing.vue'
 
 beforeAll(() => {
   class IntersectionObserverMock {
-    root: null = null
-    rootMargin: string = ''
-    thresholds: ReadonlyArray<number> = []
+    root: null = null;
+    rootMargin: string = '';
+    thresholds: ReadonlyArray<number> = [];
 
-    constructor(callback: IntersectionObserverCallback) {}
-    observe() {}
-    unobserve() {}
-    disconnect() {}
+    observe(_target?: Element) {
+      void _target;
+    }
+
+    unobserve(_target?: Element) {
+      void _target;
+    }
+
+    disconnect() {
+      void 0;
+    }
+
     takeRecords(): IntersectionObserverEntry[] {
-      return []
+      return [];
     }
   }
 
-  globalThis.IntersectionObserver = IntersectionObserverMock as any
-})
+  globalThis.IntersectionObserver = IntersectionObserverMock as any;
+});
+
 
 
 afterAll(() => {
