@@ -2,17 +2,36 @@ import { mount, VueWrapper } from '@vue/test-utils'
 import { describe, it, expect, beforeEach, beforeAll } from 'vitest'
 import EducationalSection from '@/components/EducationalSection.vue'
 
+
 beforeAll(() => {
   global.IntersectionObserver = class {
-    constructor() {}
-    observe() {}
-    unobserve() {}
-    disconnect() {}
-  }
-})
+    root: Element | null = null;
+    rootMargin: string = '';
+    thresholds: ReadonlyArray<number> = [];
+
+    observe(_target: Element) {
+      // intentionally left blank to mock functionality
+    }
+
+    unobserve(_target: Element) {
+      // intentionally left blank to mock functionality
+    }
+
+    disconnect() {
+      // no-op
+    }
+
+    takeRecords(): IntersectionObserverEntry[] {
+      return [];
+    }
+  };
+});
+
+
+
 
 describe('EducationalSection', () => {
-  let wrapper: VueWrapper
+  let wrapper: VueWrapper<any>
 
   beforeEach(() => {
     wrapper = mount(EducationalSection)

@@ -1,10 +1,16 @@
+// tailwind.config.js
+import plugin from 'tailwindcss-primeui';
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: ['selector', '[class*="app-dark"]'],
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require('tailwindcss-primeui')],
+  content: [
+    './index.html',
+    './src/**/*.{vue,js,ts,jsx,tsx}',
+    './docs/**/*.{vue,js,ts,jsx,tsx,md}'
+  ],
   theme: {
+    extend: {},
     screens: {
       sm: '576px',
       md: '768px',
@@ -13,4 +19,5 @@ module.exports = {
       '2xl': '1920px',
     },
   },
+  plugins: [plugin],
 };
