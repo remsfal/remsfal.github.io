@@ -10,15 +10,15 @@ beforeAll(() => {
     thresholds: ReadonlyArray<number> = [];
 
     observe(_target?: Element) {
-      void _target;
+      // mock observe
     }
 
     unobserve(_target?: Element) {
-      void _target;
+      // mock unobserve
     }
 
     disconnect() {
-      void 0;
+      // mock disconnect
     }
 
     takeRecords(): IntersectionObserverEntry[] {
@@ -28,6 +28,7 @@ beforeAll(() => {
 
   globalThis.IntersectionObserver = IntersectionObserverMock as any;
 });
+
 
 
 

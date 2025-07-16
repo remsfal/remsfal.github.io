@@ -2,6 +2,7 @@ import { mount, VueWrapper } from '@vue/test-utils'
 import { describe, it, expect, beforeEach, beforeAll } from 'vitest'
 import EducationalSection from '@/components/EducationalSection.vue'
 
+
 beforeAll(() => {
   global.IntersectionObserver = class {
     root: Element | null = null;
@@ -9,15 +10,15 @@ beforeAll(() => {
     thresholds: ReadonlyArray<number> = [];
 
     observe(_target: Element) {
-      void _target; // Prevent 'empty method' and 'unused parameter' warnings
+      // intentionally left blank to mock functionality
     }
 
     unobserve(_target: Element) {
-      void _target; // Same here
+      // intentionally left blank to mock functionality
     }
 
     disconnect() {
-      void 0; // No-op to prevent empty method warning
+      // no-op
     }
 
     takeRecords(): IntersectionObserverEntry[] {
@@ -25,6 +26,7 @@ beforeAll(() => {
     }
   };
 });
+
 
 
 
