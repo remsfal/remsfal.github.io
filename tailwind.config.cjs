@@ -19,5 +19,5 @@ export default {
       '2xl': '1920px',
     },
   },
-  plugins: [plugin],
+  plugins: [require('tailwindcss-primeui/v4')],
 };
