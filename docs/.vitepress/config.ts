@@ -1,11 +1,23 @@
 import { defineConfig } from 'vitepress'
+import dotenv from 'dotenv'
 import { resolve } from 'path'
+
+// load environment variables
+const mode = process.env.NODE_ENV || 'production'
+dotenv.config({
+  path: resolve(__dirname, `../../.env.${mode}`),
+})
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: ' REMSFAL Dokumentation',
   description: 'REMSFAL Dokumentation',
   lang: 'de-DE',
+  vite: {
+    define: {
+      __MODE__: JSON.stringify(mode),
+    }
+  },
   outDir: resolve(__dirname, '../../dist/docs'),
   base: '/docs',
   themeConfig: {
@@ -14,13 +26,16 @@ export default defineConfig({
     nav: [
       {
         text: 'Forschung',
-        link: process.env.VITE_DOCS_URL || 'http://localhost:5173/research',
+        link: process.env.VITE_RESEARCH_URL,
         target: '_self',
       },
-      { text: 'Dokumentation', link: process.env.VITE_DOCS_URL || 'http://localhost:5174/docs/', target: '_self' },
+      {
+        text: 'Dokumentation',
+        link: process.env.VITE_DOCS_URL,
+        target: '_self' },
       {
         text: 'Kostenlos testen',
-        link: process.env.VITE_Kostenlos_testen_URL || 'https://remsfal.online',
+        link: process.env.VITE_PLATFORM_URL,
       },
     ],
 

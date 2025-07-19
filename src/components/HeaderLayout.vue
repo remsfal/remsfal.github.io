@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Button from 'primevue/button'
+const platformUrl: string = `${import.meta.env.VITE_PLATFORM_URL}/api/v1/authentication/login`
 </script>
 
 <template>
@@ -39,7 +40,7 @@ import Button from 'primevue/button'
       </ul>
       <div class="flex border-t lg:border-t-0 border-surface py-4 lg:py-0 mt-4 lg:mt-0 gap-2">
         <Button pt:hover="" class="try-button" label="Kostenlos testen" as="a"
-                href="https://remsfal.online/api/v1/authentication/login" rounded />
+                :href="platformUrl" rounded />
       </div>
     </div>
   </div>
