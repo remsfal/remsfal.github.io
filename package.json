@@ -57,7 +57,7 @@
     "sass": "^1.89.2",
     "tailwindcss": "^4.1.11",
     "tailwindcss-primeui": "^0.6.1",
-    "typescript": "^5.8.3",
+    "typescript": "^5.9.2",
     "vite": "^6.3.5",
     "vite-plugin-vue-devtools": "^7.7.6",
     "vitepress": "^1.6.3",
