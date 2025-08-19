@@ -19,7 +19,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@primevue/themes": "^4.3.5",
+    "@primevue/themes": "^4.3.7",
     "dompurify": "^3.2.6",
     "dotenv": "^17.2.0",
     "markdown-it": "^14.1.0",
