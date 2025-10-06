@@ -54,7 +54,7 @@
     "npm-run-all2": "^8.0.2",
     "postcss": "^8.5.6",
     "prettier": "^3.5.3",
-    "sass": "^1.92.1",
+    "sass": "^1.93.2",
     "tailwindcss": "^4.1.13",
     "tailwindcss-primeui": "^0.6.1",
     "typescript": "^5.9.2",
