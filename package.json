@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.3.9",
-    "dompurify": "^3.2.6",
+    "dompurify": "^3.2.7",
     "dotenv": "^17.2.3",
     "markdown-it": "^14.1.0",
     "primeicons": "^7.0.0",
