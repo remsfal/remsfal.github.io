@@ -11,7 +11,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
   <TitleWidget title="Forschung" />
 
   <Section title="Forschung an der HTW Berlin">
-    <img alt="HTW Berlin logo" src="@/assets/htw-berlin-logo.svg" class="float-right p-2 htw-logo" />
+    <img alt="HTW Berlin logo" src="@/assets/htw-berlin-logo.svg" class="float-right p-2 h-[230px] ml-[5px] mr-[50px] mb-[3px] lg:ml-[1px] lg:mr-[1px]" />
     <p>
       REMSFAL wurde 2023 von
       <a
@@ -58,17 +58,4 @@ href="https://www.htw-berlin.de/forschung/forschungsprofil/forschungscluster/clu
   </div>
 </template>
 
-<style scoped>
-.htw-logo {
-  height: 230px;
-  margin-left: 5px;
-  margin-right: 50px;
-  margin-bottom: 3px;
-}
-@media screen and (max-width: 1024px) {
-  .htw-logo {
-    margin-left: 1px;
-    margin-right: 1px;
-  }
-}
-</style>
+

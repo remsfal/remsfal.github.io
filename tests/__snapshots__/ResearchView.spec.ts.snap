@@ -1,25 +1,25 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ResearchView > matches snapshot 1`] = `
-"<div data-v-53ee1ad1="" class="bg-white text-black dark:bg-black dark:text-white">
-  <div data-v-f8d2ac06="" data-v-53ee1ad1="" class="flex flex-col pt-6 px-6 lg:px-20 overflow-hidden title-widget">
+"<div class="bg-white text-black dark:bg-black dark:text-white">
+  <div data-v-f8d2ac06="" class="flex flex-col pt-6 px-6 lg:px-20 overflow-hidden title-widget">
     <div data-v-f8d2ac06="" class="mx-6 md:mx-20 mt-0 md:mt-6">
       <h1 data-v-f8d2ac06="" class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">Forschung</h1>
     </div>
   </div>
-  <div data-v-33107760="" data-v-53ee1ad1="" id="legal" class="py-6 px-6 lg:px-20 mx-0 my-12 lg:mx-20">
+  <div data-v-33107760="" id="legal" class="py-6 px-6 lg:px-20 mx-0 my-12 lg:mx-20">
     <!-- Titel zentriert -->
     <div data-v-33107760="" class="text-3xl font-bold text-left mb-8 ml-4">Forschung an der HTW Berlin</div><!-- Inhalt -->
-    <div data-v-33107760="" class="section-content [&amp;>p]:text-lg [&amp;>p]:m-8 [&amp;>h3]:font-semibold [&amp;>h3]:text-xl [&amp;>h3]:ml-8 [&amp;>h3]:-mb-4 [&amp;>h3:first-child]:mt-6"><img data-v-53ee1ad1="" alt="HTW Berlin logo" src="/src/assets/htw-berlin-logo.svg" class="float-right p-2 htw-logo">
-      <p data-v-53ee1ad1=""> REMSFAL wurde 2023 von <a data-v-53ee1ad1="" href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" class="underline hover:decoration-green-600" target="_blank"> Prof. Dr.-Ing. Alexander Stanik </a> als interdisziplinäres wissenschaftliches Open Source Forschungsprojekt gegründet und konzentriert sich auf die Entwicklung skalierbarer Architekturen und Technologien für verteilte und parallele Informationssysteme in der Immobilienwirtschaft. Ziel des Projektes ist die Digitalisierung von Hausverwaltungen durch innovative Verwaltungs- und Immobiliensoftware voranzutreiben. Ein besonderer Fokus liegt dabei auf der Optimierung von Mängelmanagement-Prozessen und der Implementierung nachhaltiger Strategien zur Reduzierung von CO<sub data-v-53ee1ad1="">2</sub>-Emissionen in der Gebäudebewirtschaftung. Durch die Erforschung und Erprobung neuer Technologien sollen Prozesse zur Liegenschaftsverwaltung effizienter gestaltet und gleichzeitig ökologische Aspekte berücksichtigt werden. </p>
-      <p data-v-53ee1ad1=""> Das REMSFAL Projekt ist mehr als eine Open Source Initiative und konzentriert sich unter der Leitung von <a data-v-53ee1ad1="" href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" class="underline hover:decoration-green-600" target="_blank"> Prof. Dr.-Ing. Alexander Stanik von der Hochschule für Technik und Wirtschaft (HTW) Berlin </a> ebenso auf den Einsatz in der Forschung und der Lehre. Studierende erhalten mit diesem Projekt die Möglichkeit eigene kreative Ideen mit innovativen Technologien und hohem Praxisbezug sowie einer Vielfalt an Anwendungskomplexitäten der Wirtschaftsinformatik zu realisieren. Mit dem Themenschwerpunkt auf Entwicklung und Erprobung neuer Technologien und Anwendungen für nachhaltige und klimagerechte Gebäudebewirtschaftung ist dieses Projekt seit 2024 auch Teil des Forschungsclusters <a data-v-53ee1ad1="" href="https://www.htw-berlin.de/forschung/forschungsprofil/forschungscluster/cluster/?eid=23" class="underline hover:decoration-green-600" target="_blank"> Klimagerechte Energieversorgungssysteme und energieeffiziente Gebäude (KEG) </a> der HTW Berlin. </p>
+    <div data-v-33107760="" class="section-content [&amp;>p]:text-lg [&amp;>p]:m-8 [&amp;>h3]:font-semibold [&amp;>h3]:text-xl [&amp;>h3]:ml-8 [&amp;>h3]:-mb-4 [&amp;>h3:first-child]:mt-6"><img alt="HTW Berlin logo" src="/src/assets/htw-berlin-logo.svg" class="float-right p-2 h-[230px] ml-[5px] mr-[50px] mb-[3px] lg:ml-[1px] lg:mr-[1px]">
+      <p> REMSFAL wurde 2023 von <a href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" class="underline hover:decoration-green-600" target="_blank"> Prof. Dr.-Ing. Alexander Stanik </a> als interdisziplinäres wissenschaftliches Open Source Forschungsprojekt gegründet und konzentriert sich auf die Entwicklung skalierbarer Architekturen und Technologien für verteilte und parallele Informationssysteme in der Immobilienwirtschaft. Ziel des Projektes ist die Digitalisierung von Hausverwaltungen durch innovative Verwaltungs- und Immobiliensoftware voranzutreiben. Ein besonderer Fokus liegt dabei auf der Optimierung von Mängelmanagement-Prozessen und der Implementierung nachhaltiger Strategien zur Reduzierung von CO<sub>2</sub>-Emissionen in der Gebäudebewirtschaftung. Durch die Erforschung und Erprobung neuer Technologien sollen Prozesse zur Liegenschaftsverwaltung effizienter gestaltet und gleichzeitig ökologische Aspekte berücksichtigt werden. </p>
+      <p> Das REMSFAL Projekt ist mehr als eine Open Source Initiative und konzentriert sich unter der Leitung von <a href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" class="underline hover:decoration-green-600" target="_blank"> Prof. Dr.-Ing. Alexander Stanik von der Hochschule für Technik und Wirtschaft (HTW) Berlin </a> ebenso auf den Einsatz in der Forschung und der Lehre. Studierende erhalten mit diesem Projekt die Möglichkeit eigene kreative Ideen mit innovativen Technologien und hohem Praxisbezug sowie einer Vielfalt an Anwendungskomplexitäten der Wirtschaftsinformatik zu realisieren. Mit dem Themenschwerpunkt auf Entwicklung und Erprobung neuer Technologien und Anwendungen für nachhaltige und klimagerechte Gebäudebewirtschaftung ist dieses Projekt seit 2024 auch Teil des Forschungsclusters <a href="https://www.htw-berlin.de/forschung/forschungsprofil/forschungscluster/cluster/?eid=23" class="underline hover:decoration-green-600" target="_blank"> Klimagerechte Energieversorgungssysteme und energieeffiziente Gebäude (KEG) </a> der HTW Berlin. </p>
     </div>
   </div>
-  <div data-v-33107760="" data-v-53ee1ad1="" id="legal" class="py-6 px-6 lg:px-20 mx-0 my-12 lg:mx-20">
+  <div data-v-33107760="" id="legal" class="py-6 px-6 lg:px-20 mx-0 my-12 lg:mx-20">
     <!-- Titel zentriert -->
     <div data-v-33107760="" class="text-3xl font-bold text-left mb-8 ml-4">Abschlussarbeiten im Studiengang Wirtschaftsinformatik</div><!-- Inhalt -->
     <div data-v-33107760="" class="section-content [&amp;>p]:text-lg [&amp;>p]:m-8 [&amp;>h3]:font-semibold [&amp;>h3]:text-xl [&amp;>h3]:ml-8 [&amp;>h3]:-mb-4 [&amp;>h3:first-child]:mt-6">
-      <div data-v-53ee1ad1="" class="py-12 px-4">
+      <div class="py-12 px-4">
         <!-- Controls Section -->
         <div class="flex flex-col md:flex-row gap-5 mb-8">
           <!-- Suche -->
