@@ -42,7 +42,8 @@ import TitleWidget from '@/components/TitleWidget.vue'
       Eine Wohnung ist ein umschlossener Raum oder eine Flucht aus mehreren Räumen innerhalb eines Gebäudes,
       die zu Wohnzwecken laut Baugenehmigung verwendet werden darf.
       Eine Wohnung besteht daher aus Wohn- und Nutzfläche, die sich nach der
-      <a href="https://www.gesetze-im-internet.de/woflv/BJNR234610003.html"
+      <a
+href="https://www.gesetze-im-internet.de/woflv/BJNR234610003.html"
          class="underline hover:decoration-green-600" target="_blank">
         Verordnung zur Berechnung der Wohnfläche (Wohnflächenverordnung - WoFlV)
       </a>
@@ -53,7 +54,8 @@ import TitleWidget from '@/components/TitleWidget.vue'
       Ein Nebennutzungsraum oder auch Zubehörraum ist eine meist abschließbare und durch feste Wände umschlossene
       Abstellmöglichkeit innerhalb eines Gebäudes, die ausschließlich aus Nutzfläche besteht
       und nicht zur Wohnfläche gehört entsprechend der
-      <a href="https://www.gesetze-im-internet.de/woflv/BJNR234610003.html"
+      <a
+href="https://www.gesetze-im-internet.de/woflv/BJNR234610003.html"
          class="underline hover:decoration-green-600" target="_blank">
         Verordnung zur Berechnung der Wohnfläche (Wohnflächenverordnung - WoFlV)
       </a>.
@@ -64,7 +66,8 @@ import TitleWidget from '@/components/TitleWidget.vue'
       Ein Gewerbe bestehend aus mehreren Gewerberäumen ist ein Laden oder ein Zusammenschluss mehrerer Räume innerhalb eines Gebäudes,
       die ausschließlich oder vorwiegend der Unterbringung von Industrie- oder Gewerbebetrieben dient.
       Gewerberäume werden nach der
-      <a href="https://www.dinmedia.de/de/norm/din-277/342217323"
+      <a
+href="https://www.dinmedia.de/de/norm/din-277/342217323"
          class="underline hover:decoration-green-600" target="_blank">
         DIN 277:2021-08 Norm für Grundflächen und Rauminhalte im Hochbau
       </a>
@@ -79,7 +82,8 @@ import TitleWidget from '@/components/TitleWidget.vue'
   <div class="github-section">
     <p class="text-base">
       Weitere Details finden Sie in unseren
-      <a href="https://github.com/remsfal/remsfal/issues"
+      <a
+href="https://github.com/remsfal/remsfal/issues"
          class="underline hover:decoration-green-600" target="_blank">
         GitHub Issues
       </a>
