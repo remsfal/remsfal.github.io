@@ -54,6 +54,8 @@ jobs:
 
   check-branches:
     name: "Check Pull Request Conditions"
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
