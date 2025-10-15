@@ -33,8 +33,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
     <p>Haben Sie eine Frage zu remsfal?</p>
     <p>
       Suchen Sie eine Antwort auf
-      <a
-href="https://stackoverflow.com/questions/tagged/remsfal"
+      <a href="https://stackoverflow.com/questions/tagged/remsfal"
          class="underline hover:decoration-green-600" target="_blank">
         Stack Overflow
       </a>

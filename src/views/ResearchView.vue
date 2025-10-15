@@ -14,8 +14,7 @@ import TitleWidget from '@/components/TitleWidget.vue'
     <img alt="HTW Berlin logo" src="@/assets/htw-berlin-logo.svg" class="float-right p-2 htw-logo" />
     <p>
       REMSFAL wurde 2023 von
-      <a
-href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708"
+      <a href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708"
          class="underline hover:decoration-green-600" target="_blank">
         Prof. Dr.-Ing. Alexander Stanik
       </a>
@@ -31,8 +30,7 @@ href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708"
     </p>
     <p>
       Das REMSFAL Projekt ist mehr als eine Open Source Initiative und konzentriert sich unter der Leitung von
-      <a
-href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708"
+      <a href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708"
          class="underline hover:decoration-green-600" target="_blank">
         Prof. Dr.-Ing. Alexander Stanik von der Hochschule für Technik und Wirtschaft (HTW) Berlin
       </a>
@@ -43,8 +41,7 @@ href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708"
       zu realisieren. Mit dem Themenschwerpunkt auf Entwicklung und Erprobung neuer Technologien und Anwendungen
       für nachhaltige und klimagerechte Gebäudebewirtschaftung ist dieses Projekt seit 2024 auch Teil
       des Forschungsclusters
-      <a
-href="https://www.htw-berlin.de/forschung/forschungsprofil/forschungscluster/cluster/?eid=23"
+      <a href="https://www.htw-berlin.de/forschung/forschungsprofil/forschungscluster/cluster/?eid=23"
          class="underline hover:decoration-green-600" target="_blank">
         Klimagerechte Energieversorgungssysteme und energieeffiziente Gebäude (KEG)
       </a>

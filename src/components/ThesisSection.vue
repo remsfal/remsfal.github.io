@@ -44,8 +44,8 @@ const filteredIssues = computed(() => {
       <!-- Suche -->
       <div class="flex-1">
         <input
-          v-model="searchQuery"
           type="text"
+          v-model="searchQuery"
           placeholder="Suchen Sie nach Projekten..."
           class="w-full px-5 py-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-green-800"
         >
@@ -55,8 +55,7 @@ const filteredIssues = computed(() => {
       <div>
         <select v-model="filterStatus" class="px-5 py-3 border-2 border-gray-200 rounded-lg text-base min-w-[200px] bg-white"
         >
-          <option
-v-for="option in statusOptions"
+          <option v-for="option in statusOptions"
                   :key="option.value"
                   :value="option.value">
             {{ option.label }}

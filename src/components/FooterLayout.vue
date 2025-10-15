@@ -25,11 +25,9 @@
 
           <div class="col-span-12 md:col-span-3">
             <h4 class="font-medium text-2xl leading-normal mb-4 text-surface-900 dark:text-surface-0">Community</h4>
-            <a
-href="https://github.com/remsfal" target="_blank"
+            <a href="https://github.com/remsfal" target="_blank"
                class="leading-normal text-xl block cursor-pointer mb-2 text-surface-700 dark:text-surface-100">GitHub</a>
-            <a
-href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" target="_blank"
+            <a href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" target="_blank"
                class="leading-normal text-xl block cursor-pointer mb-2 text-surface-700 dark:text-surface-100">Kontakt</a>
             <router-link to="/support" class="leading-normal text-xl block cursor-pointer mb-2 text-surface-700 dark:text-surface-100">
               Support

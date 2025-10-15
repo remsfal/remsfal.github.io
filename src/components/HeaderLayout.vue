@@ -9,6 +9,10 @@ const platformUrl: string = `${import.meta.env.VITE_PLATFORM_URL}/api/v1/authent
       <img alt="logo" src="@/assets/logo.png" class="logo" />
     </router-link>
     <Button
+      class="lg:!hidden"
+      text
+      severity="secondary"
+      rounded
       v-styleclass="{
         selector: '@next',
         enterFromClass: 'hidden',
@@ -17,10 +21,6 @@ const platformUrl: string = `${import.meta.env.VITE_PLATFORM_URL}/api/v1/authent
         leaveActiveClass: 'animate-fadeout',
         hideOnOutsideClick: true
       }"
-      class="lg:!hidden"
-      text
-      severity="secondary"
-      rounded
     >
       <i class="pi pi-bars !text-2xl"></i>
     </Button>
@@ -39,8 +39,7 @@ const platformUrl: string = `${import.meta.env.VITE_PLATFORM_URL}/api/v1/authent
         </li>
       </ul>
       <div class="flex border-t lg:border-t-0 border-surface py-4 lg:py-0 mt-4 lg:mt-0 gap-2">
-        <Button
-pt:hover="" class="try-button" label="Kostenlos testen" as="a"
+        <Button pt:hover="" class="try-button" label="Kostenlos testen" as="a"
                 :href="platformUrl" rounded />
       </div>
     </div>

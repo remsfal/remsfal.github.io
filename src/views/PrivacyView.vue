@@ -43,15 +43,13 @@ import TitleWidget from '@/components/TitleWidget.vue'
       Darüber hinaus haben Sie das Recht auf Datenübertragbarkeit.
       Sie haben weiter das Recht, sich bei einer Aufsichtsbehörde über die Verarbeitung zu
       beschweren. Eine Liste der entsprechenden Behörden finden Sie unter:
-      <a
-href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html"
+      <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html"
          class="underline hover:decoration-green-600" target="_blank">
         https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html
       </a>.
     </p>
     <p>
-      <a
-href="https://opr.vc/docs/allgemein/dse_einleitung/" class="underline hover:decoration-green-600"
+      <a href="https://opr.vc/docs/allgemein/dse_einleitung/" class="underline hover:decoration-green-600"
          target="_blank">
         open privacy by opr.vc
       </a>
@@ -93,8 +91,7 @@ href="https://opr.vc/docs/allgemein/dse_einleitung/" class="underline hover:deco
     <p>
       Weitere Informationen zu Widerspruchs- und Beseitigungsmöglichkeiten gegenüber
       GitHub finden Sie unter:
-      <a
-href="https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement#github-pages"
+      <a href="https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement#github-pages"
          class="underline hover:decoration-green-600" target="_blank">
         https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement#github-pages
       </a>
