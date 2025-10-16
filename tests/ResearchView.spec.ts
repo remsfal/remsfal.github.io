@@ -5,7 +5,7 @@ import ThesisCard from '@/components/ThesisCard.vue'
 
 
 vi.mock('@/services/GitHubService.ts', async () => {
-  const actual = await vi.importActual<any>('@/services/GitHubService.ts')
+  const actual = await vi.importActual('@/services/GitHubService.ts')
   return {
     ...actual,
     default: vi.fn(async () => [
@@ -30,7 +30,7 @@ vi.mock('@/services/GitHubService.ts', async () => {
 })
 
 describe('ResearchView', () => {
-  let wrapper: VueWrapper<any> 
+  let wrapper: VueWrapper 
 
   beforeEach(async () => {
     wrapper = mount(ResearchView)
@@ -124,7 +124,7 @@ describe('ResearchView', () => {
     const fetchIssues = (await import('@/services/GitHubService.ts')).default as ReturnType<typeof vi.fn> 
     fetchIssues.mockRejectedValueOnce(new Error('Network error'))
 
-    const wrapper = mount(ResearchView)
+    mount(ResearchView)
     await new Promise(resolve => setTimeout(resolve, 10))
 
     expect(mockConsoleError).toHaveBeenCalledWith('Failed to fetch issues:', expect.any(Error))

@@ -9,11 +9,11 @@ beforeAll(() => {
     rootMargin: string = '';
     thresholds: ReadonlyArray<number> = [];
 
-    observe(_target?: Element) {
+    observe() {
       // mock observe
     }
 
-    unobserve(_target?: Element) {
+    unobserve() {
       // mock unobserve
     }
 
@@ -26,14 +26,14 @@ beforeAll(() => {
     }
   }
 
-  globalThis.IntersectionObserver = IntersectionObserverMock as any;
+  globalThis.IntersectionObserver = IntersectionObserverMock as unknown as typeof IntersectionObserver;
 });
 
 
 
 
 afterAll(() => {
-  delete (globalThis as any).IntersectionObserver
+  delete (globalThis as { IntersectionObserver?: unknown }).IntersectionObserver
 })
 
 describe('Router basic test', () => {

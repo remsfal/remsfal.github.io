@@ -30,10 +30,11 @@ export interface Issue {
   assignee: User;
   labels: Label[];
   body: string;
+  updated_at: string;
 }
 
 // Statusanzeige
-export function getReadableStatus(issue: { state: string; assignee?: any }): string {
+export function getReadableStatus(issue: { state: string; assignee?: User | null }): string {
   if (issue.state === IssueState.Closed) return 'Abgeschlossen';
   if (issue.assignee) return 'In Bearbeitung';
   return 'Offen';
@@ -56,7 +57,7 @@ async function fetchIssuesFromMultipleRepos(repoNames: string[]): Promise<Issue[
       }
 
       const issues = await response.json()
-      const filteredIssues = issues.filter((issue: any) => !issue.pull_request)
+      const filteredIssues = issues.filter((issue: Issue) => !('pull_request' in issue))
       allIssues.push(...filteredIssues)
     } catch (error) {
       console.error('Error fetching issues:', error);
@@ -65,7 +66,7 @@ async function fetchIssuesFromMultipleRepos(repoNames: string[]): Promise<Issue[
   }
 
   return allIssues.sort(
-    (a: any, b: any) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+    (a: Issue, b: Issue) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
   );
 }
 

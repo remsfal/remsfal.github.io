@@ -15,7 +15,9 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix",
+    "lint": "eslint --quiet",
+    "lint:report": "mkdir -p reports && eslint --format json --output-file reports/eslint-report.json",
+    "lint:fix": "eslint --fix",
     "format": "prettier --write src/"
   },
   "dependencies": {
