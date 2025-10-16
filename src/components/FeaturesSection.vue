@@ -49,7 +49,8 @@ onMounted(() => {
     <p class="features-subtitle">Entdecken Sie die Werkzeuge, die Ihr Liegenschaftsmanagement revolutionieren</p>
 
     <div class="features-grid">
-      <div v-for="(feature, index) in features"
+      <div
+v-for="(feature, index) in features"
            :key="index"
            class="feature-wrapper"
            :style="{ 'animation-delay': `${index * 0.2}s` }"
@@ -66,7 +67,8 @@ onMounted(() => {
             <p class="feature-description">{{ feature.description }}</p>
 
             <div class="feature-stats">
-              <span v-for="(stat, statIndex) in feature.stats"
+              <span
+v-for="(stat, statIndex) in feature.stats"
                     :key="statIndex"
                     class="stat-badge">
                 {{ stat }}

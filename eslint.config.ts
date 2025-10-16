@@ -33,5 +33,19 @@ export default defineConfigWithVueTs(
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },
+  {
+    name: 'app/vue-rules',
+    files: ['**/*.vue', '**/*.ts'],
+    rules: {
+      'vue/multi-word-component-names': ['error', {
+        ignores: ['Section', 'Landing', 'Card', 'Menubar']
+      }],
+      'vue/no-reserved-component-names': ['error', {
+        disallowVueBuiltInComponents: true,
+        disallowVue3BuiltInComponents: true
+      }],
+      'vue/no-v-html': 'off'
+    }
+  },
   skipFormatting,
 )

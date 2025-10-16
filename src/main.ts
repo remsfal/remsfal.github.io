@@ -6,7 +6,6 @@ import Aura from '@primevue/themes/aura';
 import PrimeVue from 'primevue/config';
 import Card from 'primevue/card';
 import Menubar from 'primevue/menubar';
-import Button from 'primevue/button';
 import StyleClass from 'primevue/styleclass';
 
 import '@/assets/styles.scss';
@@ -34,6 +33,5 @@ app.directive('styleclass', StyleClass);
 // Add primefaces components
 app.component('Card', Card)
 app.component('Menubar', Menubar)
-app.component('Button', Button)
 
 app.mount('#app')

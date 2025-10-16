@@ -9,11 +9,11 @@ beforeAll(() => {
     rootMargin: string = '';
     thresholds: ReadonlyArray<number> = [];
 
-    observe(_target: Element) {
+    observe() {
       // intentionally left blank to mock functionality
     }
 
-    unobserve(_target: Element) {
+    unobserve() {
       // intentionally left blank to mock functionality
     }
 
@@ -31,7 +31,7 @@ beforeAll(() => {
 
 
 describe('EducationalSection', () => {
-  let wrapper: VueWrapper<any>
+  let wrapper: VueWrapper
 
   beforeEach(() => {
     wrapper = mount(EducationalSection)
