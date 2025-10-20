@@ -6,7 +6,7 @@ const platformUrl: string = `${import.meta.env.VITE_PLATFORM_URL}/api/v1/authent
 <template>
   <div class="py-6 px-6 mx-0 md:mx-12 lg:mx-20 lg:px-20 flex items-center justify-between relative lg:static">
     <router-link to="/" class="flex items-center">
-      <img alt="logo" src="@/assets/logo.png" class="logo" />
+      <img alt="logo" src="@/assets/logo.svg" class="logo" />
     </router-link>
     <Button
       v-styleclass="{

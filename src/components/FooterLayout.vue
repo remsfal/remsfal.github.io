@@ -6,7 +6,7 @@
     <div class="grid grid-cols-12 gap-4">
       <div class="col-span-12 md:col-span-2">
         <router-link to="/" class="flex flex-wrap items-center justify-center md:justify-start md:mb-0 mb-4 cursor-pointer">
-          <img alt="logo" src="@/assets/logo.png" class="logo" />
+          <img alt="logo" src="@/assets/logo.svg" class="logo" />
         </router-link>
       </div>
 
