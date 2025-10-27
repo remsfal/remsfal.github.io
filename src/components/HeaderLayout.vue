@@ -15,7 +15,8 @@ const platformUrl: string = `${import.meta.env.VITE_PLATFORM_URL}/api/v1/authent
         enterActiveClass: 'animate-scalein',
         leaveToClass: 'hidden',
         leaveActiveClass: 'animate-fadeout',
-        hideOnOutsideClick: true
+        hideOnOutsideClick: true,
+        toggleClass: 'hidden'
       }"
       class="lg:!hidden"
       text
