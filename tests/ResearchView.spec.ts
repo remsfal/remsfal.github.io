@@ -5,7 +5,7 @@ import ThesisCard from '@/components/ThesisCard.vue'
 
 
 vi.mock('@/services/GitHubService.ts', async () => {
-  const actual = await vi.importActual<any>('@/services/GitHubService.ts')
+  const actual = await vi.importActual('@/services/GitHubService.ts')
   return {
     ...actual,
     default: vi.fn(async () => [
@@ -30,7 +30,7 @@ vi.mock('@/services/GitHubService.ts', async () => {
 })
 
 describe('ResearchView', () => {
-  let wrapper: VueWrapper<any> 
+  let wrapper: VueWrapper 
 
   beforeEach(async () => {
     wrapper = mount(ResearchView)
@@ -51,7 +51,7 @@ describe('ResearchView', () => {
   it('should display label badges', () => {
     const labels = wrapper.findAll('[style*="background-color"]')
     expect(labels.length).toBeGreaterThan(0)
-    expect(labels[0].text()).toBe('bug')
+    expect(labels[0]!.text()).toBe('bug')
   })
 
   it('should filter issues based on status', async () => {
@@ -61,7 +61,7 @@ describe('ResearchView', () => {
 
     const cards = wrapper.findAllComponents(ThesisCard)
     expect(cards.length).toBe(1)
-    expect(cards[0].text()).toContain('Second issue')
+    expect(cards[0]!.text()).toContain('Second issue')
   })
 
   it('should filter issues based on search query', async () => {
@@ -71,7 +71,7 @@ describe('ResearchView', () => {
 
     const cards = wrapper.findAllComponents(ThesisCard)
     expect(cards.length).toBe(1)
-    expect(cards[0].text()).toContain('First issue')
+    expect(cards[0]!.text()).toContain('First issue')
   })
 
   it('should display assignee info when present', async () => {
@@ -124,7 +124,7 @@ describe('ResearchView', () => {
     const fetchIssues = (await import('@/services/GitHubService.ts')).default as ReturnType<typeof vi.fn> 
     fetchIssues.mockRejectedValueOnce(new Error('Network error'))
 
-    const wrapper = mount(ResearchView)
+    mount(ResearchView)
     await new Promise(resolve => setTimeout(resolve, 10))
 
     expect(mockConsoleError).toHaveBeenCalledWith('Failed to fetch issues:', expect.any(Error))

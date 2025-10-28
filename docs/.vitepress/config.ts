@@ -10,7 +10,7 @@ dotenv.config({
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: ' REMSFAL Dokumentation',
+  title: ' ',
   description: 'REMSFAL Dokumentation',
   lang: 'de-DE',
   vite: {
@@ -21,7 +21,7 @@ export default defineConfig({
   outDir: resolve(__dirname, '../../dist/docs'),
   base: '/docs',
   themeConfig: {
-    logo: 'logo.png',
+    logo: 'logo.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       {

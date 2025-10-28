@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Remsfal"
+  name: "REMSFAL"
   text: "Dokumentation"
   actions:
     - theme: brand

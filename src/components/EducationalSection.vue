@@ -47,7 +47,7 @@ const educationalBenefits = [
 onMounted(() => {
   const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           isVisible.value = true;
         }
       },
@@ -73,13 +73,15 @@ onMounted(() => {
       </div>
 
       <div class="benefits-grid">
-        <div v-for="(benefit, index) in educationalBenefits"
+        <div
+v-for="(benefit, index) in educationalBenefits"
              :key="index"
              class="benefit-wrapper"
              :style="{ 'animation-delay': `${index * 0.15}s` }"
              @mouseenter="activeIndex = index"
              @mouseleave="activeIndex = -1">
-          <div class="benefit-card" :class="{ 'active': activeIndex === index }"
+          <div
+class="benefit-card" :class="{ 'active': activeIndex === index }"
                data-testid="educational-card">
             <div class="benefit-icon">
               <div class="icon-ring"></div>

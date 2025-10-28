@@ -27,16 +27,22 @@ export interface Issue {
   state: string;
   url: string;
   html_url: string;
-  assignee: User;
+  assignee: User | null;
   labels: Label[];
   body: string;
+  updated_at: string;
 }
 
 // Statusanzeige
-export function getReadableStatus(issue: { state: string; assignee?: any }): string {
+export function getReadableStatus(issue: { state: string; assignee?: User | null }): string {
   if (issue.state === IssueState.Closed) return 'Abgeschlossen';
   if (issue.assignee) return 'In Bearbeitung';
   return 'Offen';
+}
+
+// GitHub API response type that includes pull_request field
+interface GitHubIssueResponse extends Issue {
+  pull_request?: unknown;
 }
 
 async function fetchIssuesFromMultipleRepos(repoNames: string[]): Promise<Issue[]> {
@@ -56,7 +62,7 @@ async function fetchIssuesFromMultipleRepos(repoNames: string[]): Promise<Issue[
       }
 
       const issues = await response.json()
-      const filteredIssues = issues.filter((issue: any) => !issue.pull_request)
+      const filteredIssues = issues.filter((issue: GitHubIssueResponse) => !issue.pull_request)
       allIssues.push(...filteredIssues)
     } catch (error) {
       console.error('Error fetching issues:', error);
@@ -65,7 +71,7 @@ async function fetchIssuesFromMultipleRepos(repoNames: string[]): Promise<Issue[
   }
 
   return allIssues.sort(
-    (a: any, b: any) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+    (a: Issue, b: Issue) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
   );
 }
 

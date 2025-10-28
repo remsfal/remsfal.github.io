@@ -6,7 +6,7 @@
     <div class="grid grid-cols-12 gap-4">
       <div class="col-span-12 md:col-span-2">
         <router-link to="/" class="flex flex-wrap items-center justify-center md:justify-start md:mb-0 mb-4 cursor-pointer">
-          <img alt="logo" src="@/assets/logo.png" class="logo" />
+          <img alt="logo" src="@/assets/logo.svg" class="logo" />
         </router-link>
       </div>
 
@@ -25,9 +25,11 @@
 
           <div class="col-span-12 md:col-span-3">
             <h4 class="font-medium text-2xl leading-normal mb-4 text-surface-900 dark:text-surface-0">Community</h4>
-            <a href="https://github.com/remsfal" target="_blank"
+            <a
+href="https://github.com/remsfal" target="_blank"
                class="leading-normal text-xl block cursor-pointer mb-2 text-surface-700 dark:text-surface-100">GitHub</a>
-            <a href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" target="_blank"
+            <a
+href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" target="_blank"
                class="leading-normal text-xl block cursor-pointer mb-2 text-surface-700 dark:text-surface-100">Kontakt</a>
             <router-link to="/support" class="leading-normal text-xl block cursor-pointer mb-2 text-surface-700 dark:text-surface-100">
               Support
