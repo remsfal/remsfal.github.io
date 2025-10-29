@@ -1,0 +1,12 @@
+:root {
+    --vp-c-brand-1: #28602C; /* Primary */
+    --vp-c-brand-2: #96BE57; /* Secondary */
+    --vp-c-accent-1: #121212; /* Accent */
+    --vp-c-bg: #F4F4F4; /* Background */
+}
+
+:root.dark {
+    --vp-c-brand-1: #28602C; /* Primary (Dark Mode) */
+    --vp-c-brand-2: #96BE57; /* Secondary */
+    --vp-c-bg: #121212; /* Background (Dark Mode) */
+}
