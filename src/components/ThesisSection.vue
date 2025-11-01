@@ -53,7 +53,8 @@ const filteredIssues = computed(() => {
 
       <!-- Filter -->
       <div>
-        <select v-model="filterStatus" class="px-5 py-3 border-2 border-gray-200 rounded-lg text-base min-w-[200px] bg-white"
+        <select v-model="filterStatus" class="px-5 py-3 border-2 border-gray-200 rounded-lg text-base min-w-[200px] bg-white focus:border-green-800
+      dark:bg-black dark:text-grey dark:border-white   dark:placeholder-gray-400"
         >
           <option
 v-for="option in statusOptions"
