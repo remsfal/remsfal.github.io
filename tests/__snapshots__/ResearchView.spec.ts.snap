@@ -24,7 +24,7 @@ exports[`ResearchView > matches snapshot 1`] = `
         <div class="flex flex-col md:flex-row gap-5 mb-8">
           <!-- Suche -->
           <div class="flex-1"><input type="text" placeholder="Suchen Sie nach Projekten..." class="w-full px-5 py-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-green-800"></div><!-- Filter -->
-          <div><select class="px-5 py-3 border-2 border-gray-200 rounded-lg text-base min-w-[200px] bg-white">
+          <div><select class="px-5 py-3 border-2 border-gray-200 rounded-lg text-base min-w-[200px] bg-white focus:border-green-800 dark:bg-black dark:text-grey dark:border-white dark:placeholder-gray-400">
               <option value="all">Alle</option>
               <option value="in_progress">In Bearbeitung</option>
               <option value="open">Offen</option>
