@@ -36,7 +36,7 @@ import Button from 'primevue/button'
 
       <div class="mx-6 md:mx-20 mt-0 md:mt-6">
             <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-              <span class="font-light block">
+              <span class=" font-cybertron block">
                 REMSFAL - <strong>RE</strong>mote <strong>M</strong>anagement
                 <strong>S</strong>ervices for connected <strong>FA</strong>ci<strong>L</strong>ities
               </span>
