@@ -23,13 +23,14 @@ const statusOptions = [
   { label: 'Offen', value: IssueState.Open },
   { label: 'Abgeschlossen', value: IssueState.Closed }
 ];
-const filteredIssues = computed(() => {
-  const order: Record<IssueState, number> = {
-    [IssueState.Open]: 1,
-    [IssueState.InProgress]: 2,
-    [IssueState.Closed]: 3
-  }
 
+const order: Record<IssueState, number> = {
+  [IssueState.Open]: 1,
+  [IssueState.InProgress]: 2,
+  [IssueState.Closed]: 3
+}
+
+const filteredIssues = computed(() => {
   return issues.value
     .filter((issue: Issue) => {
       const matchesStatus =
@@ -46,7 +47,7 @@ const filteredIssues = computed(() => {
       if (order[a.state as IssueState] !== order[b.state as IssueState]) {
         return order[a.state as IssueState] - order[b.state as IssueState]
       }
-      return a.title.localeCompare(b.title)
+      return (a.title || '').localeCompare(b.title || '')
     })
 });
 </script>
