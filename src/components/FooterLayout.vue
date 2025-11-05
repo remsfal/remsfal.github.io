@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="py-6 px-6 mx-0 mt-20 lg:mx-20">
+  <div class="py-6 px-6 mx-0 mt-20 lg:mx-20 bg-surface-0 dark:bg-surface-900">
     <div class="grid grid-cols-12 gap-4">
       <div class="col-span-12 md:col-span-2">
         <router-link to="/" class="flex flex-wrap items-center justify-center md:justify-start md:mb-0 mb-4 cursor-pointer">
