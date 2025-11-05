@@ -43,14 +43,14 @@ describe('FooterLayout', () => {
 
   it('should have dark mode compatible text color classes on license text', () => {
     const license = wrapper.find('.license')
-    expect(license.classes()).toContain('text-surface-700')
-    expect(license.classes()).toContain('dark:text-surface-100')
+    expect(license.classes()).toContain('text-gray-700')
+    expect(license.classes()).toContain('dark:text-gray-100')
   })
 
   it('should have dark mode compatible text color classes on copyright text', () => {
     const copyright = wrapper.find('.copyright')
-    expect(copyright.classes()).toContain('text-surface-700')
-    expect(copyright.classes()).toContain('dark:text-surface-100')
+    expect(copyright.classes()).toContain('text-gray-700')
+    expect(copyright.classes()).toContain('dark:text-gray-100')
   })
 
   it('should render the logo', () => {
