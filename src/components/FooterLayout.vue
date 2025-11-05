@@ -56,8 +56,8 @@ href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" target="_
       <div class="col-span-12 md:col-span-6">
 
       <div class="col left-footer">
-        <p class="license">Released under the MIT License</p>
-        <p class="copyright">Copyright © 2023 - present Prof. Dr.-Ing. Alexander Stanik</p>
+        <p class="license text-surface-700 dark:text-surface-100">Released under the MIT License</p>
+        <p class="copyright text-surface-700 dark:text-surface-100">Copyright © 2023 - present Prof. Dr.-Ing. Alexander Stanik</p>
       </div>
       </div>
 
