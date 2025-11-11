@@ -27,7 +27,7 @@ jobs:
       - name: Build Coverage Report
         run: npm run coverage
       - name: Upload Coverage Reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: coverage-${{ github.run_id }}
           path: coverage/
@@ -36,7 +36,7 @@ jobs:
       - name: Build ESLint Report
         run: npm run lint:report
       - name: Upload ESLint Reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: eslint-${{ github.run_id }}
           path: reports/eslint-report.json
