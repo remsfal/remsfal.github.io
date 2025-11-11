@@ -55,8 +55,8 @@ describe('ResearchView', () => {
   })
 
   it('should filter issues based on status', async () => {
-    const select = wrapper.find('select')
-    await select.setValue('closed')
+    const select = wrapper.findComponent({name: 'Select'})
+    await select.vm.$emit('update:modelValue', 'closed')
     await new Promise(resolve => setTimeout(resolve, 10))
 
     const cards = wrapper.findAllComponents(ThesisCard)
