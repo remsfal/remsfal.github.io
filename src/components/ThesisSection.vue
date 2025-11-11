@@ -23,17 +23,32 @@ const statusOptions = [
   { label: 'Offen', value: IssueState.Open },
   { label: 'Abgeschlossen', value: IssueState.Closed }
 ];
-const filteredIssues = computed(() => {
-  return issues.value.filter((issue: Issue) => {
-    const matchesStatus =
-      filterStatus.value === 'all' ||
-      issue.state === filterStatus.value
 
-    const matchesSearch =
-      issue.title?.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-      issue.body?.toLowerCase().includes(searchQuery.value.toLowerCase())
-    return matchesStatus && matchesSearch;
-  });
+const order: Record<IssueState, number> = {
+  [IssueState.Open]: 1,
+  [IssueState.InProgress]: 2,
+  [IssueState.Closed]: 3
+}
+
+const filteredIssues = computed(() => {
+  return issues.value
+    .filter((issue: Issue) => {
+      const matchesStatus =
+        filterStatus.value === 'all' ||
+        issue.state === filterStatus.value
+
+      const matchesSearch =
+        issue.title?.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+        issue.body?.toLowerCase().includes(searchQuery.value.toLowerCase())
+
+      return matchesStatus && matchesSearch
+    })
+    .sort((a: Issue, b: Issue) => {
+      if (order[a.state as IssueState] !== order[b.state as IssueState]) {
+        return order[a.state as IssueState] - order[b.state as IssueState]
+      }
+      return (a.title || '').localeCompare(b.title || '')
+    })
 });
 </script>
 
