@@ -2,6 +2,7 @@
 import { ref, onMounted, computed } from 'vue'
 import fetchIssues, { type Issue, IssueState } from '@/services/GitHubService.ts'
 import ThesisCard from '@/components/ThesisCard.vue'
+import Select from 'primevue/select';
 
 
 
@@ -68,17 +69,18 @@ const filteredIssues = computed(() => {
 
       <!-- Filter -->
       <div>
-        <select v-model="filterStatus" class="px-5 py-3 border-2 border-gray-200 rounded-lg text-base min-w-[200px] bg-white"
-        >
-          <option
-v-for="option in statusOptions"
-                  :key="option.value"
-                  :value="option.value">
-            {{ option.label }}
-          </option>
-        </select>
+        <Select
+          v-model="filterStatus"
+          :options="statusOptions"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Filter"
+          class="min-w-[200px]"
+        />
       </div>
+
     </div>
+
 
     <!-- Issues Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
