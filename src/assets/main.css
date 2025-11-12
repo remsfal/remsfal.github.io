@@ -5,6 +5,13 @@ img {
     -webkit-border-radius: 4px;
     border-radius: 4px;
 }
+title {
+    font-family: Cybertron;
+    -inkscape-font-specification:Cybertron;
+    fill:#006125;
+    color:red;
+    stroke-width:0.264583;
+}
 
 .p-card {
     -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
