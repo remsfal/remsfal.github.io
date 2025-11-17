@@ -51,7 +51,7 @@ describe('ResearchView', () => {
   it('should display label badges', () => {
     const labels = wrapper.findAll('[style*="background-color"]')
     expect(labels.length).toBeGreaterThan(0)
-    expect(labels[0].text()).toBe('bug')
+    expect(labels[0]!.text()).toBe('bug')
   })
 
   it('should filter issues based on status', async () => {
@@ -61,7 +61,7 @@ describe('ResearchView', () => {
 
     const cards = wrapper.findAllComponents(ThesisCard)
     expect(cards.length).toBe(1)
-    expect(cards[0].text()).toContain('Second issue')
+    expect(cards[0]!.text()).toContain('Second issue')
   })
 
   it('should filter issues based on search query', async () => {
@@ -71,7 +71,7 @@ describe('ResearchView', () => {
 
     const cards = wrapper.findAllComponents(ThesisCard)
     expect(cards.length).toBe(1)
-    expect(cards[0].text()).toContain('First issue')
+    expect(cards[0]!.text()).toContain('First issue')
   })
 
   it('should display assignee info when present', async () => {

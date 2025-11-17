@@ -31,7 +31,7 @@ const features = [
 onMounted(() => {
   const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           isVisible.value = true;
         }
       },
