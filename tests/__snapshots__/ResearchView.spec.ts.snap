@@ -24,15 +24,19 @@ exports[`ResearchView > matches snapshot 1`] = `
         <div class="flex flex-col md:flex-row gap-5 mb-8">
           <!-- Suche -->
           <div class="flex-1"><input type="text" placeholder="Suchen Sie nach Projekten..." class="w-full px-5 py-3 border-2 border-gray-200 rounded-lg text-base focus:outline-none focus:border-green-800"></div><!-- Filter -->
-          <div><select class="px-5 py-3 border-2 border-gray-200 rounded-lg text-base min-w-[200px] bg-white">
-              <option value="all">Alle</option>
-              <option value="in_progress">In Bearbeitung</option>
-              <option value="open">Offen</option>
-              <option value="closed">Abgeschlossen</option>
-            </select></div>
+          <div>
+            <div id="pv_id_0" class="p-select p-component p-inputwrapper p-inputwrapper-filled min-w-[200px]" data-p="" data-pc-name="select" pc0="" data-pc-section="root"><span class="p-select-label" tabindex="0" role="combobox" aria-label="Alle" aria-haspopup="listbox" aria-expanded="false" aria-controls="pv_id_0_list" aria-disabled="false" data-p="" data-pc-section="label">Alle</span>
+              <!---->
+              <div class="p-select-dropdown" data-pc-section="dropdown"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon p-select-dropdown-icon" aria-hidden="true" data-p="" data-pc-section="dropdownicon">
+                  <path d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z" fill="currentColor"></path>
+                </svg></div>
+              <!--teleport start-->
+              <!--teleport end-->
+            </div>
+          </div>
         </div><!-- Issues Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          <div class="p-card p-component rounded-2xl shadow-md transition hover:-translate-y-1 hover:shadow-lg" data-pc-name="card" pc0="" data-pc-section="root">
+          <div class="p-card p-component rounded-2xl shadow-md transition hover:-translate-y-1 hover:shadow-lg" data-pc-name="card" pc2="" data-pc-section="root">
             <!---->
             <div class="p-card-body" data-pc-section="body">
               <!---->
@@ -41,16 +45,16 @@ exports[`ResearchView > matches snapshot 1`] = `
                   <!-- Status --><span class="text-white text-sm px-3 py-1 rounded-full bg-purple-500">Offen</span><!-- Assignee -->
                   <!--v-if-->
                 </div><!-- Titel -->
-                <h3 class="text-xl font-semibold text-green-900 mb-2">First issue</h3><!-- Beschreibung (Markdown gerendert) -->
-                <div class="prose prose-sm max-w-none text-gray-700 mb-4">
+                <h3 class="text-xl font-semibold text-green-900 mb-2 break-words" style="hyphens: auto; hyphenate-limit-chars: 18 3 3;" lang="de">First issue</h3><!-- Beschreibung (Markdown gerendert) -->
+                <div class="prose prose-sm max-w-none text-gray-700 mb-4 break-words">
                   <p><strong>Bold text</strong> with <em>italic</em></p>
                 </div><!-- Labels -->
-                <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs px-2 py-1 rounded" style="background-color: rgb(255, 0, 0); color: white;">bug</span></div><!-- Link --><a href="https://github.com/example/issue1" target="_blank" class="text-green-700 text-sm font-medium hover:underline"> Details anzeigen → </a>
+                <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs px-2 py-1 rounded break-words" style="background-color: rgb(255, 0, 0); color: white;">bug</span></div><!-- Link --><a href="https://github.com/example/issue1" target="_blank" class="text-green-700 text-sm font-medium hover:underline break-words"> Details anzeigen → </a>
               </div>
               <!---->
             </div>
           </div>
-          <div class="p-card p-component rounded-2xl shadow-md transition hover:-translate-y-1 hover:shadow-lg" data-pc-name="card" pc1="" data-pc-section="root">
+          <div class="p-card p-component rounded-2xl shadow-md transition hover:-translate-y-1 hover:shadow-lg" data-pc-name="card" pc3="" data-pc-section="root">
             <!---->
             <div class="p-card-body" data-pc-section="body">
               <!---->
@@ -59,11 +63,11 @@ exports[`ResearchView > matches snapshot 1`] = `
                   <!-- Status --><span class="text-white text-sm px-3 py-1 rounded-full bg-green-500">Abgeschlossen</span><!-- Assignee -->
                   <!--v-if-->
                 </div><!-- Titel -->
-                <h3 class="text-xl font-semibold text-green-900 mb-2">Second issue</h3><!-- Beschreibung (Markdown gerendert) -->
-                <div class="prose prose-sm max-w-none text-gray-700 mb-4">
+                <h3 class="text-xl font-semibold text-green-900 mb-2 break-words" style="hyphens: auto; hyphenate-limit-chars: 18 3 3;" lang="de">Second issue</h3><!-- Beschreibung (Markdown gerendert) -->
+                <div class="prose prose-sm max-w-none text-gray-700 mb-4 break-words">
                   <p>Simple issue description</p>
                 </div><!-- Labels -->
-                <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs px-2 py-1 rounded" style="background-color: rgb(0, 255, 0); color: white;">enhancement</span></div><!-- Link --><a href="https://github.com/example/issue2" target="_blank" class="text-green-700 text-sm font-medium hover:underline"> Details anzeigen → </a>
+                <div class="flex flex-wrap gap-2 mb-4"><span class="text-xs px-2 py-1 rounded break-words" style="background-color: rgb(0, 255, 0); color: white;">enhancement</span></div><!-- Link --><a href="https://github.com/example/issue2" target="_blank" class="text-green-700 text-sm font-medium hover:underline break-words"> Details anzeigen → </a>
               </div>
               <!---->
             </div>
