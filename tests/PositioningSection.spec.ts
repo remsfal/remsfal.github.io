@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import PositioningSection from '@/components/PositioningSection.vue' // adjust path if needed
+import PositioningSection from '@/components/PositioningSection.vue'
 
 describe('PositioningSection.vue', () => {
   const mountComponent = () =>
@@ -10,7 +10,7 @@ describe('PositioningSection.vue', () => {
           // Custom PrimeVue Button stub that captures props
           Button: {
             name: 'Button',
-            // declare the props we care about
+            // Declare the props we care about
             props: {
               label: String,
               as: { type: String, default: 'button' },
@@ -18,7 +18,7 @@ describe('PositioningSection.vue', () => {
               rounded: [Boolean, String],
               class: String,
             },
-            // render a simple tag so we can assert attributes
+            // Render a simple tag so we can assert attributes
             template: `
               <component
                 :is="as || 'button'"
