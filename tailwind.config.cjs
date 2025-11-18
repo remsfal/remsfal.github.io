@@ -10,7 +10,11 @@ export default {
     './docs/**/*.{vue,js,ts,jsx,tsx,md}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        cybertron: ['Cybertron-Regular', 'sans-serif'],
+      }
+    },
     screens: {
       sm: '576px',
       md: '768px',
