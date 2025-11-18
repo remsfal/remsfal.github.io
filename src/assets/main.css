@@ -6,7 +6,7 @@ img {
     border-radius: 4px;
 }
 title {
-    font-family: Cybertron;
+    font-family: Cybertron, sans-serif;
     -inkscape-font-specification:Cybertron;
     fill:#006125;
     color:red;
