@@ -32,51 +32,54 @@ const renderedBody = computed(() => {
   <Card class="rounded-2xl shadow-md transition hover:-translate-y-1 hover:shadow-lg">
     <template #content>
       <div class="flex justify-between items-center mb-4">
-    <!-- Status -->
-      <span :class="`text-white text-sm px-3 py-1 rounded-full ${statusColor}`">
-        {{ statusText }}
-      </span>
+        <!-- Status -->
+        <span :class="`text-white text-sm px-3 py-1 rounded-full ${statusColor}`">
+          {{ statusText }}
+        </span>
 
-      <!-- Assignee -->
-      <div v-if="issue.assignee" class="flex items-center gap-2">
-        <img
-          :src="issue.assignee.avatar_url"
-          alt="Avatar of {{issue.assignee.login}}"
-          class="w-8 h-8 rounded-full border"
-        />
-        <span class="text-sm text-gray-600">@{{ issue.assignee.login }}</span>
+        <!-- Assignee -->
+        <div v-if="issue.assignee" class="flex items-center gap-2">
+          <img
+            :src="issue.assignee.avatar_url"
+            alt="Avatar of {{issue.assignee.login}}"
+            class="w-8 h-8 rounded-full border"
+          />
+          <span class="text-sm text-gray-600">@{{ issue.assignee.login }}</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Titel -->
-    <h3 class="text-xl font-semibold text-green-900 mb-2">
-      {{ issue.title }}
-    </h3>
-
-    <!-- Beschreibung (Markdown gerendert) -->
-    <div
-      class="prose prose-sm max-w-none text-gray-700 mb-4" v-html="renderedBody" />
-
-    <!-- Labels -->
-    <div class="flex flex-wrap gap-2 mb-4">
-      <span
-        v-for="label in issue.labels"
-        :key="label.id"
-        class="text-xs px-2 py-1 rounded"
-        :style="{ backgroundColor: '#' + label.color, color: 'white' }"
+      <!-- Titel -->
+      <h3
+        class="text-xl font-semibold text-green-900 mb-2 break-words"
+        style="hyphens: auto; hyphenate-limit-chars: 18 3 3"
+        lang="de"
       >
-        {{ label.name }}
-      </span>
-    </div>
+        {{ issue.title }}
+      </h3>
 
-    <!-- Link -->
-    <a
-      :href="issue.html_url"
-      target="_blank"
-      class="text-green-700 text-sm font-medium hover:underline"
-    >
-      Details anzeigen →
-    </a>
+      <!-- Beschreibung (Markdown gerendert) -->
+      <div class="prose prose-sm max-w-none text-gray-700 mb-4 break-words" v-html="renderedBody" />
+
+      <!-- Labels -->
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span
+          v-for="label in issue.labels"
+          :key="label.id"
+          class="text-xs px-2 py-1 rounded break-words"
+          :style="{ backgroundColor: '#' + label.color, color: 'white' }"
+        >
+          {{ label.name }}
+        </span>
+      </div>
+
+      <!-- Link -->
+      <a
+        :href="issue.html_url"
+        target="_blank"
+        class="text-green-700 text-sm font-medium hover:underline break-words"
+      >
+        Details anzeigen →
+      </a>
     </template>
   </Card>
 </template>
