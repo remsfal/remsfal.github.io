@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@primevue/auto-import-resolver": "^4.4.1",
-    "@rushstack/eslint-patch": "^1.14.1",
+    "@rushstack/eslint-patch": "^1.15.0",
     "@tailwindcss/postcss": "^4.1.17",
     "@testing-library/vue": "^8.1.0",
     "@tsconfig/node22": "^22.0.1",
