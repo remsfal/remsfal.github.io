@@ -1,1 +1,5 @@
 @import "tailwindcss";
+@font-face {
+    font-family: "Cybertron-Regular", sans-serif;
+    src: url("src/assets/ressources/Cybertron Regular.otf") format("opentype");
+}
