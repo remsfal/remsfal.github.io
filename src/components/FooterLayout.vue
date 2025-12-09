@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="py-6 px-6 mx-0 mt-20 lg:mx-20">
+  <div class="py-6 px-6 mx-0 mt-20 lg:mx-20 bg-surface-0 dark:bg-surface-900">
     <div class="grid grid-cols-12 gap-4">
       <div class="col-span-12 md:col-span-2">
         <router-link to="/" class="flex flex-wrap items-center justify-center md:justify-start md:mb-0 mb-4 cursor-pointer">
@@ -56,8 +56,8 @@ href="https://www.htw-berlin.de/hochschule/personen/person/?eid=13708" target="_
       <div class="col-span-12 md:col-span-6">
 
       <div class="col left-footer">
-        <p class="license">Released under the MIT License</p>
-        <p class="copyright">Copyright © 2023 - present Prof. Dr.-Ing. Alexander Stanik</p>
+        <p class="license text-gray-700 dark:text-gray-100">Released under the MIT License</p>
+        <p class="copyright text-gray-700 dark:text-gray-100">Copyright © 2023 - present Prof. Dr.-Ing. Alexander Stanik</p>
       </div>
       </div>
 
