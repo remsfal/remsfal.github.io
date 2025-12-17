@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the source code for the remsfal.de website - a German-language marketing and documentation site for the REMSFAL project. The site combines a Vue 3 SPA (landing page, research, support) with VitePress-based documentation.
+This is the source code for the remsfal.de website - a German-language marketing and documentation site for the REMSFAL project. The site is built entirely with VitePress, a static site generator powered by Vue and Vite.
 
 **Important Constraints:**
 - The site should only be delivered in German
-- Keep dependencies minimal (no axios, no e2e testing, no i18n)
+- Keep dependencies minimal
 - This is purely a website (no PWA or native mobile app support desired)
 
 ## Development Commands
@@ -20,27 +20,14 @@ npm ci  # Use ci for consistent installs
 
 ### Development
 ```bash
-npm run dev                # Run both app and docs in parallel
-npm run dev:app           # Run Vue app only (port 5173)
-npm run dev:docs          # Run VitePress docs only (port 5174)
+npm run dev               # Run VitePress dev server (port 5174)
 ```
-
-The dev server uses a proxy to route `/docs` requests to the VitePress server at port 5174.
 
 ### Building
 ```bash
-npm run build             # Type-check + build app + build docs
-npm run build:app         # Build Vue app only
-npm run build:docs        # Build VitePress docs only
+npm run build             # Build VitePress site
+npm run docs:preview      # Preview production build
 ```
-
-### Testing
-```bash
-npm run test              # Run Vitest in watch mode
-npm run coverage          # Run tests with coverage report
-```
-
-Note: The README mentions `npm run test:unit` but the actual script is `npm run test`.
 
 ### Linting and Formatting
 ```bash
@@ -53,74 +40,62 @@ npm run type-check        # TypeScript type checking
 
 ## Architecture
 
-### Dual Build System
+### VitePress Static Site
 
-This project has two distinct applications that build independently:
+This project is built entirely with VitePress:
 
-1. **Vue 3 SPA** (main application at `/`)
-   - Built with Vite
-   - Located in `src/`
-   - Outputs to `dist/`
-   - Includes landing page, research page, support, and legal pages
-
-2. **VitePress Documentation** (documentation at `/docs`)
-   - Built with VitePress
-   - Located in `docs/`
-   - Outputs to `dist/docs/`
-   - Standalone documentation site with its own config
-
-During development, the Vite dev server proxies `/docs` requests to the VitePress server running on port 5174, creating a seamless experience.
+- **VitePress Site** (at `/`)
+  - Built with VitePress
+  - Source located in `docs/`
+  - Outputs to `dist/`
+  - Includes home page, research pages, documentation, and legal pages
+  - Served directly from root path (`/`)
 
 ### Project Structure
 
 ```
-src/
-  ├── components/          # Reusable Vue components
-  │   ├── HeaderLayout.vue
-  │   ├── FooterLayout.vue
-  │   ├── EducationalSection.vue
-  │   ├── FeaturesSection.vue
-  │   ├── PositioningSection.vue
-  │   ├── ThesisSection.vue
-  │   ├── ThesisCard.vue
-  │   ├── TitleWidget.vue
-  │   └── Section.vue
-  ├── views/              # Page-level components (route targets)
-  │   ├── Landing.vue
-  │   ├── ResearchView.vue
-  │   ├── SupportView.vue
-  │   ├── LegalNoticeView.vue
-  │   ├── TermsView.vue
-  │   └── PrivacyView.vue
-  ├── router/
-  │   └── index.ts        # Vue Router configuration
-  ├── services/
-  │   └── GitHubService.ts # GitHub API integration for thesis issues
-  ├── assets/             # Static assets (logos, styles)
-  └── main.ts             # Application entry point
-
 docs/
   ├── .vitepress/
-  │   └── config.ts       # VitePress configuration
-  ├── index.md            # Docs home page
-  ├── objekthierachie.md
-  └── projektdokumentation.md
-
-tests/                    # Vitest test files (*.spec.ts)
+  │   ├── config.ts                # VitePress configuration
+  │   ├── theme/
+  │   │   ├── Layout.vue          # Custom layout
+  │   │   ├── index.ts            # Theme registration
+  │   │   ├── components/         # Custom Vue components
+  │   │   │   ├── ThesisSection.vue
+  │   │   │   ├── ThesisCard.vue
+  │   │   │   ├── PositioningSection.vue
+  │   │   │   ├── FeaturesSection.vue
+  │   │   │   ├── EducationalSection.vue
+  │   │   │   ├── Footer.vue
+  │   │   │   └── LandingFooterLinks.vue
+  │   │   ├── services/
+  │   │   │   └── GitHubService.ts # GitHub API integration
+  │   │   └── styles/
+  │   │       └── custom.css      # Custom styles
+  │   └── public/
+  │       ├── fonts/               # Custom fonts (Cybertron)
+  │       └── logo.svg
+  ├── index.md                     # Home page
+  ├── forschung.md                 # Research page
+  ├── abschlussarbeiten.md         # Thesis page
+  ├── objekthierachie.md           # Object hierarchy docs
+  ├── projektdokumentation.md      # Project documentation
+  ├── impressum.md                 # Legal notice
+  ├── nutzungsbedingungen.md       # Terms of use
+  └── datenschutz.md               # Privacy policy
 ```
 
 ### Key Technologies
 
-- **Vue 3** with Composition API
-- **Vue Router** for SPA routing
-- **PrimeVue** component library with Aura theme
-  - Components are registered globally in `main.ts`
-  - Uses system dark mode detection
-  - Tailwind CSS integration via `tailwindcss-primeui`
-- **VitePress** for documentation
-- **Vitest** with jsdom for component testing
+- **VitePress** - Static site generator with Vue 3 and Vite
+- **Vue 3** with Composition API (for custom components)
 - **TypeScript** throughout
-- **SCSS** for styles
+- **Tailwind CSS** for styling with `tailwindcss-primeui`
+- **PrimeIcons** for icon fonts
+- **Markdown** for content
+- **SCSS** for custom component styles
+- **DOMPurify** for sanitizing HTML
+- **markdown-it** for Markdown rendering in components
 
 ### Environment Variables
 
@@ -129,42 +104,36 @@ The project uses environment-specific `.env` files:
 - `.env.production` - production URLs
 
 Variables:
-- `VITE_BASE_URL` - Base URL for the site
-- `VITE_DOCS_URL` - Documentation URL
-- `VITE_RESEARCH_URL` - Research page URL
 - `VITE_PLATFORM_URL` - External platform URL (remsfal.online)
 
-### Router Configuration
+### VitePress Configuration
 
-The router (`src/router/index.ts`) includes:
-- Standard routes for views
-- Lazy-loaded routes for non-critical pages
-- A special `/documentation` route that redirects to `VITE_DOCS_URL` using `window.location.href`
-- An `EmptyComponent` used for external redirects
-- Scroll behavior that resets to top on navigation
+The VitePress config (`docs/.vitepress/config.ts`) includes:
+- `base: '/'` - Site is served from root path
+- `outDir: '../../dist'` - Builds to project root `dist/` directory
+- Navigation and sidebar configuration
+- German language settings (`de-DE`)
+- Local search provider
+- Custom theme with slots for landing page components
 
 ### GitHub Integration
 
-`src/services/GitHubService.ts` provides:
+`docs/.vitepress/services/GitHubService.ts` provides:
 - Fetching GitHub issues labeled "thesis" from multiple repositories
 - Filtering out pull requests
 - Sorting issues by update date
 - Type definitions for User, Issue, Label
 - Status translation to German ("Offen", "In Bearbeitung", "Abgeschlossen")
 
-### Path Aliases
+### Custom Fonts
 
-The `@` alias resolves to `src/` (configured in `vite.config.ts`).
-
-## Testing Notes
-
-- Tests use `@testing-library/vue` and `@vue/test-utils`
-- jsdom environment for component rendering
-- Coverage reports generated in `coverage/` directory
-- All mocks are reset between tests
+The Cybertron font is used for the main landing page heading:
+- Font file: `docs/public/fonts/Cybertron Regular.otf`
+- Loaded via `@font-face` in `docs/.vitepress/theme/styles/custom.css`
+- Used in PositioningSection component
 
 ## Build Output
 
-- Vue app builds to `dist/`
-- VitePress docs build to `dist/docs/`
-- Both outputs are needed for deployment
+- VitePress builds to `dist/`
+- Site is served from root path `/`
+- All static assets are bundled in the build output

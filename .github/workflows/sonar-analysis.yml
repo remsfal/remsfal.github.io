@@ -24,22 +24,6 @@ jobs:
           repository: ${{ github.event.workflow_run.head_repository.full_name }}
           ref: ${{ github.event.workflow_run.head_branch }}
           fetch-depth: 0
-      - name: Download Coverage Report from CI Build
-        uses: actions/download-artifact@v6
-        with:
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          name: coverage-${{ github.event.workflow_run.id }}
-          path: ${{ runner.temp }}/artifacts/coverage
-      - name: Prepare coverage directory and move lcov.info
-        run: |
-          mkdir -p coverage
-          if [ -f "${{ runner.temp }}/artifacts/coverage/lcov.info" ]; then
-            mv "${{ runner.temp }}/artifacts/coverage/lcov.info" coverage/
-          else
-            echo "Error: lcov.info not found in coverage artifact." >&2
-            exit 1
-          fi
       - name: Download ESLint Report from CI Build
         uses: actions/download-artifact@v6
         with:
