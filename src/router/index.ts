@@ -22,8 +22,11 @@ const router = createRouter({
     },
     {
       path: '/research',
-      name: 'ResearchView',
-      component: () => import('../views/ResearchView.vue')
+      name: 'ResearchRedirect',
+      component: EmptyComponent,
+      beforeEnter() {
+        window.location.href = import.meta.env.VITE_DOCS_URL + '/forschung'
+      }
     },
     {
       path: '/documentation',

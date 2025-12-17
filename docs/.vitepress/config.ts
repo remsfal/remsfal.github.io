@@ -26,8 +26,7 @@ export default defineConfig({
     nav: [
       {
         text: 'Forschung',
-        link: process.env.VITE_RESEARCH_URL,
-        target: '_self',
+        link: '/forschung',
       },
       {
         text: 'Dokumentation',
@@ -40,6 +39,13 @@ export default defineConfig({
     ],
 
     sidebar: [
+      {
+        text: 'Forschung & Lehre',
+        items: [
+          { text: 'Forschung', link: '/forschung' },
+          { text: 'Abschlussarbeiten', link: '/abschlussarbeiten' },
+        ],
+      },
       {
         text: 'Inhalte',
         items: [
