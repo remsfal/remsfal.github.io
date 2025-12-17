@@ -25,7 +25,7 @@ jobs:
       - name: Build ESLint Report
         run: npm run lint:report
       - name: Upload ESLint Reports
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: eslint-${{ github.run_id }}
           path: reports/eslint-report.json
