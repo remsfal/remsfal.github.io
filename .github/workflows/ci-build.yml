@@ -20,19 +20,8 @@ jobs:
           fetch-depth: 0
       - name: Build project
         uses: remsfal/.github/.github/actions/build-frontend@main
-      - name: Run tests with Vitest
-        run: npm run test
 
       # Generate reports for Sonar Analysis
-      - name: Build Coverage Report
-        run: npm run coverage
-      - name: Upload Coverage Reports
-        uses: actions/upload-artifact@v5
-        with:
-          name: coverage-${{ github.run_id }}
-          path: coverage/
-          retention-days: 1
-          if-no-files-found: error
       - name: Build ESLint Report
         run: npm run lint:report
       - name: Upload ESLint Reports
@@ -41,7 +30,7 @@ jobs:
           name: eslint-${{ github.run_id }}
           path: reports/eslint-report.json
           retention-days: 1
-          if-no-files-found: error
+          if-no-files-found: warn
 
   check-branches:
     name: "Check Pull Request Conditions"

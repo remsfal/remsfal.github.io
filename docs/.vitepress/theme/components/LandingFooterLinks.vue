@@ -1,7 +1,4 @@
 <script setup lang="ts">
-const baseUrl = import.meta.env.VITE_BASE_URL || '/'
-const docsUrl = import.meta.env.VITE_DOCS_URL || '/docs/'
-const researchUrl = '/docs/forschung'
 </script>
 
 <template>
@@ -9,16 +6,16 @@ const researchUrl = '/docs/forschung'
     <div class="container">
       <div class="footer-grid">
         <div class="footer-logo">
-          <a :href="baseUrl" class="logo-link">
-            <img alt="logo" src="/docs/logo.svg" class="logo" />
+          <a href="/" class="logo-link">
+            <img alt="logo" src="/remsfal-logo.svg" class="logo" />
           </a>
         </div>
 
         <div class="footer-links">
           <div class="link-column">
             <h4 class="column-title">Ressourcen</h4>
-            <a :href="researchUrl" class="link-item">Forschung</a>
-            <a :href="docsUrl" class="link-item">Dokumentation</a>
+            <a href="/forschung" class="link-item">Forschung</a>
+            <a href="/projektdokumentation" class="link-item">Dokumentation</a>
           </div>
 
           <div class="link-column">
@@ -29,9 +26,9 @@ const researchUrl = '/docs/forschung'
 
           <div class="link-column">
             <h4 class="column-title">Rechtliches</h4>
-            <a href="/docs/impressum" class="link-item">Impressum</a>
-            <a href="/docs/nutzungsbedingungen" class="link-item">Nutzungsbedingungen</a>
-            <a href="/docs/datenschutz" class="link-item">Datenschutz</a>
+            <a href="/impressum" class="link-item">Impressum</a>
+            <a href="/nutzungsbedingungen" class="link-item">Nutzungsbedingungen</a>
+            <a href="/datenschutz" class="link-item">Datenschutz</a>
           </div>
         </div>
       </div>

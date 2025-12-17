@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
 
-const platformUrl = 'https://remsfal.online/api/v1/authentication/login'
+const platformUrl = import.meta.env.VITE_PLATFORM_URL || 'https://remsfal.online'
 const screenImage = withBase('/landing/screen-1.png')
 </script>
 

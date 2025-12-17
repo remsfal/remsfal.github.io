@@ -28,8 +28,6 @@ jobs:
         uses: actions/checkout@v6
       - name: Build project
         uses: remsfal/.github/.github/actions/build-frontend@main
-      - name: Configure HTTP Not Found for Vue Router
-        run: cp ./dist/index.html ./dist/404.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

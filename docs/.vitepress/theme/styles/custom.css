@@ -1,6 +1,14 @@
 /* Import Tailwind CSS */
 @import 'tailwindcss';
 
+/* Cybertron Font */
+@font-face {
+  font-family: 'Cybertron';
+  src: url('/fonts/Cybertron Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* VitePress Theme Variables */
 :root {
     --vp-c-brand-1: #28602C; /* Primary */
