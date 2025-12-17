@@ -47,11 +47,15 @@ export default defineConfig({
           { text: 'Projektdokumentation', link: '/projektdokumentation' },
         ],
       },
+      {
+        text: 'Rechtliches',
+        items: [
+          { text: 'Impressum', link: '/impressum' },
+          { text: 'Nutzungsbedingungen', link: '/nutzungsbedingungen' },
+          { text: 'Datenschutz', link: '/datenschutz' },
+        ],
+      },
     ],
-    footer: {
-      message: 'Released under the MIT License',
-      copyright: 'Copyright © 2023 - present Prof. Dr.-Ing. Alexander Stanik',
-    },
     lastUpdated: {
       text: 'Zuletzt aktualisiert',
       formatOptions: {
