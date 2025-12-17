@@ -1,8 +1,10 @@
 import { defineConfig } from 'vitepress'
 import { resolve } from 'path'
+import { config as dotenvConfig } from 'dotenv'
 
-// Environment variables are automatically loaded by Vite
+// Load environment variables based on NODE_ENV
 const mode = process.env.NODE_ENV || 'production'
+dotenvConfig({ path: resolve(__dirname, `../../.env.${mode}`) })
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
