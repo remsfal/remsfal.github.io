@@ -1,45 +1,66 @@
 import { defineConfig } from 'vitepress'
-import dotenv from 'dotenv'
 import { resolve } from 'path'
 
-// load environment variables
+// Environment variables are automatically loaded by Vite
 const mode = process.env.NODE_ENV || 'production'
-dotenv.config({
-  path: resolve(__dirname, `../../.env.${mode}`),
-})
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: ' ',
   description: 'REMSFAL Dokumentation',
   lang: 'de-DE',
+  head: [
+    // Favicon
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
+    ['link', { rel: 'manifest', href: '/site.webmanifest' }],
+
+    // Meta-Tags
+    ['meta', { name: 'theme-color', content: '#28602C' }],
+    ['meta', { name: 'keywords', content: 'Facility Management, Smart Building, IoT, Mängelmanagement, ' +
+        'Online-Ticketsystemen, Hausverwaltungen, Open-Source, Vermieter, Eigentümer, Fernzugriff, ' +
+        'Überwachen, Steuern, Verwalten, Liegenschaften, Studienprojekt, Abschlussarbeit, kostenlos, ' +
+        'Fernwartung, Building Management System, BMS, Gebäudeleittechnik, GLT, Managementebene' }],
+    ['meta', { name: 'og:type', content: 'website' }],
+    ['meta', { name: 'og:locale', content: 'de_DE' }],
+    ['meta', { name: 'og:site_name', content: 'REMSFAL' }],
+    ['meta', { name: 'og:description', content: 'Remote Management Services for connected Facilities' }],
+  ],
   vite: {
     define: {
       __MODE__: JSON.stringify(mode),
     }
   },
-  outDir: resolve(__dirname, '../../dist/docs'),
-  base: '/docs',
+  outDir: resolve(__dirname, '../../dist'),
+  base: '/',
   themeConfig: {
-    logo: 'logo.svg',
+    logo: 'remsfal-logo.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       {
         text: 'Forschung',
-        link: process.env.VITE_RESEARCH_URL,
-        target: '_self',
+        link: '/forschung',
       },
       {
         text: 'Dokumentation',
-        link: process.env.VITE_DOCS_URL,
-        target: '_self' },
+        link: '/projektdokumentation',
+      },
       {
         text: 'Kostenlos testen',
-        link: process.env.VITE_PLATFORM_URL,
+        link: process.env.VITE_PLATFORM_URL || 'https://remsfal.online',
       },
     ],
 
     sidebar: [
+      {
+        text: 'Forschung & Lehre',
+        items: [
+          { text: 'Forschung', link: '/forschung' },
+          { text: 'Abschlussarbeiten', link: '/abschlussarbeiten' },
+        ],
+      },
       {
         text: 'Inhalte',
         items: [
@@ -47,11 +68,15 @@ export default defineConfig({
           { text: 'Projektdokumentation', link: '/projektdokumentation' },
         ],
       },
+      {
+        text: 'Rechtliches',
+        items: [
+          { text: 'Impressum', link: '/impressum' },
+          { text: 'Nutzungsbedingungen', link: '/nutzungsbedingungen' },
+          { text: 'Datenschutz', link: '/datenschutz' },
+        ],
+      },
     ],
-    footer: {
-      message: 'Released under the MIT License',
-      copyright: 'Copyright © 2023 - present Prof. Dr.-Ing. Alexander Stanik',
-    },
     lastUpdated: {
       text: 'Zuletzt aktualisiert',
       formatOptions: {
