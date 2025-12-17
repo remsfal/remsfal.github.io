@@ -17,8 +17,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'HomeRedirect',
+      component: EmptyComponent,
+      beforeEnter() {
+        window.location.href = import.meta.env.VITE_DOCS_URL
+      }
     },
     {
       path: '/research',
