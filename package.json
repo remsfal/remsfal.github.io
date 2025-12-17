@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development vitepress dev docs --port 5174",
     "build": "NODE_ENV=production vitepress build docs",
-    "docs:preview": "NODE_ENV=development vitepress preview dist",
+    "preview": "NODE_ENV=development vitepress preview dist",
     "type-check": "tsc --noEmit",
     "lint": "eslint --quiet",
     "lint:report": "mkdir -p reports && eslint --format json --output-file reports/eslint-report.json",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "dompurify": "^3.3.0",
+    "dotenv": "^17.2.3",
     "markdown-it": "^14.1.0",
     "primeicons": "^7.0.0"
   },
