@@ -21,12 +21,19 @@ const order: Record<IssueState, number> = {
   [IssueState.Closed]: 3
 }
 
+const getIssueState = (issue: Issue): IssueState => {
+  if (issue.state === 'closed') return IssueState.Closed
+  if (issue.assignee) return IssueState.InProgress
+  return IssueState.Open
+}
+
 const filteredIssues = computed(() => {
   return issues.value
     .filter((issue: Issue) => {
+      const issueState = getIssueState(issue)
       const matchesStatus =
         filterStatus.value === 'all' ||
-        issue.state === filterStatus.value
+        issueState === filterStatus.value
 
       const matchesSearch =
         issue.title?.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
@@ -35,8 +42,10 @@ const filteredIssues = computed(() => {
       return matchesStatus && matchesSearch
     })
     .sort((a: Issue, b: Issue) => {
-      if (order[a.state as IssueState] !== order[b.state as IssueState]) {
-        return order[a.state as IssueState] - order[b.state as IssueState]
+      const stateA = getIssueState(a)
+      const stateB = getIssueState(b)
+      if (order[stateA] !== order[stateB]) {
+        return order[stateA] - order[stateB]
       }
       return (a.title || '').localeCompare(b.title || '')
     })
