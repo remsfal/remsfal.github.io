@@ -38,13 +38,17 @@ const screenImage = withBase('/landing/screen-1.png')
       </div>
 
       <div class="mx-6 md:mx-20 mt-0 md:mt-6">
-            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-              <span class="font-cybertron block">
+            <h1 class="leading-tight">
+              <span class="font-cybertron text-white text-5xl md:text-6xl font-bold">
                 REMSFAL - <strong>RE</strong>mote <strong>M</strong>anagement
                 <strong>S</strong>ervices for connected <strong>FA</strong>ci<strong>L</strong>ities
               </span>
-              Open Source Immobilien<wbr />software
             </h1>
+            <h2 class="leading-tight">
+              <span class="text-4xl md:text-5xl font-bold text-white">
+                Open Source Immobilien<wbr />software
+              </span>
+            </h2>
             <p class="font-normal text-xl md:text-2xl leading-normal md:mt-4 text-white">
               Mieter:innen und Kund:innen verdienen Aufmerksamkeit und Transparenz,
               während Verwalter:innen und Eigentümer:innen Kosten und Zeit durch effizientes
@@ -68,8 +72,69 @@ const screenImage = withBase('/landing/screen-1.png')
   clip-path: ellipse(150% 87% at 93% 13%);
 }
 
-.font-cybertron {
-  font-family: 'Cybertron', sans-serif;
+.positioning-section p {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .positioning-section p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+.positioning-section > div:first-child {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .positioning-section > div:first-child {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.positioning-section > div:first-child > div:first-of-type {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .positioning-section > div:first-child > div:first-of-type {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.positioning-section > div:first-child > div:last-of-type {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .positioning-section > div:first-child > div:last-of-type {
+    justify-content: flex-end;
+  }
+}
+
+.positioning-section > div:first-child > div:last-of-type img {
+  width: 75%;
+}
+
+@media (min-width: 768px) {
+  .positioning-section > div:first-child > div:last-of-type img {
+    width: auto;
+  }
 }
 
 .try-button {
