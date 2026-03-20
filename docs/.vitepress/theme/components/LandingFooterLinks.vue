@@ -27,6 +27,7 @@
           <div class="link-column">
             <h4 class="column-title">Rechtliches</h4>
             <a href="/impressum" class="link-item">Impressum</a>
+            <a href="/trademark" class="link-item">Markenrichtlinien</a>
             <a href="/nutzungsbedingungen" class="link-item">Nutzungsbedingungen</a>
             <a href="/datenschutz" class="link-item">Datenschutz</a>
           </div>
@@ -106,14 +107,6 @@
 
 .link-item {
   font-size: 1.125rem;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
-  color: var(--vp-c-text-2);
-  text-decoration: none;
-  transition: color 0.2s;
 }
 
-.link-item:hover {
-  color: var(--vp-c-brand-1);
-}
 </style>
