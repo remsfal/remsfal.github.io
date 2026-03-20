@@ -14,13 +14,13 @@
     "format": "prettier --write docs/"
   },
   "dependencies": {
-    "dompurify": "^3.3.1",
+    "dompurify": "^3.3.3",
     "dotenv": "^17.3.1",
     "markdown-it": "^14.1.1",
     "primeicons": "^7.0.0"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.15.0",
+    "@rushstack/eslint-patch": "^1.16.1",
     "@tailwindcss/postcss": "^4.1.18",
     "@tsconfig/node22": "^22.0.5",
     "@types/dompurify": "^3.2.0",
@@ -29,7 +29,7 @@
     "autoprefixer": "^10.4.27",
     "eslint": "^9.39.2",
     "jiti": "^2.6.1",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.8",
     "prettier": "^3.8.1",
     "sass": "^1.97.3",
     "tailwindcss": "^4.2.1",
