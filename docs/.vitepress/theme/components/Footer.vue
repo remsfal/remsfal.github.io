@@ -6,8 +6,13 @@
     <div class="container">
       <div class="footer-bottom">
         <div class="footer-info">
-          <p class="license">Released under the MIT License</p>
-          <p class="copyright">Copyright © 2023 - present Prof. Dr.-Ing. Alexander Stanik</p>
+          <p class="copyright">Copyright © 2023 - present REMSFAL Immobiliensoftware GmbH</p>
+          <p class="license">REMSFAL ist ein Open-Source-Projekt, das von der REMSFAL Immobiliensoftware GmbH gesponsert wird.
+            REMSFAL® ist eine eingetragene Marke. Die Nutzung der Marke und des Logos unterliegt unseren
+            <a href="/trademark" class="link-item">
+              Markenrichtlinien.
+            </a>
+            </p>
         </div>
       </div>
     </div>
@@ -42,5 +47,14 @@
   margin: 0.25rem 0;
   color: var(--vp-c-text-2);
   font-size: 0.9rem;
+}
+
+@media (min-width: 960px) {
+  .license {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }
 </style>

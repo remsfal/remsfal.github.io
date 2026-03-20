@@ -21,7 +21,7 @@ export default defineConfig({
 
     // Meta-Tags
     ['meta', { name: 'theme-color', content: '#28602C' }],
-    ['meta', { name: 'keywords', content: 'Facility Management, Smart Building, IoT, Mängelmanagement, ' +
+    ['meta', { name: 'keywords', content: 'REMSFAL, Facility Management, Smart Building, IoT, Mängelmanagement, ' +
         'Online-Ticketsystemen, Hausverwaltungen, Open-Source, Vermieter, Eigentümer, Fernzugriff, ' +
         'Überwachen, Steuern, Verwalten, Liegenschaften, Studienprojekt, Abschlussarbeit, kostenlos, ' +
         'Fernwartung, Building Management System, BMS, Gebäudeleittechnik, GLT, Managementebene' }],
@@ -74,6 +74,7 @@ export default defineConfig({
         text: 'Rechtliches',
         items: [
           { text: 'Impressum', link: '/impressum' },
+          { text: 'Markenrichtlinien', link: '/trademark' },
           { text: 'Nutzungsbedingungen', link: '/nutzungsbedingungen' },
           { text: 'Datenschutz', link: '/datenschutz' },
         ],
