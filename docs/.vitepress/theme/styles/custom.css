@@ -43,3 +43,15 @@
     font-family: 'Cybertron', sans-serif;
     display: block;
 }
+
+.link-item {
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    color: var(--vp-c-text-2);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-item:hover {
+    color: var(--vp-c-brand-1);
+}
