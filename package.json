@@ -14,7 +14,7 @@
     "format": "prettier --write docs/"
   },
   "dependencies": {
-    "dompurify": "^3.3.3",
+    "dompurify": "^3.4.0",
     "dotenv": "^17.4.2",
     "markdown-it": "^14.1.1",
     "primeicons": "^7.0.0"
