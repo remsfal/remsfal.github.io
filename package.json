@@ -25,17 +25,17 @@
     "@tsconfig/node22": "^22.0.5",
     "@types/dompurify": "^3.2.0",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^25.9.1",
+    "@types/node": "^25.9.2",
     "autoprefixer": "^10.5.0",
-    "eslint": "^10.4.0",
+    "eslint": "^10.4.1",
     "jiti": "^2.7.0",
-    "postcss": "^8.5.14",
+    "postcss": "^8.5.15",
     "prettier": "^3.8.1",
     "sass": "^1.100.0",
     "tailwindcss": "^4.3.0",
     "tailwindcss-primeui": "^0.6.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.60.0",
+    "typescript-eslint": "^8.61.0",
     "vitepress": "^1.6.4"
   }
 }
