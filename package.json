@@ -29,7 +29,7 @@
     "autoprefixer": "^10.5.4",
     "eslint": "^10.6.0",
     "jiti": "^2.7.0",
-    "postcss": "^8.5.20",
+    "postcss": "^8.5.26",
     "prettier": "^3.9.6",
     "sass": "^1.102.0",
     "tailwindcss": "^4.3.2",
