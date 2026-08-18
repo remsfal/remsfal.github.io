@@ -33,7 +33,14 @@ export default defineConfig({
   vite: {
     define: {
       __MODE__: JSON.stringify(mode),
-    }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+      },
+    },
   },
   outDir: resolve(__dirname, '../../dist'),
   base: '/',
@@ -47,7 +54,7 @@ export default defineConfig({
       },
       {
         text: 'Dokumentation',
-        link: '/projektdokumentation',
+        link: '/getting-started/',
       },
       {
         text: 'Kostenlos testen',
@@ -64,10 +71,17 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Inhalte',
+        text: 'Dokumentation',
         items: [
+          {
+            text: 'Getting Started',
+            link: '/getting-started/',
+            items: [
+              { text: 'Entwickler Setup', link: '/getting-started/entwickler-setup' },
+              { text: 'Docker Setup', link: '/getting-started/docker-setup' },
+            ],
+          },
           { text: 'Objekthierachie', link: '/objekthierachie' },
-          { text: 'Projektdokumentation', link: '/projektdokumentation' },
         ],
       },
       {
