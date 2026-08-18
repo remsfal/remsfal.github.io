@@ -33,7 +33,14 @@ export default defineConfig({
   vite: {
     define: {
       __MODE__: JSON.stringify(mode),
-    }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+      },
+    },
   },
   outDir: resolve(__dirname, '../../dist'),
   base: '/',
