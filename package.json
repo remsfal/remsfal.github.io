@@ -28,7 +28,7 @@
     "jiti": "^2.7.0",
     "postcss": "^8.5.26",
     "prettier": "^3.9.6",
-    "sass-embedded": "^1.102.0",
+    "sass-embedded": "^1.103.1",
     "tailwindcss": "^4.3.2",
     "tailwindcss-primeui": "^0.6.1",
     "typescript": "^6.0.3",
