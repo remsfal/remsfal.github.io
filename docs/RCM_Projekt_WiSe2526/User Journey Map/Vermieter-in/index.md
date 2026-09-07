@@ -1,0 +1,13 @@
+---
+title: Vermieter/-in
+---
+
+|  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Phasen | 1. Schadensmeldung erhalten | 2. Zuordnung / Einschätzung | 3. Handwerker beauftragen | 4. Rückmeldung abwarten | 5. Kontrolle & Dokumentation | 6. Abrechnung & Archivierung |
+| Schritte / Aktionen | Mieter ruft an, schreibt E-Mail oder Zettel; manchmal wird Schaden auch verspätet gemeldet | Verwalter prüft, um welchen Schaden es sich handelt, ob er zuständig ist und welche Firma kontaktiert werden muss | Wählt eine passende Firma aus, ruft an oder schreibt eine E-Mail mit Beschreibung | Wartet auf Bestätigung oder Rechnung des Handwerkers | Prüft, ob der Mieter zufrieden ist oder ob Nacharbeiten nötig sind | Erfasst Rechnung manuell in Buchhaltung / Excel |
+| Ziele / Erwartungen | Klare, vollständige Auftragserteilung | Effektive Vorbereitung ohne Rückfragen | Schaden effizient beheben und Nachweis erstellen | Klare, revisionssichere Rückmeldung an Verwaltung | Transparente Abrechnung und Auftragsübersicht | Überblick über Aufträge, weniger Nachfragen |
+| Herausforderungen / Pain Points | Meldungen kommen zu unterschiedlichen Zeiten, über viele Kanäle; keine zentrale Übersicht; Meldungen werde übersehen | Fehlende Fotos oder Detailinfos erschweren Einschätzung; oft Rückfragen nötig; Bearbeitung verzögert sich | Kommunikationsfehler, doppelte Beauftragung, keine Rückmeldung vom Handwerker | Keine Transparenz über Bearbeitungsstatus; Handwerker meldet sich oft spät oder gar nicht | Keine einheitliche Dokumentation; Fotos und Notizen liegen verstreut | Zeitaufwendig, fehleranfällig; doppelte Dateneingabe |
+| Informationen / Daten | Name des Mieters, Adresse, Schadensbeschreibung | Objektdaten, Mietvertrag, Handwerkerkontakte | Schadensbeschreibung, Adresse, Terminwunsch | Status, Datum, Rechnungsdaten | Abschlussbericht, Foto, Rechnung | Rechnungsbetrag, Leistungsdatum |
+| Systeminteraktionen / Touchpoints | Telefon, E-Mail, Zettel | Telefon, E-Mail, Aktenordner, Excel | Telefon, E-Mail | E-Mail, Telefon | Papierakten, Excel | Excel, Ordner, Buchhaltungssoftware |
+| Verbesserungspotenzial / Anforderungen | Einheitliches digitales Meldesystem mit Pflichtfeldern und Uploadmöglichkeit (z. B. Foto) und Zuordnung an zu bearbeitenden Mitarbeiter innerhalb der Hausverwaltung. | Automatische Kategorisierung und Priorisierung der Meldung (z. B. „Wasser“, „Heizung“, „Elektrik“) | Integrierte Beauftragungsfunktion mit automatischer Dokumentation im System | Statusanzeige im Dashboard + automatische Benachrichtigungen bei Fortschritt | Zentrale Dokumentation aller Fälle mit Foto-Upload und Bearbeitungshistorie | Automatische Verknüpfung von Rechnungsdaten mit Schadensfall + Exportfunktion für Buchhaltung |
