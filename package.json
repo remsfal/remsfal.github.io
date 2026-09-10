@@ -23,7 +23,7 @@
     "@tailwindcss/postcss": "^4.3.3",
     "@tsconfig/node-lts": "^24.0.1",
     "@types/markdown-it": "^14.2.0",
-    "@types/node": "^26.2.0",
+    "@types/node": "^26.4.0",
     "eslint": "^10.9.0",
     "jiti": "^2.7.0",
     "postcss": "^8.5.26",
