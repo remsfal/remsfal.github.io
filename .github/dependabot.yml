@@ -7,6 +7,9 @@ updates:
     directory: "/" # Location of package.json
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "primeicons"
+        update-types: ["version-update:semver-major"]
   # Enable version updates for GitHub actions
   - package-ecosystem: "github-actions"
     directory: "/.github/workflows"
