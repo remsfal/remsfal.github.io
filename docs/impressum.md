@@ -1,6 +1,6 @@
 # Impressum
 
-Angaben gemäß § 5 Telemediengesetz (TMG):
+Angaben gemäß § 5 Digitale-Dienst-Gesetz (DDG):
 
 **Prof. Dr.-Ing. Alexander Stanik**<br>
 TA Gebäude C, Raum 830<br>
@@ -16,7 +16,7 @@ Deutschland
 
 ## Verantwortlich für den Inhalt
 
-Verantwortlicher gemäß § 55 Abs. 2 Rundfunkstaatsvertrag (RStV):
+Verantwortlicher gemäß § 8 Abs. 2 des Medienstaatsvertrags (MStV):
 
 **Prof. Dr.-Ing. Alexander Stanik**<br>
 **E-Mail:** info@remsfal.de
