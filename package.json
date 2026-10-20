@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development vitepress dev docs --port 5174",
     "build": "NODE_ENV=production vitepress build docs",
-    "preview": "NODE_ENV=development vitepress preview dist",
+    "preview": "NODE_ENV=production vitepress preview docs --port 4173",
     "type-check": "tsc --noEmit",
     "lint": "eslint --quiet",
     "lint:report": "mkdir -p reports && eslint --format json --output-file reports/eslint-report.json",
