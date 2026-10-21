@@ -16,7 +16,7 @@
   "dependencies": {
     "dompurify": "^3.4.16",
     "dotenv": "^18.0.5",
-    "markdown-it": "^15.0.2",
+    "markdown-it": "^15.0.3",
     "primeicons": ">=7.0.0 <8.0.0"
   },
   "devDependencies": {
