@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
 
-const platformUrl = import.meta.env.VITE_PLATFORM_URL || 'https://remsfal.online'
 const screenImage = withBase('/landing/screen-1.png')
 </script>
 
@@ -58,7 +57,7 @@ const screenImage = withBase('/landing/screen-1.png')
               die Ihnen die Arbeit erleichtert und durch Zeit- und Kostenersparnis
               eine nachhaltige Gebäudebewirtschaftung realisiert.
             </p>
-            <a :href="platformUrl" class="try-button">Kostenlos testen</a>
+            <a href="https://remsfal.online" class="try-button">Kostenlos testen</a>
         </div>
         <div class="flex justify-center md:justify-end">
             <img :src="screenImage" alt="REMSFAL preview" class="w-9/12 md:w-auto" />

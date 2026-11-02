@@ -97,15 +97,6 @@ docs/
 - **DOMPurify** for sanitizing HTML
 - **markdown-it** for Markdown rendering in components
 
-### Environment Variables
-
-The project uses environment-specific `.env` files:
-- `.env.development` - local development URLs
-- `.env.production` - production URLs
-
-Variables:
-- `VITE_PLATFORM_URL` - External platform URL (remsfal.online)
-
 ### VitePress Configuration
 
 The VitePress config (`docs/.vitepress/config.ts`) includes:
