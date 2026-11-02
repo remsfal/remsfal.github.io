@@ -71,15 +71,6 @@ npm run dev
 
 The site is served at [http://localhost:5174](http://localhost:5174) with hot module replacement.
 
-### Configuration
-
-Build-time configuration is done via environment variables in [`.env.development`](.env.development)
-(`npm run dev`) and [`.env.production`](.env.production) (`npm run build`).
-
-| Variable            | Description                                                 |
-|---------------------|-------------------------------------------------------------|
-| `VITE_PLATFORM_URL` | Target of the navigation link *Kostenlos testen*            |
-
 ### Available scripts
 
 | Command                     | Description                                                          |

@@ -85,12 +85,6 @@ const renderedBody = computed(() => {
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.thesis-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .thesis-card-content {

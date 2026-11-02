@@ -1,10 +1,5 @@
 import { defineConfig } from 'vitepress'
 import { resolve } from 'path'
-import { config as dotenvConfig } from 'dotenv'
-
-// Load environment variables based on NODE_ENV
-const mode = process.env.NODE_ENV || 'production'
-dotenvConfig({ path: resolve(__dirname, `../../.env.${mode}`) })
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -31,9 +26,6 @@ export default defineConfig({
     ['meta', { name: 'og:description', content: 'Remote Management Services for connected Facilities' }],
   ],
   vite: {
-    define: {
-      __MODE__: JSON.stringify(mode),
-    },
     css: {
       preprocessorOptions: {
         scss: {
@@ -58,7 +50,7 @@ export default defineConfig({
       },
       {
         text: 'Kostenlos testen',
-        link: process.env.VITE_PLATFORM_URL || 'https://remsfal.online',
+        link: 'https://remsfal.online',
       },
     ],
 

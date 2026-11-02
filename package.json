@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=development vitepress dev docs --port 5174",
-    "build": "NODE_ENV=production vitepress build docs",
-    "preview": "NODE_ENV=production vitepress preview docs --port 4173",
+    "dev": "vitepress dev docs --port 5174",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs --port 4173",
     "type-check": "tsc --noEmit",
     "lint": "eslint --quiet",
     "lint:report": "mkdir -p reports && eslint --format json --output-file reports/eslint-report.json",
@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "dompurify": "^3.4.17",
-    "dotenv": "^18.0.5",
     "markdown-it": "^15.0.3",
     "primeicons": ">=7.0.0 <8.0.0"
   },
