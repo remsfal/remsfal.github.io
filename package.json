@@ -26,7 +26,7 @@
     "eslint": "^10.13.0",
     "jiti": "^2.7.0",
     "postcss": "^8.5.32",
-    "prettier": "^3.9.9",
+    "prettier": "^3.9.10",
     "sass-embedded": "^1.107.1",
     "tailwindcss": "^4.3.2",
     "tailwindcss-primeui": "^0.6.1",
